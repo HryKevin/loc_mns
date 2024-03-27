@@ -1,0 +1,160 @@
+/* GLOBAL */
+:root {
+    --grey: #E6E9E0;
+    --purple: #776E9A;
+    --black: #222222;
+    --white: #FEFEFE;
+    --orange: #FFB566;
+    --brown: #B15E05;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Golos Text",
+        sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+a {
+    color: var(--purple);
+}
+
+/* FONT GAYATHRI TITRE */
+.gayathri-thin {
+    font-family: "Gayathri", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.gayathri-regular {
+    font-family: "Gayathri", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.gayathri-bold {
+    font-family: "Gayathri", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+h1 {
+    font-family: "Gayathri", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-transform: uppercase;
+}
+
+/* FONT GOLOS TEXTE */
+
+
+.golos-text-font {
+    font-family: "Golos Text", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Inscription */
+
+.container-inscription {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+.container-svg-inscription {
+    width: 75%;
+    background-color: var(--grey);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.logo-inscription {
+    width: 300px;
+}
+
+.container-form-inscription {
+    width: 25%;
+    display: flex;
+    align-items: center;
+
+    flex-direction: column;
+
+    margin: auto;
+}
+
+.container-form-inscription h1 {
+    width: 70%;
+    border-bottom: solid 2px var(--purple);
+}
+
+.form-inscription {
+    width: 70%;
+    margin: 20px;
+}
+
+.form-inscription input {
+    margin: 10px 0 10px 0;
+}
+
+.form-inscription input[type="text"],
+.form-inscription input[type="email"],
+.form-inscription input[type="password"] {
+    border: 1px solid rgba(119, 110, 154, 1);
+    border-radius: 10px;
+    height: 50px;
+    width: 100%;
+    padding: 5px;
+    background: rgba(244, 243, 243, 1);
+    opacity: 1;
+}
+
+.form-inscription input[type="checkbox"] {
+    border: solid 1px var(--orange);
+}
+
+.submit-inscription {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* Cacher la case à cocher standard */
+.form-inscription input[type="checkbox"] {
+    display: none;
+}
+
+/* Créer un élément personnalisé pour remplacer la case à cocher */
+.form-inscription input[type="checkbox"]+label::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--orange);
+    /* Couleur de la bordure */
+    border-radius: 5px;
+}
+
+/* Styler la bordure lorsqu'il est coché */
+.form-inscription input[type="checkbox"]:checked+label::before {
+    border-color: var(--purple);
+    /* Couleur de la bordure lorsqu'il est coché */
+}
+
+/* Cacher la case à cocher standard */
+.form-inscription input[type="submit"] {
+    padding: 20px;
+    border-radius: 30px;
+    border-color: 1px solid var(--brown);
+    background-color: var(--orange);
+    color: var(--white);
+    width: 250px;
+}
