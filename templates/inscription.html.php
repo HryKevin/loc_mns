@@ -16,19 +16,20 @@
             </div>
             <div>
                 <label for="password">Mot de passe :</label>
-                <input type="password" name="password" id="password" value="" placeholder="Mot de passe" required>
+                <div class="password-input">
+                    <input type="password" name="password" id="password" value="" placeholder="Mot de passe" required>
+                    <span class="toggle-password" onclick="togglePasswordVisibility()"></span>
+                </div>
             </div>
-            <div class="container_see_pass">
-                <input name="see_pass" id="see_pass" type="checkbox" class="show-password" data-target="pass">
-                <label for="see_pass">Afficher le mot de passe</label>
-            </div>
-            <div>
+            <div class="container-progressbar-pass">
                 <p id="strength"></p>
                 <progress id="pass-strength" value="0" max="5"></progress>
             </div>
+
             <div class="container_accept_policy">
                 <input type="checkbox" name="accept_policy" id="accept_policy" required>
-                <label for="accept_policy">En cochant cette case, j'accepte la <a href="#">Politique de
+                <label class="checkbox-inscription" for="accept_policy">En cochant cette case, j'accepte la <a
+                        href="#">Politique de
                         confidentialité</a></label>
             </div>
             <div class="submit-inscription">
