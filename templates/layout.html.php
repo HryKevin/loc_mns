@@ -18,17 +18,7 @@
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="assets/css/styles.css">
 
-    <!-- FONT GAYATHRI TITRE -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gayathri:wght@100;400;700&display=swap" rel="stylesheet">
 
-    <!-- FONT GOLOS PARAGRAPHE -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="assets/css/styles.css">
 
 </head>
 
