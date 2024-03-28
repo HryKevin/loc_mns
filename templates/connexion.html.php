@@ -11,12 +11,16 @@
           <input type="email" placeholder="  Email" />
         </div>
         <div><label>Mot de passe : </label>
-          <input type="password" placeholder="  Mot de passe" />
+          <div>
+            <input class="eye" type="password" placeholder="  Mot de passe" />
+            <img class="open-eye" src="assets/img/eye-open.svg" alt="oeil" />
+          </div>
         </div>
         <a class="mdp" href="/">Mot de passe oublié ?</a>
+
         <div><input class="button" type="submit" value="Connexion" /></div>
       </form>
-      <a href="/>">Vous n'êtes pas encore inscrit ?</a>
+      <a href="?page=inscription">Vous n'êtes pas encore inscrit ?</a>
 
     </div>
   </div>
