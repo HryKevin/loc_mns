@@ -1,6 +1,6 @@
 <div class="container-connexion">
   <div class="img-connexion">
-    <img src="assets/img/connexion.svg" alt="connexion">
+    <img class="svg-connexion" src="assets/img/connexion.svg" alt="connexion">
     <img class="logo-connexion" src="assets/img/logo.svg" alt="logo">
   </div>
   <div class="container-right-connexion">
@@ -17,6 +17,7 @@
         <div><input class="button" type="submit" value="Connexion" /></div>
       </form>
       <a href="/>">Vous n'êtes pas encore inscrit ?</a>
+
     </div>
   </div>
 

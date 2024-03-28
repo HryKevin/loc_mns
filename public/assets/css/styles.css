@@ -234,9 +234,8 @@ progress#pass-strength {
 }
 
 .logo-connexion {
-    width: 400px;
+    width: 300px;
 }
-
 
 
 /* Partie droite */
@@ -311,5 +310,56 @@ progress#pass-strength {
 
     }
 
+
+}
+
+/* CONNEXION MEDIA QUERIES */
+
+@media (max-width:1166px){
+ 
+  .img-connexion{
+    row-gap: 20px;
+    padding-top: 15px;
+  }
+  .logo-connexion {
+    width: 200px;
+    margin-bottom: 20px;
+}
+.svg-connexion{
+  width: 400px;
+}
+.container-right-connexion{
+  & h1{font-size: 24px;
+    padding: 0;
+
+  }
+}
+.container-form-connexion{
+  & .button{
+    font-size: 12px;
+  }
+  & a{
+    font-size:12px;
+  }
+}
+
+}
+
+@media (max-width:768px){
+  .container-connexion{
+    display: flex;
+    flex-direction: column;
+    
+  }
+  .img-connexion{
+    width: 100%;
+  }
+  .container-right-connexion{
+    width: 100%;
+  }
+  .svg-connexion{
+    width: 200px;
+  }
+  
 
 }
