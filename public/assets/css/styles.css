@@ -282,7 +282,6 @@ progress#pass-strength {
     & input[type="email"],
     input[type="password"] {
         height: 40px;
-       
         border-radius: 10px;
         border: 1px solid transparent;
         border-top: none;
@@ -290,6 +289,7 @@ progress#pass-strength {
         border-bottom: 1px solid #DDD;
         box-shadow: inset 0 1px 2px rgba(0, 0, 0, .39), 0 -1px 1px #FFF, 0 1px 0 #FFF;
     }
+   
   
     & .mdp {
         text-align: end;
@@ -376,6 +376,8 @@ progress#pass-strength {
 
 }
 
+/* Oeil */
+
 @media (min-width: 768px){
   .open-eye{
     display: flex;
@@ -386,4 +388,12 @@ progress#pass-strength {
     margin-top: 8px;
   
   }
+}
+
+/* ///////// MDP OUBLIE /////////// */
+
+.container-pwd{
+    height: 100vh;
+    width: 100%;
+    background-color: var(--grey);
 }
