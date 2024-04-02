@@ -16,7 +16,7 @@
             <img class="open-eye" src="assets/img/eye-open.svg" alt="oeil" />
           </div>
         </div>
-        <a class="mdp" href="/">Mot de passe oublié ?</a>
+        <a class="mdp" href="/?page=reinitialisation-mdp">Mot de passe oublié ?</a>
 
         <div><input class="button" type="submit" value="Connexion" /></div>
       </form>
