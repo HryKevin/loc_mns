@@ -28,18 +28,17 @@
 
             <div class="container_accept_policy">
                 <input type="checkbox" name="accept_policy" id="accept_policy" required>
-                <label class="checkbox-inscription" for="accept_policy">En cochant cette case, j'accepte la <a
-                        href="#">Politique de
-                        confidentialité</a></label>
+                <label class="checkbox-inscription" for="accept_policy">En cochant cette case, j'accepte la &nbsp;<a
+                        href="#">Politique de confidentialité</a></label>
             </div>
             <div class="submit-inscription">
                 <input type="submit" value="Inscription">
-                <p><a href="connexion.php">Vous avez déjà un compte ?</a></p>
+                <p><a href="?page=connexion">Vous avez déjà un compte ?</a></p>
             </div>
         </form>
     </div>
     <div class="container-svg-inscription">
-        <img src="assets/img/inscription.svg" alt="svg-inscription">
+        <img class="image-inscription" src="assets/img/inscription.svg" alt="svg-inscription">
         <img class="logo-inscription" src="assets/img/logo.svg" alt="logo">
     </div>
 

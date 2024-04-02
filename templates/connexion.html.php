@@ -21,7 +21,6 @@
         <div><input class="button" type="submit" value="Connexion" /></div>
       </form>
       <a href="?page=inscription">Vous n'êtes pas encore inscrit ?</a>
-
     </div>
   </div>
 
