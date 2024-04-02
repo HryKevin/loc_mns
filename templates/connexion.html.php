@@ -16,7 +16,7 @@
         <a class="mdp" href="/">Mot de passe oublié ?</a>
         <div><input class="button" type="submit" value="Connexion" /></div>
       </form>
-      <a href="/>">Vous n'êtes pas encore inscrit ?</a>
+      <a href="?page=inscription">Vous n'êtes pas encore inscrit ?</a>
     </div>
   </div>
 
