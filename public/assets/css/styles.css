@@ -71,7 +71,8 @@ h1 {
     width: 70%;
     border-bottom: solid 0.1em var(--purple);
     /* Utilisation de em */
-    font-size: 2em;
+    font-size: 32px;
+    /* Converti de 2em */
     /* Utilisation de em */
 }
 
@@ -82,53 +83,63 @@ h1 {
 }
 
 .form-inscription label {
-    font-size: 1.25em;
+    font-size: 20px;
+    /* Converti de 1.25em */
     /* Utilisation de em */
 }
 
 .container-form-inscription .form-inscription>div:nth-child(n+5) label,
 .container-form-inscription .form-inscription>div:nth-child(n+6) {
-    font-size: 0.7375em;
+    font-size: 11px;
+    /* Converti de 0.7375em */
     /* Utilisation de em */
 }
 
 .form-inscription input {
-    margin: 0.625em 0;
+    margin: 10px 0;
+    /* Converti de 0.625em */
     /* Utilisation de em */
 }
 
 .form-inscription input[type="text"],
 .form-inscription input[type="email"],
 .form-inscription input[type="password"] {
-    border: 0.0625em solid transparent;
+    border: 1px solid transparent;
+    /* Converti de 0.0625em */
     /* Utilisation de em */
     border-top: none;
-    border-radius: 0.625em;
+    border-radius: 10px;
+    /* Converti de 0.625em */
     /* Utilisation de em */
-    height: 3.125em;
+    height: 50px;
+    /* Converti de 3.125em */
     /* Utilisation de em */
     width: 100%;
-    padding: 0.3125em;
+    padding: 5px;
+    /* Converti de 0.3125em */
     /* Utilisation de em */
     background: rgba(244, 243, 243, 1);
     opacity: 1;
     background-color: #F4F3F3;
-    border-bottom: 0.0625em solid #DDD;
+    border-bottom: 1px solid #DDD;
+    /* Converti de 0.0625em */
     /* Utilisation de em */
-    box-shadow: inset 0 0.0625em 0.125em rgba(0, 0, 0, .39),
-        0 -0.0625em 0.0625em #FFF,
-        0 0.0625em 0 #FFF;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, .39),
+        0 -1px 1px #FFF,
+        0 1px 0 #FFF;
 }
 
 .form-inscription input[type="text"]::placeholder,
 .form-inscription input[type="email"]::placeholder,
 .form-inscription input[type="password"]::placeholder {
-    font-size: 0.9375em;
+    font-size: 15px;
+    /* Converti de 0.9375em */
     /* Utilisation de em */
 }
 
 .form-inscription input[type="checkbox"] {
-    border: 0.0625em solid var(--orange);
+    border: 1px solid var(--orange);
+    /* Converti de 0.0625em */
     /* Utilisation de em */
 }
 
@@ -143,7 +154,8 @@ h1 {
 /* Lien connexion */
 .submit-inscription a {
     text-decoration: none;
-    font-size: 0.9375em;
+    font-size: 15px;
+    /* Converti de 0.9375em */
     /* Utilisation de em */
     font-weight: 500;
 }
@@ -157,15 +169,20 @@ h1 {
 .form-inscription input[type="checkbox"]+label::before {
     content: '';
     display: inline-block;
-    width: 1.25em;
+    width: 20px;
+    /* Converti de 1.25em */
     /* Utilisation de em */
-    height: 1.25em;
+    height: 20px;
+    /* Converti de 1.25em */
     /* Utilisation de em */
-    border: 0.125em solid var(--orange);
+    border: 2px solid var(--orange);
+    /* Converti de 0.125em */
     /* Utilisation de em */
-    border-radius: 0.3125em;
+    border-radius: 5px;
+    /* Converti de 0.3125em */
     /* Utilisation de em */
-    margin: 0 0.625em 0 0;
+    margin: 0 10px 0 0;
+    /* Converti de 0.625em */
     /* Utilisation de em */
     background: rgba(244, 243, 243, 1);
 }
@@ -178,19 +195,25 @@ h1 {
 
 /* Cacher la case à cocher standard */
 .form-inscription input[type="submit"] {
-    padding: 0.625em;
+    padding: 10px;
+    /* Converti de 0.625em */
     /* Utilisation de em */
-    border-radius: 3.125em;
+    border-radius: 50px;
+    /* Converti de 3.125em */
     /* Utilisation de em */
-    border: 0.0625em solid var(--brown);
+    border: 1px solid var(--brown);
+    /* Converti de 0.0625em */
     /* Utilisation de em */
     background-color: var(--orange);
     color: var(--white);
-    width: 9.625em;
+    width: 150px;
+    /* Converti de 9.625em */
     /* Utilisation de em */
-    font-size: 1.2em;
+    font-size: 20px;
+    /* Converti de 1.2em */
     /* Utilisation de em */
-    margin: 1.125em 0 0.9375em 0;
+    margin: 20px 0 15px 0;
+    /* Converti de 1.125em */
     /* Utilisation de em */
 }
 
@@ -203,7 +226,8 @@ h1 {
 
 /* Espacement entre les checkbox */
 .container-see-pass {
-    margin: 0.9375em 0 2.5em 0;
+    margin: 15px 0 40px 0;
+    /* Converti de 0.9375em */
     /* Utilisation de em */
 }
 
@@ -222,7 +246,8 @@ progress#pass-strength {
 }
 
 .password-input input[type="password"] {
-    padding-right: 1.875em;
+    padding-right: 30px;
+    /* Converti de 1.875em */
     /* Utilisation de em */
     /* Pour laisser de l'espace pour l'icône */
 }
@@ -230,19 +255,23 @@ progress#pass-strength {
 .password-input .toggle-password {
     position: absolute;
     top: 50%;
-    right: 0.3125em;
+    right: 5px;
+    /* Converti de 0.3125em */
     /* Utilisation de em */
     transform: translateY(-50%);
     cursor: pointer;
-    background-image: url('eye-icon.png');
+
     /* Remplacez par l'URL de votre image */
-    width: 1.25em;
+    width: 20px;
+    /* Converti de 1.25em */
     /* Utilisation de em */
-    height: 1.25em;
+    height: 20px;
+    /* Converti de 1.25em */
     /* Utilisation de em */
     background-size: cover;
     color: #776E9A;
 }
+
 
 
 /*////////// CONNEXION //////////////////*/
