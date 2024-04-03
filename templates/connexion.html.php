@@ -1,6 +1,6 @@
 <div class="container-connexion">
   <div class="img-connexion">
-    <img src="assets/img/connexion.svg" alt="connexion">
+    <img class="svg-connexion" src="assets/img/connexion.svg" alt="connexion">
     <img class="logo-connexion" src="assets/img/logo.svg" alt="logo">
   </div>
   <div class="container-right-connexion">
@@ -11,9 +11,13 @@
           <input type="email" placeholder="  Email" />
         </div>
         <div><label>Mot de passe : </label>
-          <input type="password" placeholder="  Mot de passe" />
+          <div>
+            <input class="eye" type="password" placeholder="  Mot de passe" />
+            <img class="open-eye" src="assets/img/eye-open.svg" alt="oeil" />
+          </div>
         </div>
-        <a class="mdp" href="/">Mot de passe oublié ?</a>
+        <a class="mdp" href="/?page=reinitialisation-mdp">Mot de passe oublié ?</a>
+
         <div><input class="button" type="submit" value="Connexion" /></div>
       </form>
       <a href="?page=inscription">Vous n'êtes pas encore inscrit ?</a>
