@@ -8,11 +8,11 @@
       <h1>SE CONNECTER</h1>
       <form>
         <div><label>Email : </label>
-          <input type="email" placeholder="  Email" />
+          <input type="email" placeholder="Email" />
         </div>
         <div><label>Mot de passe : </label>
           <div>
-            <input class="eye" type="password" placeholder="  Mot de passe" />
+            <input class="eye" type="password" placeholder="Mot de passe" />
             <img class="open-eye" src="assets/img/eye-open.svg" alt="oeil" />
           </div>
         </div>
