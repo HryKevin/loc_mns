@@ -17,8 +17,8 @@
             <div>
                 <label for="password">Mot de passe :</label>
                 <div class="password-input">
-                    <input type="password" name="password" id="password" value="" placeholder="Mot de passe" required>
-                    <span class="toggle-password" onclick="togglePasswordVisibility()"></span>
+                    <input type="password" name="password" id="password-inscription" value="" placeholder="Mot de passe" required>
+                     <img class="open-eye-inscription" src="assets/img/eye-open.svg" alt="oeil" />
                 </div>
             </div>
             <div class="container-progressbar-pass">
