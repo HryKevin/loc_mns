@@ -621,20 +621,33 @@ progress#pass-strength {
     padding: 40px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    
     flex-direction: column;
     row-gap: 10%;
-    & .logo-section-sidebar{
+    /* Section Avec logo de la Side Bar */
+    .logo-section-sidebar{
         display: flex;
         flex-direction: column;
-        & img {
-        width:140px ;}
+            & img {
+            width:140px ;}
     }
-    
-    & li{
+    ul{
+        margin-top: 4em;
+    }
+    li{
         list-style: none;
+        margin-bottom: 15px;
+        
+
+        & img{
+            margin-right: 20px;
+        }
     }
-    & a{
+    a{
         text-decoration: none;
+        color: var(--black);
+    
     }
 
           
@@ -656,8 +669,11 @@ progress#pass-strength {
                 padding:3% 3% 2% 0;
         } 
         input{
+            position: relative;
             padding-left: 10px;
+            margin-right: 20px;
             height: 30px;
+            width: 505px;
             border-radius: 10px;
             border: 1px solid transparent;
             border-top: none;
@@ -665,6 +681,20 @@ progress#pass-strength {
             border-bottom: 1px solid #DDD;
             box-shadow: inset 0 1px 2px rgba(0, 0, 0, .39), 0 -1px 1px #FFF, 0 1px 0 #FFF;
         }
+       
+}
+ .input-search{
+    position: relative;
+    
+}
+ .search{
+    display: flex;
+    position: absolute;
+    top: 4.8%;
+    margin-left: 10px;
+
+  
+
 }
 
 .container-main-index{
