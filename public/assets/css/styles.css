@@ -120,11 +120,6 @@ h1 {
 }
 
 
-/* LIEN PAGE CONNEXION */
-.submit-inscription a {
-    text-decoration: none;
-}
-
 /* CACHER LA CASE A COCHER STANDARD */
 .form-inscription input[type="checkbox"] {
     display: none;
@@ -189,6 +184,80 @@ progress#pass-strength {
     position: absolute;
     top: 32.5%;
     left: 85%;
+}
+
+/* INSCRIPTION MEDIA QUERIES */
+
+@media (max-width:1166px) {
+
+    .container-svg-inscription {
+        row-gap: 20px;
+    }
+
+    .logo-inscription {
+        width: 200px;
+    }
+
+    .image-inscription {
+        width: 400px;
+    }
+    
+    /* TITRE FORMULAIRE */
+    .container-form-inscription h1 {
+        font-size: 24px;
+    }
+
+    /* BOUTON INSCRIPTION */
+    .form-inscription input[type="submit"] {
+        font-size: 12px;
+    }
+
+    /* LIEN PAGE CONNEXION */
+    .submit-inscription a {
+        font-size: 12px;
+    }
+
+    .checkbox-inscription {
+        font-size: 12px;
+    }
+}
+
+@media (max-width:768px) {
+    .container-inscription {
+        flex-direction: column-reverse;
+        height: auto;
+        width: 100%;
+    }
+
+    .image-inscription{
+        width: 200px;
+        padding-top: 15px;
+    }
+
+    .logo-inscription{
+        margin-bottom: 20px;
+    }
+
+    .container-svg-inscription {
+        width: 100%;
+    }
+
+    .container-form-inscription {
+        width: 100%;
+        row-gap: 20px;
+        padding-top: 20px;
+    }
+
+    .form-inscription input[type="text"],
+    .form-inscription input[type="email"],
+    .form-inscription input[type="password"] {
+        margin-bottom: 30px;
+    }
+
+    /* OEIL INPUT MOT DE PASSE */
+    .open-eye-inscription {
+        top: 24.5%;
+    }
 }
 
 /*////////// CONNEXION //////////////////*/
