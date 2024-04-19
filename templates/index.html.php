@@ -23,12 +23,282 @@
     <div class="nav-bar">
       <h1>Accueil</h1>
       <div>
-        <input class="input-search" type=text />
+        <input class="input-search" type="text" /></input>
         <img class="search" src="assets/img/magnifier.svg" />
         <img src="assets/img/user.svg" />
         <img src="assets/img/chevron-down.svg" />
       </div>
     </div>
-    <div class="container-main-index">MAIN</div>
+    <!-- MAIN -->
+    <div class="container-main-index">
+      <!-- HAUT DU MAIN -->
+      <div class="top-main-index">
+        <div class="container-material-index">
+
+          <!-- CONTAINER EQUIPEMENTS -->
+
+          <div class="title-material-index">
+            <h2>Equipements</h2>
+            <a href="/">Voir plus<img src="assets/img/chevron-down-orange.svg"> </a>
+          </div>
+          <div><button class="button-material-index">Tout le matériel</button>
+            <button class="button-loan-index">En location</button>
+            <button class="button-available-index">Disponible</button>
+            <button class="button-repair-index">En réparation</button>
+          </div>
+          <!-- TABLEAU -->
+          <div class="table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Nom</th>
+                  <th>Description</th>
+                  <th>Numéro de série</th>
+                  <th>Date achat</th>
+                  <th>Marque</th>
+                  <th>Catégorie</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Nom 1</td>
+                  <td>Description 1</td>
+                  <td>Numéro de série 1</td>
+                  <td>Date achat 1</td>
+                  <td>Marque 1</td>
+                  <td>Catégorie 1</td>
+                </tr>
+                <tr>
+                  <td>Nom 2</td>
+                  <td>Description 2</td>
+                  <td>Numéro de série 2</td>
+                  <td>Date achat 2</td>
+                  <td>Marque 2</td>
+                  <td>Catégorie 2</td>
+
+                </tr>
+                <tr>
+                  <td>Nom 3</td>
+                  <td>Description 3</td>
+                  <td>Numéro de série 3</td>
+                  <td>Date achat 3</td>
+                  <td>Marque 3</td>
+                  <td>Catégorie 3</td>
+                </tr>
+                <tr>
+                  <td>Nom 4</td>
+                  <td>Description 4</td>
+                  <td>Numéro de série 4</td>
+                  <td>Date achat 4</td>
+                  <td>Marque 4</td>
+                  <td>Catégorie 4</td>
+                </tr>
+                <tr>
+                  <td>Nom 4</td>
+                  <td>Description 4</td>
+                  <td>Numéro de série 4</td>
+                  <td>Date achat 4</td>
+                  <td>Marque 4</td>
+                  <td>Catégorie 4</td>
+                </tr>
+                <tr>
+                  <td>Nom 4</td>
+                  <td>Description 4</td>
+                  <td>Numéro de série 4</td>
+                  <td>Date achat 4</td>
+                  <td>Marque 4</td>
+                  <td>Catégorie 4</td>
+                </tr>
+                <tr>
+                  <td>Nom 4</td>
+                  <td>Description 4</td>
+                  <td>Numéro de série 4</td>
+                  <td>Date achat 4</td>
+                  <td>Marque 4</td>
+                  <td>Catégorie 4</td>
+                </tr>
+                <tr>
+                  <td>Nom 4</td>
+                  <td>Description 4</td>
+                  <td>Numéro de série 4</td>
+                  <td>Date achat 4</td>
+                  <td>Marque 4</td>
+                  <td>Catégorie 4</td>
+                </tr>
+                <tr>
+                  <td>Nom 4</td>
+                  <td>Description 4</td>
+                  <td>Numéro de série 4</td>
+                  <td>Date achat 4</td>
+                  <td>Marque 4</td>
+                  <td>Catégorie 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- CONTAINER VUE D'ENSEMBLE -->
+        <div class="container-overview-index">
+          <h2>Vue d’ensemble du parc</h2>
+          <div class="roundTest"></div>
+        </div>
+      </div>
+      <!-- BAS DU MAIN -->
+      <div class="bottom-main-index">
+        <!-- BLOCS  GAUCHE -->
+        <div class="request-blocks">
+          <div class="request-rental">
+            <!-- DEMANDE DE LOCATION -->
+            <div class="title-flex-index">
+              <h2>Demandes de location</h2>
+              <a href="/">Voir plus<img src="assets/img/chevron-down-orange.svg"> </a>
+            </div>
+            <!-- TABLEAU -->
+            <div class="table">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Utilisateur</th>
+                    <th>Statut</th>
+                    <th>Dates</th>
+                    <th>Materiel</th>
+                    <th>Catégorie</th>
+                    <th>Reçu le</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Nom 1</td>
+                    <td>Eleve</td>
+                    <td>22/22/20224 - 22/22/2222</td>
+                    <td>Marque 1</td>
+                    <td>Catégorie 1</td>
+                    <td>26/02/2024</td>
+                  </tr>
+                  <tr>
+                    <td>Nom 2</td>
+                    <td>Intervenant</td>
+                    <td>22/22/20224 - 22/22/2222</td>
+                    <td>Marque 2</td>
+                    <td>Catégorie 2</td>
+                    <td>26/02/2024</td>
+                  </tr>
+                  <tr>
+                    <td>Nom 3</td>
+                    <td>Eleve</td>
+                    <td>22/22/20224 - 22/22/2222</td>
+                    <td>Marque 3</td>
+                    <td>Catégorie 2</td>
+                    <td>26/02/2024</td>
+                  </tr>
+                  <tr>
+                    <td>Nom 3</td>
+                    <td>Eleve</td>
+                    <td>22/22/20224 - 22/22/2222</td>
+                    <td>Marque 3</td>
+                    <td>Catégorie 2</td>
+                    <td>26/02/2024</td>
+                  </tr>
+                  <tr>
+                    <td>Nom 4</td>
+                    <td>Eleve</td>
+                    <td>22/22/20224 - 22/22/2222</td>
+                    <td>Marque 3</td>
+                    <td>Catégorie 2</td>
+                    <td>26/02/2024</td>
+                  </tr>
+                  <tr>
+                    <td>Nom 4</td>
+                    <td>Eleve</td>
+                    <td>22/22/20224 - 22/22/2222</td>
+                    <td>Marque 3</td>
+                    <td>Catégorie 2</td>
+                    <td>26/02/2024</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- DEMANDE DE RETOUR -->
+          <div class="request-return">
+            <div class="title-flex-index">
+              <h2>Demande de retour</h2>
+              <a href="/">Voir plus<img src="assets/img/chevron-down-orange.svg"> </a>
+            </div>
+            <div class="table">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Utilisateur</th>
+                    <th>Statut</th>
+                    <th>Dates</th>
+                    <th>Materiel</th>
+                    <th>Catégorie</th>
+                    <th>Reçu le</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Nom 1</td>
+                    <td>Eleve</td>
+                    <td>22/22/20224 - 22/22/2222</td>
+                    <td>Marque 1</td>
+                    <td>Catégorie 1</td>
+                    <td>26/02/2024</td>
+                  </tr>
+                  <tr>
+                    <td>Nom 2</td>
+                    <td>Intervenant</td>
+                    <td>22/22/20224 - 22/22/2222</td>
+                    <td>Marque 2</td>
+                    <td>Catégorie 2</td>
+                    <td>26/02/2024</td>
+                  </tr>
+                  <tr>
+                    <td>Nom 3</td>
+                    <td>Eleve</td>
+                    <td>22/22/20224 - 22/22/2222</td>
+                    <td>Marque 3</td>
+                    <td>Catégorie 2</td>
+                    <td>26/02/2024</td>
+                  </tr>
+                  <tr>
+                    <td>Nom 3</td>
+                    <td>Eleve</td>
+                    <td>22/22/20224 - 22/22/2222</td>
+                    <td>Marque 3</td>
+                    <td>Catégorie 2</td>
+                    <td>26/02/2024</td>
+                  </tr>
+                  <tr>
+                    <td>Nom 4</td>
+                    <td>Eleve</td>
+                    <td>22/22/20224 - 22/22/2222</td>
+                    <td>Marque 3</td>
+                    <td>Catégorie 2</td>
+                    <td>26/02/2024</td>
+                  </tr>
+                  <tr>
+                    <td>Nom 4</td>
+                    <td>Eleve</td>
+                    <td>22/22/20224 - 22/22/2222</td>
+                    <td>Marque 3</td>
+                    <td>Catégorie 2</td>
+                    <td>26/02/2024</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-calendar-index">
+          <h2>Calendrier</h2>
+
+        </div>
+      </div>
+
+    </div>
   </div>
 </div>
