@@ -4,20 +4,20 @@
         <form class="form-inscription" method="POST" action="#">
             <div>
                 <label for="lastname">Nom :</label>
-                <input type="text" name="lastname" id="lastname" value="" placeholder="Nom" required>
+                <input type="text" name="users[lastname]" id="lastname" value="" placeholder="Nom" required>
             </div>
             <div>
                 <label for="firstname">Prénom :</label>
-                <input type="text" name="firstname" id="firstname" value="" placeholder="Prénom" required>
+                <input type="text" name="users[firstname]" id="firstname" value="" placeholder="Prénom" required>
             </div>
             <div>
                 <label for="email">Email :</label>
-                <input type="email" name="email" id="email" value="" placeholder="Email" required>
+                <input type="email" name="users[email]" id="email" value="" placeholder="Email" required>
             </div>
             <div>
                 <label for="password">Mot de passe :</label>
                 <div class="password-input">
-                    <input type="password" name="password" id="password-inscription" value="" placeholder="Mot de passe" required>
+                    <input type="password" name="users[password]" id="password-inscription" value="" placeholder="Mot de passe" required>
                      <img class="open-eye-inscription" src="assets/img/eye-open.svg" alt="oeil" />
                 </div>
             </div>
@@ -32,7 +32,7 @@
                         href="#">Politique de confidentialité</a></label>
             </div>
             <div class="submit-inscription">
-                <input type="submit" value="Inscription">
+                <input type="submit" name="submit" value="Inscription">
                 <p><a href="?page=connexion">Vous avez déjà un compte ?</a></p>
             </div>
         </form>
