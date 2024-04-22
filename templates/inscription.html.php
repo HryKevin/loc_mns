@@ -4,21 +4,43 @@
         <form class="form-inscription" method="POST" action="#">
             <div>
                 <label for="lastname">Nom :</label>
-                <input type="text" name="users[lastname]" id="lastname" value="" placeholder="Nom" required>
+                <input type="text" name="users[lastname]" id="lastname" value="" placeholder="Nom" >
+                <!--Message d'erreur -->
+                <?php if(isset($errors['users']['lastname'])) : ?>
+                    <div>
+                        <?= $errors['users']['lastname'] ?>
+                    </div>
+                <?php endif; ?>
             </div>
             <div>
                 <label for="firstname">Prénom :</label>
-                <input type="text" name="users[firstname]" id="firstname" value="" placeholder="Prénom" required>
+                <input type="text" name="users[firstname]" id="firstname" value="" placeholder="Prénom" >
+                <?php if(isset($errors['users']['firstname'])) : ?>
+                    <div>
+                        <?= $errors['users']['firstname'] ?>
+                    </div>
+                <?php endif; ?>
             </div>
             <div>
                 <label for="email">Email :</label>
-                <input type="email" name="users[email]" id="email" value="" placeholder="Email" required>
+                <input type="email" name="users[email]" id="email" value="" placeholder="Email" >
+                <?php if(isset($errors['users']['email'])) : ?>
+                    <div>
+                        <?= $errors['users']['email'] ?>
+                    </div>
+                <?php endif; ?>
             </div>
             <div>
                 <label for="password">Mot de passe :</label>
                 <div class="password-input">
-                    <input type="password" name="users[password]" id="password-inscription" value="" placeholder="Mot de passe" required>
+                    <input type="password" name="users[password]" id="password-inscription" value="" placeholder="Mot de passe" >
                      <img class="open-eye-inscription" src="assets/img/eye-open.svg" alt="oeil" />
+                    <?php if(isset($errors['users']['password']))
+                    foreach ($errors['users']['password'] as $error): ?>
+                        <div>
+                            <?= $error ?>
+                        </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
             <div class="container-progressbar-pass">
@@ -27,7 +49,7 @@
             </div>
 
             <div class="container_accept_policy">
-                <input type="checkbox" name="accept_policy" id="accept_policy" required>
+                <input type="checkbox" name="accept_policy" id="accept_policy" >
                 <label class="checkbox-inscription" for="accept_policy">En cochant cette case, j'accepte la &nbsp;<a
                         href="#">Politique de confidentialité</a></label>
             </div>
