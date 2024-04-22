@@ -760,7 +760,6 @@ progress#pass-strength {
 
         /* Tableaux */
         & table{
-            overflow: auto;
             border:solid 1px var(--grey);
             border-collapse: collapse;
             font-size: 12px;
@@ -836,23 +835,20 @@ progress#pass-strength {
 
     .bottom-main-index{  
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         height: 50%;
         column-gap: 40px;
         margin-top: 40px;
+        row-gap: 40px;
+        width: 100%;
 
         /* 2 BLOCKS DEMANDE */
-        .request-blocks{
-            
-            display: flex;
-            flex-direction:column;
-            row-gap: 40px;
-            width: 60%;
 
             .title-flex-index{
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
+               
                 a{
                     font-size: 13px;
     
@@ -860,10 +856,12 @@ progress#pass-strength {
                         margin-left: 5px;
                     }
                 }
-            }
+            } 
+            .scroll-bar{
+                   height: 120px;
+                }
             /* TABLEAU */
             & table{
-                overflow: auto;
                 border:solid 1px var(--grey);
                 border-collapse: collapse;
                 font-size: 12px;
@@ -901,36 +899,31 @@ progress#pass-strength {
                 border-radius: 20px;
                 height: 45%;
                 overflow: hidden;
-
+                table{
+                & th{
+                background-color: var(--purple);}}
             }
         }
-        /*  CALENDRIER */
-            .container-calendar-index{
-                height: 100%;
-                width: 40%;
-                background-color:var(--white) ;
-                box-shadow: 0px 2px 12px 6px rgba(0,0,0,0.11);
-                padding: 14px;
-                border-radius: 20px;
-            }
+        
     }
 
 /* SCROLL BAR */
-.table{
-    overflow: auto;
+.scroll-bar{
+    overflow:auto;
+    height: auto;
 }
-.table::-webkit-scrollbar {
+.scroll-bar::-webkit-scrollbar {
 width: 8px;
 }
 
-.table::-webkit-scrollbar-thumb {
+.scroll-bar::-webkit-scrollbar-thumb {
 background: #666;
 border-radius: 20px;
 }
 
-.table::-webkit-scrollbar-track {
+.scroll-bar::-webkit-scrollbar-track {
 background: #ddd;
 border-radius: 40px;
 }
 
-}
+

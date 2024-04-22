@@ -47,7 +47,7 @@
             <button class="button-repair-index">En réparation</button>
           </div>
           <!-- TABLEAU -->
-          <div class="table">
+          <div class="scroll-bar">
             <table>
               <thead>
                 <tr>
@@ -146,159 +146,154 @@
       <!-- BAS DU MAIN -->
       <div class="bottom-main-index">
         <!-- BLOCS  GAUCHE -->
-        <div class="request-blocks">
+     
+          <!-- DEMANDE DE LOCATION -->   
           <div class="request-rental">
-            <!-- DEMANDE DE LOCATION -->
-            <div class="title-flex-index">
-              <h2>Demandes de location</h2>
-              <a href="/">Voir plus<img src="assets/img/chevron-down-orange.svg"> </a>
-            </div>
-            <!-- TABLEAU -->
-            <div class="table">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Utilisateur</th>
-                    <th>Statut</th>
-                    <th>Dates</th>
-                    <th>Materiel</th>
-                    <th>Catégorie</th>
-                    <th>Reçu le</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Nom 1</td>
-                    <td>Eleve</td>
-                    <td>22/22/20224 - 22/22/2222</td>
-                    <td>Marque 1</td>
-                    <td>Catégorie 1</td>
-                    <td>26/02/2024</td>
-                  </tr>
-                  <tr>
-                    <td>Nom 2</td>
-                    <td>Intervenant</td>
-                    <td>22/22/20224 - 22/22/2222</td>
-                    <td>Marque 2</td>
-                    <td>Catégorie 2</td>
-                    <td>26/02/2024</td>
-                  </tr>
-                  <tr>
-                    <td>Nom 3</td>
-                    <td>Eleve</td>
-                    <td>22/22/20224 - 22/22/2222</td>
-                    <td>Marque 3</td>
-                    <td>Catégorie 2</td>
-                    <td>26/02/2024</td>
-                  </tr>
-                  <tr>
-                    <td>Nom 3</td>
-                    <td>Eleve</td>
-                    <td>22/22/20224 - 22/22/2222</td>
-                    <td>Marque 3</td>
-                    <td>Catégorie 2</td>
-                    <td>26/02/2024</td>
-                  </tr>
-                  <tr>
-                    <td>Nom 4</td>
-                    <td>Eleve</td>
-                    <td>22/22/20224 - 22/22/2222</td>
-                    <td>Marque 3</td>
-                    <td>Catégorie 2</td>
-                    <td>26/02/2024</td>
-                  </tr>
-                  <tr>
-                    <td>Nom 4</td>
-                    <td>Eleve</td>
-                    <td>22/22/20224 - 22/22/2222</td>
-                    <td>Marque 3</td>
-                    <td>Catégorie 2</td>
-                    <td>26/02/2024</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+          <div class="title-flex-index">
+            <h2>Demandes de location</h2>
+            <a href="/">Voir plus<img src="assets/img/chevron-down-orange.svg"> </a>
           </div>
-
-          <!-- DEMANDE DE RETOUR -->
-          <div class="request-return">
-            <div class="title-flex-index">
-              <h2>Demande de retour</h2>
-              <a href="/">Voir plus<img src="assets/img/chevron-down-orange.svg"> </a>
-            </div>
-            <div class="table">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Utilisateur</th>
-                    <th>Statut</th>
-                    <th>Dates</th>
-                    <th>Materiel</th>
-                    <th>Catégorie</th>
-                    <th>Reçu le</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Nom 1</td>
-                    <td>Eleve</td>
-                    <td>22/22/20224 - 22/22/2222</td>
-                    <td>Marque 1</td>
-                    <td>Catégorie 1</td>
-                    <td>26/02/2024</td>
-                  </tr>
-                  <tr>
-                    <td>Nom 2</td>
-                    <td>Intervenant</td>
-                    <td>22/22/20224 - 22/22/2222</td>
-                    <td>Marque 2</td>
-                    <td>Catégorie 2</td>
-                    <td>26/02/2024</td>
-                  </tr>
-                  <tr>
-                    <td>Nom 3</td>
-                    <td>Eleve</td>
-                    <td>22/22/20224 - 22/22/2222</td>
-                    <td>Marque 3</td>
-                    <td>Catégorie 2</td>
-                    <td>26/02/2024</td>
-                  </tr>
-                  <tr>
-                    <td>Nom 3</td>
-                    <td>Eleve</td>
-                    <td>22/22/20224 - 22/22/2222</td>
-                    <td>Marque 3</td>
-                    <td>Catégorie 2</td>
-                    <td>26/02/2024</td>
-                  </tr>
-                  <tr>
-                    <td>Nom 4</td>
-                    <td>Eleve</td>
-                    <td>22/22/20224 - 22/22/2222</td>
-                    <td>Marque 3</td>
-                    <td>Catégorie 2</td>
-                    <td>26/02/2024</td>
-                  </tr>
-                  <tr>
-                    <td>Nom 4</td>
-                    <td>Eleve</td>
-                    <td>22/22/20224 - 22/22/2222</td>
-                    <td>Marque 3</td>
-                    <td>Catégorie 2</td>
-                    <td>26/02/2024</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+          <!-- TABLEAU -->
+          <div class="scroll-bar">
+            <table>
+              <thead>
+                <tr>
+                  <th>Utilisateur</th>
+                  <th>Statut</th>
+                  <th>Dates</th>
+                  <th>Materiel</th>
+                  <th>Catégorie</th>
+                  <th>Reçu le</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Nom 1</td>
+                  <td>Eleve</td>
+                  <td>22/22/20224 - 22/22/2222</td>
+                  <td>Marque 1</td>
+                  <td>Catégorie 1</td>
+                  <td>26/02/2024</td>
+                </tr>
+                <tr>
+                  <td>Nom 2</td>
+                  <td>Intervenant</td>
+                  <td>22/22/20224 - 22/22/2222</td>
+                  <td>Marque 2</td>
+                  <td>Catégorie 2</td>
+                  <td>26/02/2024</td>
+                </tr>
+                <tr>
+                  <td>Nom 3</td>
+                  <td>Eleve</td>
+                  <td>22/22/20224 - 22/22/2222</td>
+                  <td>Marque 3</td>
+                  <td>Catégorie 2</td>
+                  <td>26/02/2024</td>
+                </tr>
+                <tr>
+                  <td>Nom 3</td>
+                  <td>Eleve</td>
+                  <td>22/22/20224 - 22/22/2222</td>
+                  <td>Marque 3</td>
+                  <td>Catégorie 2</td>
+                  <td>26/02/2024</td>
+                </tr>
+                <tr>
+                  <td>Nom 4</td>
+                  <td>Eleve</td>
+                  <td>22/22/20224 - 22/22/2222</td>
+                  <td>Marque 3</td>
+                  <td>Catégorie 2</td>
+                  <td>26/02/2024</td>
+                </tr>
+                <tr>
+                  <td>Nom 4</td>
+                  <td>Eleve</td>
+                  <td>22/22/20224 - 22/22/2222</td>
+                  <td>Marque 3</td>
+                  <td>Catégorie 2</td>
+                  <td>26/02/2024</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
 
-        <div class="container-calendar-index">
-          <h2>Calendrier</h2>
-
+        <!-- DEMANDE DE RETOUR -->
+        <div class="request-return">
+          <div class="title-flex-index">
+            <h2>Demande de retour</h2>
+            <a href="/">Voir plus<img src="assets/img/chevron-down-orange.svg"> </a>
+          </div>
+          <div class="scroll-bar">
+            <table>
+              <thead>
+                <tr>
+                  <th>Utilisateur</th>
+                  <th>Statut</th>
+                  <th>Dates</th>
+                  <th>Materiel</th>
+                  <th>Catégorie</th>
+                  <th>Reçu le</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Nom 1</td>
+                  <td>Eleve</td>
+                  <td>22/22/20224 - 22/22/2222</td>
+                  <td>Marque 1</td>
+                  <td>Catégorie 1</td>
+                  <td>26/02/2024</td>
+                </tr>
+                <tr>
+                  <td>Nom 2</td>
+                  <td>Intervenant</td>
+                  <td>22/22/20224 - 22/22/2222</td>
+                  <td>Marque 2</td>
+                  <td>Catégorie 2</td>
+                  <td>26/02/2024</td>
+                </tr>
+                <tr>
+                  <td>Nom 3</td>
+                  <td>Eleve</td>
+                  <td>22/22/20224 - 22/22/2222</td>
+                  <td>Marque 3</td>
+                  <td>Catégorie 2</td>
+                  <td>26/02/2024</td>
+                </tr>
+                <tr>
+                  <td>Nom 3</td>
+                  <td>Eleve</td>
+                  <td>22/22/20224 - 22/22/2222</td>
+                  <td>Marque 3</td>
+                  <td>Catégorie 2</td>
+                  <td>26/02/2024</td>
+                </tr>
+                <tr>
+                  <td>Nom 4</td>
+                  <td>Eleve</td>
+                  <td>22/22/20224 - 22/22/2222</td>
+                  <td>Marque 3</td>
+                  <td>Catégorie 2</td>
+                  <td>26/02/2024</td>
+                </tr>
+                <tr>
+                  <td>Nom 4</td>
+                  <td>Eleve</td>
+                  <td>22/22/20224 - 22/22/2222</td>
+                  <td>Marque 3</td>
+                  <td>Catégorie 2</td>
+                  <td>26/02/2024</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
-
     </div>
+
+
   </div>
 </div>
