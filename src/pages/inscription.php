@@ -11,13 +11,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
     $errors = [];
 
     // Validation du champs "NOM"
-    if (empty($_POST['users']['lastname']) || strlen($_POST['user']['lastname']) <= 1) {
-        $errors['users']['lastname'] = "Veuillez saisir un nom qui contient plus d'un caractère.";
+    if (empty($_POST['users']['lastname']) || strlen($_POST['users']['lastname']) <= 1) {
+        $errors['users']['lastname'] = "Veuillez saisir un nom, qui contient plus d'un caractère.";
     }
 
     // Validation du champs "Prénom"
     if (empty($_POST['users']['firstname']) || strlen($_POST['users']['firstname']) <= 1) {
-        $errors['users']['firstname'] = "Veuillez saisir un prénom qui contient plus d'un caractère.";
+        $errors['users']['firstname'] = "Veuillez saisir un prénom, qui contient plus d'un caractère.";
     }
 
     // Validation du champs "Email"

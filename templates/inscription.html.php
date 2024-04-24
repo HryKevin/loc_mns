@@ -4,7 +4,7 @@
         <form class="form-inscription" method="POST">
             <div>
                 <label for="lastname">Nom :</label>
-                <input type="text" name="users[lastname]" id="lastname" value="" placeholder="Nom" >
+                <input type="text" name="users[lastname]" id="lastname" value="" placeholder="Nom" required>
                 <!--Message d'erreur -->
                 <?php if(isset($errors) && !empty($errors['users']['lastname'])) : ?>
                     <div class="errors-inscr">
@@ -14,7 +14,7 @@
             </div>
             <div>
                 <label for="firstname">Prénom :</label>
-                <input type="text" name="users[firstname]" id="firstname" value="" placeholder="Prénom" >
+                <input type="text" name="users[firstname]" id="firstname" value="" placeholder="Prénom" required>
                 <?php if(isset($errors) && !empty($errors['users']['firstname'])) : ?>
                     <div class="errors-inscr">
                         <?= $errors['users']['firstname'] ?>
@@ -23,7 +23,7 @@
             </div>
             <div>
                 <label for="email">Email :</label>
-                <input type="email" name="users[email]" id="email" value="" placeholder="Email" >
+                <input type="email" name="users[email]" id="email" value="" placeholder="Email" required>
                 <?php if(isset($errors) && !empty($errors['users']['email'])) : ?>
                     <div class="errors-inscr">
                         <?= $errors['users']['email'] ?>
@@ -33,7 +33,7 @@
             <div class="password-inscr">
                 <label for="password">Mot de passe :</label>
                 <div class="password-input">
-                    <input type="password" name="users[password]" id="password-inscription" value="" placeholder="Mot de passe" >
+                    <input type="password" name="users[password]" id="password-inscription" value="" placeholder="Mot de passe" required>
                      <img class="open-eye-inscription" src="assets/img/eye-open.svg" alt="oeil" />
                 </div>
                 <?php if(isset($errors) && !empty($errors['users']['password'])) : ?>
@@ -48,7 +48,7 @@
             </div>
 
             <div class="container_cgu">
-                <input type="checkbox" name="users[cgu]" id="cgu" >
+                <input type="checkbox" name="users[cgu]" id="cgu" required>
                 <label class="checkbox-inscription" for="cgu">En cochant cette case, j'accepte la &nbsp;<a
                         href="#">Politique de confidentialité</a></label>
             </div>
