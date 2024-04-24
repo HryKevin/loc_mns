@@ -6,7 +6,7 @@
                 <label for="lastname">Nom :</label>
                 <input type="text" name="users[lastname]" id="lastname" value="" placeholder="Nom" >
                 <!--Message d'erreur -->
-                <?php if(isset($errors['users']['lastname'])) : ?>
+                <?php if(isset($errors) && !empty($errors['users']['lastname'])) : ?>
                     <div class="errors-inscr">
                         <?= $errors['users']['lastname'] ?>
                     </div>
@@ -15,7 +15,7 @@
             <div>
                 <label for="firstname">Prénom :</label>
                 <input type="text" name="users[firstname]" id="firstname" value="" placeholder="Prénom" >
-                <?php if(isset($errors['users']['firstname'])) : ?>
+                <?php if(isset($errors) && !empty($errors['users']['firstname'])) : ?>
                     <div class="errors-inscr">
                         <?= $errors['users']['firstname'] ?>
                     </div>
@@ -24,7 +24,7 @@
             <div>
                 <label for="email">Email :</label>
                 <input type="email" name="users[email]" id="email" value="" placeholder="Email" >
-                <?php if(isset($errors['users']['email'])) : ?>
+                <?php if(isset($errors) && !empty($errors['users']['email'])) : ?>
                     <div class="errors-inscr">
                         <?= $errors['users']['email'] ?>
                     </div>
@@ -36,23 +36,27 @@
                     <input type="password" name="users[password]" id="password-inscription" value="" placeholder="Mot de passe" >
                      <img class="open-eye-inscription" src="assets/img/eye-open.svg" alt="oeil" />
                 </div>
-                <?php if (isset($errors['users']['password']))
-                    foreach ($errors['users']['password'] as $error): ?>
-                        <div class="errors-inscr">
-                            <?= $error ?>
-                        </div>
-                    <?php endforeach; ?>
+                <?php if(isset($errors) && !empty($errors['users']['password'])) : ?>
+                    <div class="errors-inscr">
+                        <?= $errors['users']['password'] ?>
+                    </div>
+                <?php endif; ?>
             </div>
             <div class="container-progressbar-pass">
                 <p id="strength"></p>
                 <progress id="pass-strength" value="0" max="5"></progress>
             </div>
 
-            <div class="container_accept_policy">
-                <input type="checkbox" name="accept_policy" id="accept_policy" >
-                <label class="checkbox-inscription" for="accept_policy">En cochant cette case, j'accepte la &nbsp;<a
+            <div class="container_cgu">
+                <input type="checkbox" name="users[cgu]" id="cgu" >
+                <label class="checkbox-inscription" for="cgu">En cochant cette case, j'accepte la &nbsp;<a
                         href="#">Politique de confidentialité</a></label>
             </div>
+            <?php if (isset($errors) && !empty($errors['users']['cgu'])): ?>
+                <div class="errors-inscr">
+                    <?= $errors['users']['cgu'] ?>
+                </div>
+            <?php endif; ?>
             <div class="submit-inscription">
                 <input type="submit" name="submit" value="Inscription">
                 <p><a href="?page=connexion">Vous avez déjà un compte ?</a></p>
