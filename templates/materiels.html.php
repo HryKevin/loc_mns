@@ -39,7 +39,7 @@
           <div></div>
           <div>
 
-            <h3>Tous les équiments</h3> <button>Voir <img src="assets/img/chevron-white.svg"></button>
+            <h3>Tous les équipements</h3> <button>Voir <img src="assets/img/chevron-white.svg"></button>
           </div>
         </div>
         <div class="card-material">
