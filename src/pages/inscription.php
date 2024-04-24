@@ -56,6 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
             
             $query = $dbh->prepare("INSERT INTO users (firstname, lastname, email, password, id_role) VALUES (:firstname, :lastname, :email, :password, 1)");
             $query->execute($_POST['users']);
+            
             if (!$dbh->lastInsertId()) {
                 $errors['form'] = "Une erreur s'est produit lors de l'inscription. Contacter l'administrateur à l'adresse [email].";
             } else {

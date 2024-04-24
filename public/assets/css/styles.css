@@ -135,6 +135,7 @@ h1 {
     border-radius: 5px;
     margin: 0 3px 0 0;
     background: rgba(244, 243, 243, 1);
+    cursor: pointer;
 }
 
 /* BORDER CASE A COCHER */
