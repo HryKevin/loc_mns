@@ -176,14 +176,32 @@ progress#pass-strength {
 }
 
 /* OEIL INPUT MOT DE PASSE */
+.password-inscr {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
 .password-input {
     position: relative;
+    display: inline-block;
+    width: 100%;
 }
 
 .open-eye-inscription {
     position: absolute;
-    top: 32.5%;
-    left: 85%;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+/* ERREURS INSCRIPTION */
+.errors-inscr {
+    color: rgb(204, 0, 0) ;
+    margin-top: -5px;
+    margin-bottom: 5px;
+    
 }
 
 /* INSCRIPTION MEDIA QUERIES */

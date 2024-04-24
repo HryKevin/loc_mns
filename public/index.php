@@ -15,6 +15,6 @@ if (file_exists($path)) {
 } else {
     // Erreur 404
     header('HTTP/1.1 404 Not Found');
-    require '../templates/404.html.php';
+    header('Location: ?page=404');
 }
 
