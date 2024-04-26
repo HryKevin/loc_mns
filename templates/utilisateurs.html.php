@@ -8,9 +8,9 @@
             </div>
             <ul>
                 <li><a href="/"> <img src="assets/img/house.svg" />Accueil</a></li>
-                <li><a href="/"> <img src="assets/img/computer.svg" />Matériels</a></li>
+                <li><a href="/?page=materiels"> <img src="assets/img/computer.svg" />Matériels</a></li>
                 <li><a href="/"> <img src="assets/img/bell.svg" />Notifications</a></li>
-                <li><a href="/"> <img src="assets/img/users.svg" />Utilisateurs</a></li>
+                <li><a href="/?page=utilisateurs"> <img src="assets/img/users.svg" />Utilisateurs</a></li>
                 <li><a href="/"> <img src="assets/img/gear.svg" />Réglages</a></li>
             </ul>
         </div>
@@ -21,7 +21,7 @@
     <div class="rigth-section-index">
         <!-- Nav -->
         <div class="nav-bar">
-            <h1>Accueil</h1>
+            <h1><?= $title ?></h1>
             <div>
                 <input class="input-search" type="text" /></input>
                 <img class="search" src="assets/img/magnifier.svg" />
@@ -34,7 +34,7 @@
             <div class="container-main-users">
                 <div class="top-container-users"></div>
                 <div class="container-users">
-                    <div><a href="/">Gérer <img src="assets/img/circles.svg" alt="logo gérer" /></a></div>
+                    <div class="handle-users"><a href="/?page=gerer-users">Gérer <img src="assets/img/circles.svg" alt="logo gérer" /></a></div>
                     <div class="container-table-users">
                         <table class="show_users">
                             <thead>

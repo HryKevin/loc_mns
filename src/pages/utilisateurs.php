@@ -5,7 +5,7 @@ $description = 'Description de la page des utilisateurs';
 
 require '../src/data/db-connect.php';
 
-$nbParPage = 11;
+$nbParPage = 10;
 $search = isset($_GET['search']) ? strtolower($_GET['search']) : '';
 
 // Calcul du nombre total de pages
