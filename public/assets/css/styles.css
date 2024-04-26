@@ -926,6 +926,45 @@ progress#pass-strength {
     }
 
 
+@media (max-width: 1024px) {
+    .container-index{
+        .container-main-index{
+            overflow: auto;
+        .top-main-index{
+            display: flex;
+            flex-direction: column;
+            height: auto;
+            row-gap: 40px;
+            .container-material-index{ 
+                width: 100%;
+                max-height: 400px;
+            }
+            .container-overview-index{
+                width: 100%;
+                height: 300px;
+            }
+        }
+        .bottom-main-index{
+            height: auto;
+            .scroll-bar{
+                height: auto
+             }
+            .request-rental{
+                max-height: 400px;
+            }
+            .request-return{
+                max-height: 400px;
+            }
+        }
+
+}}
+    }
+
+    @media (max-width: 768px){
+
+    }
+    
+
 /*////////////// SCROLL BAR ////////////////////*/
 .scroll-bar{
     overflow:auto;
@@ -974,6 +1013,7 @@ border-radius: 40px;
     /* Container Global */
     .container-material {
         background-color: var(--white);
+       
         margin: auto;
         width: 98%;
         height: 97%;
