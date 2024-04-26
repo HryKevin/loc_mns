@@ -15,6 +15,6 @@ if (file_exists($path)) {
 } else {
     // Erreur 404
     header('HTTP/1.1 404 Not Found');
-    header('Location: ?page=404');
+    
 }
 
