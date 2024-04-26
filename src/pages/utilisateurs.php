@@ -5,31 +5,7 @@ $description = 'Description de la page des utilisateurs';
 
 require '../src/data/db-connect.php';
 
-// $nbParPage = 12;
-// if(!empty($_GET['search'])){
-//     $search = strtolower($_GET['search']);
-//     $query = $dbh->query("SELECT COUNT(*) AS nbusers FROM users WHERE lastname = '%$search%'");
-
-// } else {
-//     $query = $dbh->query("SELECT COUNT(*) AS nbusers FROM users ");
-// }
-
-// $nbPages = ceil($query->fetch()['nbusers'] / $nbParPage);
-// $start = 0;
-// $currentPage = 1;
-
-// if (!empty($_GET['page'])){
-//     $start = $_GET['page'] * $nbParPage - $nbParPage;
-//     $currentPage = $_GET['page'];
-// }
-
-
-
-// # Récupération de tous les utilisateur
-// $query = $dbh->query("SELECT * FROM users ORDER BY lastname ASC LIMIT $start,$nbParPage ");
-// $users = $query->fetchAll();
-
-$nbParPage = 12;
+$nbParPage = 11;
 $search = isset($_GET['search']) ? strtolower($_GET['search']) : '';
 
 // Calcul du nombre total de pages
@@ -57,4 +33,5 @@ if (!empty($search)) {
 } else {
     $query = $dbh->query("SELECT * FROM users ORDER BY lastname ASC LIMIT $start, $nbParPage");
 }
+
 $users = $query->fetchAll();

@@ -345,6 +345,43 @@ progress#pass-strength {
         }
     }
 
+    .pagination {
+        display: flex;
+        list-style-type: none;
+        justify-content: center;
+        /* Centrer horizontalement */
+        margin-top: 20px;
+        /* Marge en haut */
+
+        li{
+           margin: 0 5px;
+           /* Marge entre les éléments */
+        }
+
+        li.active a {
+           font-weight: bold;
+           /* Mettre en gras le numéro de page actif */
+        }
+
+        li a {
+            text-decoration: none;
+            /* Supprimer les soulignements */
+            color: #333;
+            /* Couleur du texte */
+            padding: 5px 10px;
+            /* Espacement du texte à l'intérieur du lien */
+            border: 1px solid #ccc;
+            /* Bordure autour du lien */
+            border-radius: 3px;
+            /* Coins arrondis */
+        }
+
+        li a:hover {
+            background-color: #f5f5f5;
+            /* Couleur de fond au survol */
+        }
+    }
+
 }
 /*////////// CONNEXION //////////////////*/
 
