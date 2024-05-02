@@ -1,4 +1,5 @@
 <div class="container-index">
+  <div class="logo-mobile"><img class="img-logo"src="assets/img/logo.svg"/></div>
   <div class="left-section-index">
     <!-- Menu Latéral -->
     <div>
@@ -22,7 +23,7 @@
     <!-- Nav -->
     <div class="nav-bar">
       <h1>Accueil</h1>
-      <div>
+      <div class="element-nav-bar">
         <input class="input-search" type="text" /></input>
         <img class="search" src="assets/img/magnifier.svg" />
         <img src="assets/img/user.svg" />

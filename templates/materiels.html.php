@@ -22,7 +22,7 @@
     <!-- Nav -->
     <div class="nav-bar">
       <h1>Matériels</h1>
-      <div>
+      <div class="element-nav-bar">
         <input class="input-search" type="text" /></input>
         <img class="search" src="assets/img/magnifier.svg" />
         <img src="assets/img/user.svg" />
