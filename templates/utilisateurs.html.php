@@ -34,7 +34,7 @@
             <div class="container-main-users">
                 <div class="top-container-users"></div>
                 <div class="container-users">
-                    <div class="handle-users"><a href="/?page=ajouter-utilisateur">Ajouter&nbsp;<img
+                    <div class="handle-users"><a href="/?page=ajouter-utilisateur">Ajouter un nouvel utilisateur&nbsp;<img
                                 src="assets/img/circles.svg" alt="logo gérer" /></a></div>
                     <div class="container-table-users">
                         <table class="show_users">
