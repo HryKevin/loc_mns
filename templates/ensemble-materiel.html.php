@@ -38,33 +38,9 @@
       <!-- CONTAINER GLOBAL -->
       <div class="container-material">
         <!-- GERER -->
-        <div class="manage-container"><a href="/">Gérer <img src="assets/img/circles.svg" alt="logo gérer" /></a></div>
-        <!-- DIV CARDS -->
-        <div class="container-cards-material">
-          <div class="card-material">
-            <div class="img-card-allmaterial">
-            </div>
-            <div class="card-body">
-
-              <h3>Tous les équipements</h3>
-              <div class="card-button"><button>Voir <img src="assets/img/chevron-white.svg"></button></div>
-            </div>
-          </div>
-          <div class="card-material">
-            <div class="img-card-categorie-material"></div>
-            <div class="card-body">
-              <h3>Catégories</h3>
-              <div class="card-button"><button>Voir <img src="assets/img/chevron-white.svg"></button></div>
-            </div>
-          </div>
-          <div class="card-material">
-            <div class="img-card-brand-material"></div>
-            <div class="card-body">
-              <h3>Marques</h3>
-              <div class="card-button"><button>Voir <img src="assets/img/chevron-white.svg"></button></div>
-            </div>
-          </div>
-        </div>
+        <div><div><button class="button">Tout le matériel</button><button>En location</button><button>En Réparation</button><button>Disponible</button></div><div class="manage-container"><a href="/">Gérer <img src="assets/img/circles.svg" alt="logo gérer" /></a></div></div>
+        <!-- DIV TAB -->
+       
       </div>
     </div>
   </div>

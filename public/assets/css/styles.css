@@ -966,7 +966,7 @@ progress#pass-strength {
     }}
         
 }
-
+/* INDEX  */
 
 @media (max-width: 768px) {
     .logo-mobile{ 
@@ -1174,6 +1174,7 @@ border-radius: 40px;
                 margin-top: 10%;
                 row-gap: 40%;
                 flex-direction: column;
+                align-items: center;
                
 
                 .card-button{
@@ -1186,12 +1187,11 @@ border-radius: 40px;
                & button {
                  background-color: var(--orange);
                  border: 1px solid var(--brown);
-                 width: 45%;
-                 padding: 4px;
+                 padding: 9px 28px;
                  display: flex;
                  align-items: center;
                  justify-content: center;
-                 border-radius: 15px;
+                 border-radius: 25px;
                  color: var(--white);
                  transition: all 0.3s ease-in-out; 
 
@@ -1215,3 +1215,62 @@ border-radius: 40px;
         }
     }
 }
+
+@media (max-width: 768px){
+    
+    .container-index {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        z-index: 1;
+        .container-main-index {  
+        overflow:inherit;
+        height: auto;
+        padding:20px;}
+    .container-main-material {
+        height: auto;
+        padding: 20px;
+     
+        .container-material {
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            row-gap: 22px;
+            background-color: var(--grey);
+            box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+            .card-material {
+                width: 100%;
+                height: 100%;
+               .card-body {
+                margin-bottom: 30px;
+                row-gap: 20px;
+               
+               }
+               
+            }
+    }
+    .top-container-material {
+       visibility: hidden;
+    }
+    .container-cards-material {
+        display: flex;
+        flex-direction: column;
+        
+        row-gap: 20px;
+        margin: 0;
+        .img-card-allmaterial{
+            width: 100%;
+            height: 250px;
+        }
+        .img-card-categorie-material{
+            width: 100%;
+            height: 250px;
+            
+        }
+        .img-card-brand-material{ width: 100%;
+            height: 250px;}
+    }
+}
+    }}
