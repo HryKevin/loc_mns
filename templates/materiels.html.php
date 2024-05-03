@@ -17,11 +17,11 @@
       </ul>
     </div>
     <div><a href="/"><img src="assets/img/door.svg" />
-        Déconnexion</a>
+        Déconnexion </a>
     </div>
   </div>
   <div class="rigth-section-index">
-    <!-- Nav -->
+    <!-- Nav --> 
     <div class="nav-bar">
       <h1><?= $title ?></h1>
       <div>
