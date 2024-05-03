@@ -2,7 +2,7 @@
 
 try{
     $host = 'localhost';
-    $dbname = '';
+    $dbname = 'locmns';
     $username = 'root';
     $password = '';
 

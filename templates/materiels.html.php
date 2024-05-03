@@ -10,9 +10,9 @@
       </div>
       <ul>
         <li><a href="/"> <img src="assets/img/house.svg" />Accueil</a></li>
-        <li><a href="/"> <img src="assets/img/computer.svg" />Matériels</a></li>
+        <li><a href="/?page=materiels"> <img src="assets/img/computer.svg" />Matériels</a></li>
         <li><a href="/"> <img src="assets/img/bell.svg" />Notifications</a></li>
-        <li><a href="/"> <img src="assets/img/users.svg" />Utilisateurs</a></li>
+        <li><a href="/?page=utilisateurs"> <img src="assets/img/users.svg" />Utilisateurs</a></li>
         <li><a href="/"> <img src="assets/img/gear.svg" />Réglages</a></li>
       </ul>
     </div>
@@ -23,8 +23,8 @@
   <div class="rigth-section-index">
     <!-- Nav -->
     <div class="nav-bar">
-      <h1>Matériels</h1>
-      <div class="element-nav-bar">
+      <h1><?= $title ?></h1>
+      <div>
         <input class="input-search" type="text" /></input>
         <img class="search" src="assets/img/magnifier.svg" />
         <img src="assets/img/user.svg" />
