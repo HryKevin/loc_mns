@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
 
     //Validation du champs "Rôle"
     if(empty($_POST['users']['id_role'])) {
-        $errors['users']['id_role'] = "Veuillez selectionné un role pour l'utilisateur";
+        $errors['users']['id_role'] = "Veuillez selectionné un role pour l'utilisateur.";
     }
 
     // Validation du champs "Email"
@@ -66,8 +66,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
             if (!$dbh->lastInsertId()) {
                 $errors['form'] = "Une erreur s'est produit lors de l'ajout de l'utilisateur. Contacter l'administrateur à l'adresse [email].";
             } else {
-                header("Location: ?page=ajouter-utilisateur");
-                $success = "Votre inscription est réussi.";
+                
+                $success = "L'inscription de l'utilisateur est réussi.";
             }
         }
 

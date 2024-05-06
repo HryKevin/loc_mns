@@ -34,12 +34,13 @@
             <div class="container-main-users">
                 <div class="top-container-users"></div>
                 <div class="container-users">
+
                     <div class="container-form-inscription">
                         <form class="form-inscription" method="POST">
                             <div>
                                 <label for="lastname">Nom :</label>
-                                <input type="text" name="users[lastname]" id="lastname" value="" placeholder="Nom"
-                                required>
+                                <input type="text" name="users[lastname]" id="lastname_update"
+                                    value="<?= $user['lastname'] ?>" placeholder="Nom" required>
                                 <!--Message d'erreur -->
                                 <?php if (isset($errors) && !empty($errors['users']['lastname'])): ?>
                                     <div class="errors-inscr">
@@ -49,8 +50,8 @@
                             </div>
                             <div>
                                 <label for="firstname">Prénom :</label>
-                                <input type="text" name="users[firstname]" id="firstname" value="" placeholder="Prénom"
-                                required>
+                                <input type="text" name="users[firstname]" id="firstname_update"
+                                    value="<?= $user['firstname'] ?>" placeholder="Prénom" required>
                                 <?php if (isset($errors) && !empty($errors['users']['firstname'])): ?>
                                     <div class="errors-inscr">
                                         <?= $errors['users']['firstname'] ?>
@@ -59,14 +60,16 @@
                             </div>
                             <div>
                                 <label for="role">Rôle :</label>
-                                <select name="users[id_role]" id="role" >
+                                <select name="users[id_role]" id="role_update">
                                     <option value="">Sélectionner un rôle</option>
                                     <?php
                                     // Vérifiez si la requête a retourné des résultats
                                     if ($role) {
                                         // Itérez sur chaque résultat et affichez-le comme une option dans le select
                                         while ($row = $role->fetch()) {
-                                            echo '<option value="' . $row['id_role'] . '">' . $row['name_role'] . '</option>';
+                                            // Vérifiez si l'ID du rôle correspond à l'ID du rôle de l'utilisateur
+                                            $selected = ($row['id_role'] == $user['id_role']) ? 'selected' : '';
+                                            echo '<option value="' . $row['id_role'] . '" ' . $selected . '>' . $row['name_role'] . '</option>';
                                         }
                                     }
                                     ?>
@@ -78,38 +81,26 @@
                                 <?php endif; ?>
                             </div>
 
+
                             <div>
                                 <label for="email">Email :</label>
-                                <input type="email" name="users[email]" id="email" value="" placeholder="Email"
-                                required>
+                                <input type="email" name="users[email]" id="email" value="<?= $user['email'] ?>"
+                                    placeholder="Email" required>
                                 <?php if (isset($errors) && !empty($errors['users']['email'])): ?>
                                     <div class="errors-inscr">
                                         <?= $errors['users']['email'] ?>
                                     </div>
                                 <?php endif; ?>
                             </div>
-                            <div class="password-inscr">
-                                <label for="password">Mot de passe :</label>
-                                <div class="password-input">
-                                    <input type="password" name="users[password]" id="password-inscription" value=""
-                                        placeholder="Mot de passe" required>
-                                    <img class="open-eye-inscription" src="assets/img/eye-open.svg" alt="oeil" />
-                                </div>
-                                <?php if (isset($errors) && !empty($errors['users']['password'])): ?>
-                                    <div class="errors-inscr">
-                                        <?= $errors['users']['password'] ?>
-                                    </div>
-                                <?php endif; ?>
-                            </div>
                             <div class="submit-inscription">
-                                <input type="submit" name="submit" value="Ajouter">
+                                <input type="submit" name="submit" value="Modifier">
                                 <?php if (isset($success) && !empty($success)): ?>
                                     <div class="success-inscr">
                                         <?= $success ?>
                                     </div>
                                 <?php endif; ?>
                             </div>
-                            
+
                         </form>
                     </div>
 

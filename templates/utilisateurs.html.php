@@ -34,8 +34,8 @@
             <div class="container-main-users">
                 <div class="top-container-users"></div>
                 <div class="container-users">
-                    <div class="handle-users"><a href="/?page=ajouter-utilisateur">Ajouter un nouvel utilisateur&nbsp;<img
-                                src="assets/img/circles.svg" alt="logo gérer" /></a></div>
+                    <div class="handle-users"><a href="/?page=ajouter-utilisateur">Ajouter un nouvel
+                            utilisateur&nbsp;<img src="assets/img/circles.svg" alt="logo gérer" /></a></div>
                     <div class="container-table-users">
                         <table class="show_users">
                             <thead>
@@ -53,13 +53,13 @@
                                         <td><?= $user['lastname'] ?></td>
                                         <td><?= $user['firstname'] ?></td>
                                         <td><?= $user['email'] ?></td>
-                                        <td><?= $user['id_role'] ?></td>
+                                        <td><?= $user['name_role'] ?></td>
                                         <td>
                                             <ul>
-                                                <li><a href="/?page=modifier-utilisateurs"> <img
-                                                            src="assets/img/pen-writing-6.svg" />Modifier</a></li>
-                                                <li><a href="/?page=supprimer-utilisateurs"> <img
-                                                            src="assets/img/trash.svg" />Supprimer</a></li>
+                                                <li><a href="<?= '/?page=modifier-utilisateur&id=' . $user['id_users'] ?>"><img
+                                                            src="assets/img/pen-writing-6.svg" /> Modifier</a></li>
+                                                <li><a href="<?= '/?page=supprimer-utilisateur&id=' . $user['id_users'] ?>"><img
+                                                            src="assets/img/trash.svg" /> Supprimer</a></li>
                                             </ul>
                                         </td>
                                     </tr>
