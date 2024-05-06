@@ -60,6 +60,7 @@
                                                             src="assets/img/pen-writing-6.svg" /> Modifier</a></li>
                                                 <li><a href="<?= '/?page=supprimer-utilisateur&id=' . $user['id_users'] ?>"><img
                                                             src="assets/img/trash.svg" /> Supprimer</a></li>
+                                                
                                             </ul>
                                         </td>
                                     </tr>
