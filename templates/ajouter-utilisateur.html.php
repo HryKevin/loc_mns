@@ -31,9 +31,9 @@
         </div>
         <!-- MAIN -->
         <div class="container-main-index">
-            <div class="container-main-users">
-                <div class="top-container-users"></div>
-                <div class="container-users">
+            <div class="container-main-add-users">
+                <div class="top-container-add-users"></div>
+                <div class="container-add-users">
                     <div class="container-form-inscription">
                         <form class="form-inscription" method="POST">
                             <div>
