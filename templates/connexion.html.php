@@ -9,26 +9,27 @@
       <form method="POST">
         <div><label>Email : </label>
          <input type="email" name="email" placeholder="Email">
-              <?php if (isset($errors['email'])) : ?>
+              <?php if (isset($errors['users']['email'])) : ?>
                 <div>
-                  <?php echo $errors['email'] ?>
+                  <?=  $errors['users']['email'] ?>
+                 
                 </div>
               <?php endif; ?>
-          
-          
         </div>
+
+        
         <div><label>Mot de passe : </label>
           <div>
           <input type="password" name="password" placeholder="Mot de passe">
-              <?php if (isset($errors['password'])) : ?>
-                <div> <?php echo $errors['password'] ?></div>
+              <?php if (isset($errors['users']['password'])) : ?>
+                <div> <?= $errors['users']['password'] ?></div>
               <?php endif; ?>
             <img class="open-eye" src="assets/img/eye-open.svg" alt="oeil" />
           </div>
         </div>
         <a class="mdp" href="/?page=reinitialisation-mdp">Mot de passe oublié ?</a>
 
-        <div><input class="button" type="submit" value="Connexion" name="" /></div>
+        <div><input class="button" type="submit" value="Connexion" name="login_form_submit" /></div>
       </form>
       <a href="?page=inscription">Vous n'êtes pas encore inscrit ?</a>
     </div>
