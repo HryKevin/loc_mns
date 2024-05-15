@@ -36,7 +36,7 @@
                 <div class="container-users">
                     <div class="handle-users"><a href="/?page=ajouter-utilisateur">Ajouter un nouvel
                             utilisateur&nbsp;<img src="assets/img/circles.svg" alt="logo gérer" /></a></div>
-                    <div class="container-table-users">
+                    <div class="container-table-users scroll-bar">
                         <table class="show_users">
                             <thead>
                                 <tr>
@@ -67,7 +67,8 @@
                                 <?php endforeach; ?>
                             </tbody>
                         </table>
-                        <!-- Pagination -->
+                    </div>
+                    <!-- Pagination -->
                         <div class="pagination">
                             <nav aria-label="Page navigation">
                                 <ul class="pagination justify-content-center">
@@ -118,8 +119,6 @@
                                 </ul>
                             </nav>
                         </div>
-
-                    </div>
 
                 </div>
             </div>
