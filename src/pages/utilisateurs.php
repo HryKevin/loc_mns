@@ -29,9 +29,9 @@ $start = ($currentPage - 1) * $nbParPage;
 
 // Récupération des utilisateurs pour la page courante
 if (!empty($search)) {
-    $query = $dbh->query("SELECT * FROM users WHERE lastname LIKE '%$search%' ORDER BY lastname ASC LIMIT $start, $nbParPage");
+    $query = $dbh->query("SELECT users.*, role.name_role FROM users LEFT JOIN role ON users.id_role = role.id_role WHERE users.lastname LIKE '%$search%' ORDER BY users.lastname ASC LIMIT $start, $nbParPage");
 } else {
-    $query = $dbh->query("SELECT * FROM users ORDER BY lastname ASC LIMIT $start, $nbParPage");
+    $query = $dbh->query("SELECT users.*, role.name_role FROM users LEFT JOIN role ON users.id_role = role.id_role ORDER BY users.lastname ASC LIMIT $start, $nbParPage");
 }
 
 $users = $query->fetchAll();
