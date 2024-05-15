@@ -26,10 +26,10 @@
                                         <td><?= $user['name_role'] ?></td>
                                         <td>
                                             <ul>
-                                                <li><a href="<?= '/?page=modifier-utilisateur&id=' . $user['id_users'] ?>"><img
-                                                            src="assets/img/pen-writing-6.svg" /> Modifier</a></li>
-                                                <li><a href="<?= '/?page=supprimer-utilisateur&id=' . $user['id_users'] ?>"><img
-                                                            src="assets/img/trash.svg" /> Supprimer</a></li>
+                                                <li><button><a href="<?= '/?page=modifier-utilisateur&id=' . $user['id_users'] ?>"><img class="button-crud-users"
+                                                            src="assets/img/pen-writing-6.svg" /> Modifier</a></button></li>
+                                                <li><button><a href="<?= '/?page=supprimer-utilisateur&id=' . $user['id_users'] ?>"><img class="button-crud-users"
+                                                            src="assets/img/trash.svg" /> Supprimer</a></button></li>
                                                 
                                             </ul>
                                         </td>

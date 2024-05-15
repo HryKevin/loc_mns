@@ -277,7 +277,6 @@ h1 {
              width: 98%;
              height: 87%;
              border-radius: 0 0 20px 20px;
-             box-shadow: 0px 30px 15px -3px rgba(128, 128, 128, 0.1);
              box-sizing: border-box;
              justify-content: space-between;
 
@@ -323,11 +322,22 @@ h1 {
             text-align: left;
             border-bottom: 1px solid #ddd;
             font-size: 11px;
+            border: solid 1px var(--grey);
+        }
+
+        .show_users td button{
+            border-radius: 20px;
+            border-color: var(--grey);
+        }
+        .button-crud-users{
+            height: 18px;
+            border-color: #776E9A;
         }
 
         .show_users th {
             background-color: var(--purple);
-            font-weight: bold;
+            color: var(--white);
+            text-align: center;
         }
 
         .show_users tbody tr:hover {
@@ -344,7 +354,9 @@ h1 {
                 text-decoration:none;
                 display: flex;
                 align-items: center;
-                padding-left: 2px;
+                padding: 4px;
+                font-size: 11px;
+                border-color: var(--purple);
             }
         }
 
