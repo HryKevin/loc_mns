@@ -1,6 +1,4 @@
-
-
-<!-- MAIN -->
+ <!-- MAIN -->
     <div class="container-main-index">
       <!-- HAUT DU MAIN -->
       <div class="top-main-index">

@@ -113,31 +113,6 @@ h1 {
 }
 
 
-/* CACHER LA CASE A COCHER STANDARD */
-.form-inscription input[type="checkbox"] {
-    display: none;
-}
-
-/* CREER UNE CASE A COCHER */
-.form-inscription input[type="checkbox"]+label::before {
-    content: '';
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    border: 2px solid var(--orange);
-    border-radius: 5px;
-    margin: 0 3px 0 0;
-    background: rgba(244, 243, 243, 1);
-    cursor: pointer;
-}
-
-/* BORDER CASE A COCHER */
-.form-inscription input[type="checkbox"]:checked+label::before {
-    border-color: var(--purple);
-    background-color: var(--orange);
-}
-
-
 /* BOUTON AJOUTER */
 .form-inscription input[type="submit"] {
     box-shadow: none;
@@ -297,7 +272,6 @@ h1 {
         
         .container-table-users {
              display: flex;
-             align-items: center;
              flex-direction: column;
              background-color: var(--white);
              width: 98%;
@@ -417,6 +391,24 @@ h1 {
         }
     }
 
+}
+
+
+/* MEDIA QUERIES UTILISATEURS */
+@media (max-width:768px) {
+    .container-table-users {
+        align-items: start;
+    }
+
+    .container-users {
+            border-radius: 20px 20px 20px 20px !important;
+    }
+}
+
+@media (min-width:769px) {
+    .container-table-users {
+        align-items: center;
+    }
 }
 
 
@@ -973,10 +965,10 @@ h1 {
    
 
     /* /////// CONTAINER DU HAUT /////////////// */
-    .top-main-index{
+    & .top-main-index{
         display: flex;
         flex-direction: row;
-        height:35.7vh;
+        height: 33vh;
         column-gap: 40px;
         
     
@@ -1093,7 +1085,7 @@ h1 {
     .bottom-main-index{  
         display: flex;
         flex-direction: column;
-        height: 50%;
+        height: 54%;
         column-gap: 40px;
         margin-top: 40px;
         row-gap: 40px;
@@ -1115,8 +1107,7 @@ h1 {
                 }
             } 
             .scroll-bar{
-                   height: 120px;
-                   overflow:auto;
+                   height: 76%;
                 }
             /* TABLEAU */
             & table{

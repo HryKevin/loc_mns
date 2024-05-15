@@ -23,8 +23,7 @@
 </head>
 
 <body>
-
-<div class="container-index">
+      <div class="container-index">
   <div class="logo-mobile"><img class="img-logo"src="assets/img/logo.svg"/></div>
   <div class="left-section-index">
     <!-- Menu Latéral -->
@@ -49,14 +48,13 @@
     <!-- Nav -->
     <div class="nav-bar">
        <h1><?= $title ?></h1>
-      <div class="element-nav-bar">
-        <input class="input-search" type="text" /></input>
-        <img class="search" src="assets/img/magnifier.svg" />
-        <img src="assets/img/user.svg" />
-        <img src="assets/img/chevron-down.svg" />
-      </div>
-      </div>
-      <!-- MAIN -->
+            <div class="element-nav-bar">
+              <input class="input-search" type="text" /></input>
+              <img class="search" src="assets/img/magnifier.svg" />
+              <img src="assets/img/user.svg" />
+              <img src="assets/img/chevron-down.svg" />
+            </div>
+          </div>
     <main>
         <?php require '../templates/' . $page . '.html.php'; ?>
     </main>
