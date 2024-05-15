@@ -22,15 +22,14 @@
   <div class="rigth-section-index">
     <!-- Nav -->
     <div class="nav-bar">
-      <h1>Accueil</h1>
+       <h1><?= $title ?></h1>
       <div class="element-nav-bar">
         <input class="input-search" type="text" /></input>
         <img class="search" src="assets/img/magnifier.svg" />
         <img src="assets/img/user.svg" />
         <img src="assets/img/chevron-down.svg" />
       </div>
-    </div>
-    <!-- MAIN -->
+    </div>  <!-- MAIN -->
     <div class="container-main-index">
       <!-- HAUT DU MAIN -->
       <div class="top-main-index">
@@ -61,80 +60,17 @@
                 </tr>
               </thead>
               <tbody>
+               
+                <?php foreach($materials as $material):?>
                 <tr>
-                  <td>Nom 1</td>
-                  <td>Description 1</td>
-                  <td>Numéro de série 1</td>
-                  <td>Date achat 1</td>
-                  <td>Marque 1</td>
-                  <td>Catégorie 1</td>
+                  <td><?= $material['name_material'] ?></td>
+                  <td><?= $material['description'] ?></td>
+                  <td><?= $material['serial_number'] ?></td>
+                  <td><?= $material['date_purchase'] ?></td>
+                  <td><?= $material['name_brand'] ?></td>
+                  <td><?= $material['name_category'] ?></td>
                 </tr>
-                <tr>
-                  <td>Nom 2</td>
-                  <td>Description 2</td>
-                  <td>Numéro de série 2</td>
-                  <td>Date achat 2</td>
-                  <td>Marque 2</td>
-                  <td>Catégorie 2</td>
-
-                </tr>
-                <tr>
-                  <td>Nom 3</td>
-                  <td>Description 3</td>
-                  <td>Numéro de série 3</td>
-                  <td>Date achat 3</td>
-                  <td>Marque 3</td>
-                  <td>Catégorie 3</td>
-                </tr>
-                <tr>
-                  <td>Nom 4</td>
-                  <td>Description 4</td>
-                  <td>Numéro de série 4</td>
-                  <td>Date achat 4</td>
-                  <td>Marque 4</td>
-                  <td>Catégorie 4</td>
-                </tr>
-                <tr>
-                  <td>Nom 4</td>
-                  <td>Description 4</td>
-                  <td>Numéro de série 4</td>
-                  <td>Date achat 4</td>
-                  <td>Marque 4</td>
-                  <td>Catégorie 4</td>
-                </tr>
-                <tr>
-                  <td>Nom 4</td>
-                  <td>Description 4</td>
-                  <td>Numéro de série 4</td>
-                  <td>Date achat 4</td>
-                  <td>Marque 4</td>
-                  <td>Catégorie 4</td>
-                </tr>
-                <tr>
-                  <td>Nom 4</td>
-                  <td>Description 4</td>
-                  <td>Numéro de série 4</td>
-                  <td>Date achat 4</td>
-                  <td>Marque 4</td>
-                  <td>Catégorie 4</td>
-                </tr>
-                <tr>
-                  <td>Nom 4</td>
-                  <td>Description 4</td>
-                  <td>Numéro de série 4</td>
-                  <td>Date achat 4</td>
-                  <td>Marque 4</td>
-                  <td>Catégorie 4</td>
-                </tr>
-                <tr>
-                  <td>Nom 4</td>
-                  <td>Description 4</td>
-                  <td>Numéro de série 4</td>
-                  <td>Date achat 4</td>
-                  <td>Marque 4</td>
-                  <td>Catégorie 4</td>
-                </tr>
-              </tbody>
+                <?php endforeach; ?>
             </table>
           </div>
         </div>

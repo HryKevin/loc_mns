@@ -6,19 +6,29 @@
   <div class="container-right-connexion">
     <div class="container-form-connexion">
       <h1>SE CONNECTER</h1>
-      <form>
+      <form method="POST">
         <div><label>Email : </label>
-          <input type="email" placeholder="Email" />
+         <input type="email" name="email" placeholder="Email">
+              <?php if (isset($errors['email'])) : ?>
+                <div>
+                  <?php echo $errors['email'] ?>
+                </div>
+              <?php endif; ?>
+          
+          
         </div>
         <div><label>Mot de passe : </label>
           <div>
-            <input class="eye" type="password" placeholder="Mot de passe" />
+          <input type="password" name="password" placeholder="Mot de passe">
+              <?php if (isset($errors['password'])) : ?>
+                <div> <?php echo $errors['password'] ?></div>
+              <?php endif; ?>
             <img class="open-eye" src="assets/img/eye-open.svg" alt="oeil" />
           </div>
         </div>
         <a class="mdp" href="/?page=reinitialisation-mdp">Mot de passe oublié ?</a>
 
-        <div><input class="button" type="submit" value="Connexion" /></div>
+        <div><input class="button" type="submit" value="Connexion" name="" /></div>
       </form>
       <a href="?page=inscription">Vous n'êtes pas encore inscrit ?</a>
     </div>
