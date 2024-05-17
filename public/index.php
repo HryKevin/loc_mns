@@ -1,7 +1,7 @@
 <?php
 
 // Récupération du paramètre de la page
-$page = !empty ($_GET['page']) ? $_GET['page'] : 'index';
+$page = !empty($_GET['page']) ? $_GET['page'] : 'index';
 
 // Vérification de l'existence de la page
 $path = '../src/pages/' . $page . '.php';
@@ -15,6 +15,6 @@ if (file_exists($path)) {
 } else {
     // Erreur 404
     header('HTTP/1.1 404 Not Found');
-    
+    require '../templates/404.html.php';
+    exit;
 }
-
