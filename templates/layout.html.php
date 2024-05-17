@@ -6,7 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Gayathri:wght@100;400;700&family=Golos+Text:wght@400..900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Gayathri:wght@100;400;700&family=Golos+Text:wght@400..900&display=swap"
+    rel="stylesheet">
   <title>
     <?= $title ?? '' ?>
   </title>
@@ -45,13 +47,16 @@
     <div class="rigth-section-index">
       <!-- Nav -->
       <div class="nav-bar">
-        <h1><?= $title ?></h1>
-        <div class="element-nav-bar">
-          <input class="input-search" type="text" /></input>
-          <img class="search" src="assets/img/magnifier.svg" />
-          <img src="assets/img/user.svg" />
-          <img src="assets/img/chevron-down.svg" />
-        </div>
+        <div class="all-element-navbar">
+          <h1><?= $title ?></h1>
+          </div>
+          <div class="element-nav-bar">
+            <input class="input-search" type="text" /></input>
+            <img class="search" src="assets/img/magnifier.svg" />
+            <img src="assets/img/user.svg" />
+            <img src="assets/img/chevron-down.svg" />
+          </div>
+        
       </div>
       <main>
         <?php require '../templates/' . $page . '.html.php'; ?>

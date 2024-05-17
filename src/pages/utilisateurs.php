@@ -27,11 +27,17 @@ $currentPage = max(1, min($currentPage, $nbPages)); // Assure que la page couran
 // Calcul de l'offset de la requête SQL
 $start = ($currentPage - 1) * $nbParPage;
 
+
+
 // Récupération des utilisateurs pour la page courante
 if (!empty($search)) {
     $query = $dbh->query("SELECT users.*, role.name_role FROM users LEFT JOIN role ON users.id_role = role.id_role WHERE users.lastname LIKE '%$search%' ORDER BY users.lastname ASC LIMIT $start, $nbParPage");
 } else {
     $query = $dbh->query("SELECT users.*, role.name_role FROM users LEFT JOIN role ON users.id_role = role.id_role ORDER BY users.lastname ASC LIMIT $start, $nbParPage");
 }
+
+// else {
+//     $query = $dbh->query("SELECT users.*, role.name_role FROM users LEFT JOIN role ON users.id_role = role.id_role ORDER BY users.lastname ASC LIMIT $start, $nbParPage");
+// }
 
 $users = $query->fetchAll();
