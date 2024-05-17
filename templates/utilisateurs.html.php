@@ -7,14 +7,14 @@
             <div class="handle-users">
                 <div>
                 <button class="button-material-index button-users">Tous les utilisateurs</button>
-                <button class="button-loan-index button-users">Administrateurs</button>
+                <button class="button-loan-index button-users" id="roleAdmin">Administrateurs</button>
                 <button class="button-available-index button-users">Intervenants</button>
                 <button class="button-repair-index button-users">Stagiaires</button>
             </div>
                 <a href="/?page=ajouter-utilisateur">Ajouter un nouvel
                     utilisateur&nbsp;<img src="assets/img/circles.svg" alt="logo gérer" /></a></div>
             <div class="container-table-users scroll-bar">
-                <table class="show_users">
+                <table class="show_users" id="tableUsers">
                     <thead>
                         <tr>
                             <th>Nom</th>
@@ -106,3 +106,4 @@
 
 </div>
 </div>
+ <script src="./assets/js/utilisateurs.js"></script>
