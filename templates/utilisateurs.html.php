@@ -5,11 +5,11 @@
         <div class="container-users">
             
             <div class="handle-users">
-                <div>
-                <button class="button-material-index button-users">Tous les utilisateurs</button>
-                <button class="button-loan-index button-users" id="roleAdmin">Administrateurs</button>
-                <button class="button-available-index button-users">Intervenants</button>
-                <button class="button-repair-index button-users">Stagiaires</button>
+                <div class="filters">
+                <a href="/?page=utilisateurs"><button class="button-material-index button-users">Tous les utilisateurs</button></a>
+                <button class="button-admin-filter button-users" id="roleAdmin">Administrateurs</button>
+                <button class="button-available-index button-users" id="roleIntervenant">Intervenants</button>
+                <button class="button-repair-index button-users" id="roleStagiaire">Stagiaires</button>
             </div>
                 <a href="/?page=ajouter-utilisateur">Ajouter un nouvel
                     utilisateur&nbsp;<img src="assets/img/circles.svg" alt="logo gérer" /></a></div>
@@ -50,7 +50,7 @@
                 </table>
             </div>
             <!-- Pagination -->
-            <div class="pagination">
+            <div class="pagination" id="pagination">
                 <nav aria-label="Page navigation">
                     <ul class="pagination justify-content-center">
                         <!-- Bouton pour revenir à la première page -->

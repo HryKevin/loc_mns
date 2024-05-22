@@ -280,10 +280,11 @@ h1 {
             border-radius: 15px;
             font-size: 11px;
         }
+
         .bottom-main-index {
             display: flex;
             flex-direction: row;
-            
+
         }
 
         .button-material-index {
@@ -291,10 +292,20 @@ h1 {
             color: var(--white);
         }
 
-        .button-loan-index {
+        .button-admin-filter {
             background-color: var(--orange);
             border: solid 1px var(--brown);
             color: var(--white);
+            transition: transform 0.3s ease,
+            transition-delay 0.1s;
+            /* Ajoute un léger délai avant que la transition ne commence */
+            cursor: pointer;
+            /* Change le curseur de la souris en pointeur */
+        }
+
+        .button-admin-filter:hover {
+            transform: scale(1.05);
+            /* Échelle de 1.05 (5% plus grand) lors du survol */
         }
 
         .button-available-index {
@@ -345,6 +356,26 @@ h1 {
                 display: flex;
                 align-items: center;
             }
+        }
+
+        .filters {
+            display: flex;
+            gap: 5px;
+            
+            & button{
+                transition: transform 0.3s ease,
+                transition-delay 0.1s;
+                /* Ajoute un léger délai avant que la transition ne commence */
+                cursor: pointer;
+                /* Change le curseur de la souris en pointeur */
+
+                
+            }
+             button:hover {
+                 transform: scale(1.05);
+                 /* Échelle de 1.05 (5% plus grand) lors du survol */
+             }
+
         }
 
         .show_users {
@@ -462,7 +493,7 @@ h1 {
 }
 
 
-/* AJOUT UTILISATEURS */
+/* AJOUT UTILISATEUR */
 .container-main-add-users {
     background-color: var(--grey);
     width: 100%;
