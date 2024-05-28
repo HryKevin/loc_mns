@@ -43,3 +43,18 @@ btn_submit.addEventListener("click", function (e) {
     alert("Veuillez remplir tous les champs obligatoires");;
   }
 });
+
+// oeil
+
+let eye = document.querySelector("#eye");
+let password = document.querySelector("#user_password");
+
+eye.addEventListener("click", function () {
+  if (password.type === "password") {
+    password.type = "text";
+    eye.src = "assets/img/eye-closed.svg"; 
+  } else {
+    password.type = "password";
+    eye.src = "assets/img/eye-open.svg"; 
+  }
+});

@@ -24,7 +24,7 @@
             <?php if (isset($errors['password'])) : ?>
               <div class="error-message"><?= $errors['password'] ?></div>
             <?php endif; ?>
-            <img class="open-eye" src="assets/img/eye-open.svg" alt="oeil">
+            <img class="open-eye" src="assets/img/eye-open.svg" alt="oeil" id="eye">
           </div>
         </div>
         <a class="mdp" href="/?page=reinitialisation-mdp">Mot de passe oublié ?</a>
