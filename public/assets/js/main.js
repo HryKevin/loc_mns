@@ -117,6 +117,7 @@ let availableMaterials = document.querySelector("#availableMaterials");
 
 availableMaterials.addEventListener("click", function () {
   fetch("ajax.php?ajax=json.available-material")
+  
     .then((resultat) => resultat.json())
     .then(async (json_resultat) => {
       // Sélectionne toutes les cellules <td> du tableau
