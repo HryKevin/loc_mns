@@ -6,13 +6,18 @@
             
             <div class="handle-users">
                 <div class="filters">
-                <a href="/?page=utilisateurs"><button class="button-material-index button-users">Tous les utilisateurs</button></a>
-                <button class="button-admin-filter button-users" id="roleAdmin">Administrateurs</button>
-                <button class="button-available-index button-users" id="roleIntervenant">Intervenants</button>
-                <button class="button-repair-index button-users" id="roleStagiaire">Stagiaires</button>
-            </div>
+                    <a href="/?page=utilisateurs"><button class="button-material-index button-users">Tous les utilisateurs</button></a>
+                    <button class="button-admin-filter button-users" id="roleAdmin">Administrateurs</button>
+                    <button class="button-available-index button-users" id="roleIntervenant">Intervenants</button>
+                    <button class="button-repair-index button-users" id="roleStagiaire">Stagiaires</button>
+                </div>
+            <div class="add-users">
                 <a href="/?page=ajouter-utilisateur">Ajouter un nouvel
-                    utilisateur&nbsp;<img src="assets/img/circles.svg" alt="logo gérer" /></a></div>
+                    utilisateur&nbsp;<img src="assets/img/circles.svg" alt="logo gérer" /></a>
+                    <a href="/?page=ajouter-utilisateurs">Ajouter plusieurs utilisateurs&nbsp;<img src="assets/img/circles.svg" alt="logo gérer" /></a>
+            </div>
+                
+            </div>
             <div class="container-table-users scroll-bar">
                 <table class="show_users" id="tableUsers">
                     <thead>
@@ -107,3 +112,6 @@
 </div>
 </div>
  <script src="./assets/js/utilisateurs.js"></script>
+
+ <?php
+ var_dump($nbUsers);

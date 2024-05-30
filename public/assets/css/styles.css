@@ -327,7 +327,9 @@ h1 {
             height: 87%;
             border-radius: 0 0 20px 20px;
             box-sizing: border-box;
-            justify-content: center;
+            overflow: auto;
+            padding-top: 2.5%;
+            
 
             table {
                 border: solid 1px var(--grey);
@@ -338,8 +340,7 @@ h1 {
 
         .handle-users {
             margin: auto;
-            padding-top: 1%;
-            padding-bottom: 1%;
+            padding-top: 2%;
             width: 96%;
             display: flex;
             align-items: center;
@@ -358,6 +359,10 @@ h1 {
             }
         }
 
+        .add-users{
+            display: flex;
+            gap:20px;
+        }
         .filters {
             display: flex;
             gap: 5px;
@@ -407,6 +412,8 @@ h1 {
             background-color: var(--purple);
             color: var(--white);
             text-align: center;
+            position: sticky;
+            top:0;
         }
 
         .show_users tbody tr:hover {
