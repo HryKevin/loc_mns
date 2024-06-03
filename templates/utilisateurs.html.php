@@ -113,5 +113,3 @@
 </div>
  <script src="./assets/js/utilisateurs.js"></script>
 
- <?php
- var_dump($nbUsers);
