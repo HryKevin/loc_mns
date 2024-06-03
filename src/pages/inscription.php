@@ -1,5 +1,10 @@
 <?php
 
+if (empty($_SESSION['user_id'])) {
+    header('Location: /?page=connexion');
+    exit;
+}
+
 $title = 'Inscription';
 $description = 'Description de la page d\'accueil';
 

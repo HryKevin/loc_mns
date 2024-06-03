@@ -1,116 +1,225 @@
-let tableMaterials = document.querySelector("#tableMaterials");
 let allMaterials = document.querySelector("#allMaterials");
-// let loan = document.querySelector("#produit");
 
+// TABLEAU TOUT LE MATERIEL
 allMaterials.addEventListener("click", function () {
   fetch("ajax.php?ajax=json.all-material")
     .then((resultat) => resultat.json())
     .then(async (json_resultat) => {
-      // Récupérer le modèle de tableau client depuis le HTML
-      let template = document.querySelector("#materialsIndex");
+      // Sélectionne toutes les cellules <td> du tableau
+      const tbody = document.querySelector("#myTable tbody");
 
-      // Remplir le tableau avec les données
-      for (const valeur of json_resultat) {
-        // Cloner le modèle de tableau
-        let cloneTemplate = template.content.cloneNode(true);
-
-        // Remplacer les marqueurs de données par les valeurs réelles
-        let ligne = cloneTemplate.firstElementChild;
-
-        ligne.innerHTML = ligne.innerHTML.replace(
-          "{{name_material}}",
-          valeur.name_material
-        );
-        ligne.innerHTML = ligne.innerHTML.replace(
-          "{{description}}",
-          valeur.description
-        );
-        ligne.innerHTML = ligne.innerHTML.replace(
-          "{{serial_number}}",
-          valeur.serial_number
-        );
-        ligne.innerHTML = ligne.innerHTML.replace(
-          "{{date_purchase}}",
-          valeur.date_purchase
-        );
-        ligne.innerHTML = ligne.innerHTML.replace(
-          "{{name_brand}}",
-          valeur.name_brand
-        );
-        ligne.innerHTML = ligne.innerHTML.replace(
-          "{{name_category}}",
-          valeur.name_category
-        );
-
-        // Ajouter la ligne clonée au nouveau tableau
-        newTable.appendChild(cloneTemplate);
+      // Supprime chaque cellule <td>
+      while (tbody.firstChild) {
+        tbody.removeChild(tbody.firstChild);
       }
 
-      // Supprimer les anciens tableaux s'il y en a
-      while (tableMaterials.firstChild) {
-        tableMaterials.removeChild(tableMaterials.firstChild);
-      }
+      // Créer un nouveau tableau
+      json_resultat.forEach((value) => {
+        const row = document.createElement("tr");
 
-      // Ajouter le nouveau tableau à l'élément principal
-      tableMaterials.appendChild(newTable);
+        const cellName = document.createElement("td");
+        cellName.textContent = value.name_material;
+        row.appendChild(cellName);
+
+        const cellDescription = document.createElement("td");
+        cellDescription.textContent = value.description;
+        row.appendChild(cellDescription);
+
+        const cellSerialNumber = document.createElement("td");
+        cellSerialNumber.textContent = value.serial_number;
+        row.appendChild(cellSerialNumber);
+
+        const cellDatePurchase = document.createElement("td");
+        cellDatePurchase.textContent = value.date_purchase;
+        row.appendChild(cellDatePurchase);
+
+        const cellBrand = document.createElement("td");
+        cellBrand.textContent = value.name_brand;
+        row.appendChild(cellBrand);
+
+        const cellCategory = document.createElement("td");
+        cellCategory.textContent = value.name_category;
+        row.appendChild(cellCategory);
+
+        // Ajouter les nouvelles lignes au tableau
+        tbody.appendChild(row);
+      });
     });
+    const tableHeader = document.querySelector("#myTable thead");
+    tableHeader.classList.remove(
+      "thead-background-loan",
+      "thead-background-available",
+      "thead-background-broken");
+  
+    tableHeader.classList.add("thead-background");
 });
 
-// produit.addEventListener("click", function () {
-//   fetch("http://coursjs.local/2024_01_03/json.article.php")
-//     .then((resultat) => resultat.json())
-//     .then(async (json_resultat) => {
-//       // Créer un nouveau tableau
-//       let newTable = document.createElement("table");
-//       newTable.classList.add("produit-table");
+let loanMaterials = document.querySelector("#loanMaterials");
 
-//       // Créer le thead et les en-têtes de colonne
-//       let thead = document.createElement("thead");
-//       let headerRow = document.createElement("tr");
-//       headerRow.innerHTML = `
-//           <th>Id</th>
-//           <th>description</th>
-//           <th>quantité</th>
-//           <th>price</th>
-//         `;
-//       thead.appendChild(headerRow);
+// TABLEAU MATERIEL EMPRUNTÉ
+loanMaterials.addEventListener("click", function () {
+ 
 
-//       // Ajouter le thead au tableau
-//       newTable.appendChild(thead);
+  fetch("ajax.php?ajax=json.loan")
+    .then((resultat) => resultat.json())
+    .then(async (json_resultat) => {
+      // Sélectionne toutes les cellules <td> du tableau
+      const tbody = document.querySelector("#myTable tbody");
 
-//       // Récupérer le modèle de tableau produit depuis le HTML
-//       let template = document.querySelector("#tableProduit");
+      // Supprime chaque cellule <td>
+      while (tbody.firstChild) {
+        tbody.removeChild(tbody.firstChild);
+      }
+      // Créer un nouveau tableau
+      json_resultat.forEach((value) => {
+        const row = document.createElement("tr");
 
-//       // Remplir le tableau avec les données
-//       for (const valeur of json_resultat) {
-//         // Cloner le modèle de tableau
-//         let cloneTemplate = template.content.cloneNode(true);
+        const cellName = document.createElement("td");
+        cellName.textContent = value.name_material;
+        row.appendChild(cellName);
 
-//         let ligne = cloneTemplate.firstElementChild;
+        const cellDescription = document.createElement("td");
+        cellDescription.textContent = value.description;
+        row.appendChild(cellDescription);
 
-//         ligne.innerHTML = ligne.innerHTML.replace(
-//           "{{numarticle}}",
-//           valeur.num_article
-//         );
-//         ligne.innerHTML = ligne.innerHTML.replace(
-//           "{{description}}",
-//           valeur.description_article
-//         );
-//         ligne.innerHTML = ligne.innerHTML.replace(
-//           "{{quantite}}",
-//           valeur.quantite_stock
-//         );
-//         ligne.innerHTML = ligne.innerHTML.replace("{{price}}", valeur.prix_ht);
-//         // Ajouter la ligne clonée au nouveau tableau
-//         newTable.appendChild(cloneTemplate);
-//       }
+        const cellSerialNumber = document.createElement("td");
+        cellSerialNumber.textContent = value.serial_number;
+        row.appendChild(cellSerialNumber);
 
-//       // Supprimer les anciens tableaux s'il y en a
-//       while (mainElement.firstChild) {
-//         mainElement.removeChild(mainElement.firstChild);
-//       }
+        const cellDatePurchase = document.createElement("td");
+        cellDatePurchase.textContent = value.date_purchase;
+        row.appendChild(cellDatePurchase);
 
-//       // Ajouter le nouveau tableau à l'élément principal
-//       mainElement.appendChild(newTable);
-//     });
-// });
+        const cellBrand = document.createElement("td");
+        cellBrand.textContent = value.name_brand;
+        row.appendChild(cellBrand);
+
+        const cellCategory = document.createElement("td");
+        cellCategory.textContent = value.name_category;
+        row.appendChild(cellCategory);
+
+        // Ajouter les nouvelles lignes au tableau
+        tbody.appendChild(row);
+      });
+    });
+ 
+    const tableHeader = document.querySelector("#myTable thead");
+    tableHeader.classList.remove(
+      "thead-background",
+      "thead-background-available",
+      "thead-background-broken");
+  
+    tableHeader.classList.add("thead-background-loan");
+  });
+
+// TABLEAU MATERIEL DISPONIBLE
+let availableMaterials = document.querySelector("#availableMaterials");
+
+availableMaterials.addEventListener("click", function () {
+  fetch("ajax.php?ajax=json.available-material")
+  
+    .then((resultat) => resultat.json())
+    .then(async (json_resultat) => {
+      // Sélectionne toutes les cellules <td> du tableau
+      const tbody = document.querySelector("#myTable tbody");
+
+      // Supprime chaque cellule <td>
+      while (tbody.firstChild) {
+        tbody.removeChild(tbody.firstChild);
+      }
+      // Créer un nouveau tableau
+      json_resultat.forEach((value) => {
+        const row = document.createElement("tr");
+
+        const cellName = document.createElement("td");
+        cellName.textContent = value.name_material;
+        row.appendChild(cellName);
+
+        const cellDescription = document.createElement("td");
+        cellDescription.textContent = value.description;
+        row.appendChild(cellDescription);
+
+        const cellSerialNumber = document.createElement("td");
+        cellSerialNumber.textContent = value.serial_number;
+        row.appendChild(cellSerialNumber);
+
+        const cellDatePurchase = document.createElement("td");
+        cellDatePurchase.textContent = value.date_purchase;
+        row.appendChild(cellDatePurchase);
+
+        const cellBrand = document.createElement("td");
+        cellBrand.textContent = value.name_brand;
+        row.appendChild(cellBrand);
+
+        const cellCategory = document.createElement("td");
+        cellCategory.textContent = value.name_category;
+        row.appendChild(cellCategory);
+
+        // Ajouter les nouvelles lignes au tableau
+        tbody.appendChild(row);
+      });
+    });
+    const tableHeader = document.querySelector("#myTable thead");
+    tableHeader.classList.remove(
+      "thead-background-loan",
+      "thead-background",
+      "thead-background-broken");
+  
+    tableHeader.classList.add("thead-background-available");
+});
+
+// TABLEAU MATERIEL EN PANNE
+
+let brokenMaterials = document.querySelector("#brokenMaterials");
+brokenMaterials.addEventListener("click", function () {
+  fetch("ajax.php?ajax=json.broken-down")
+    .then((resultat) => resultat.json())
+    .then(async (json_resultat) => {
+      // Sélectionne toutes les cellules <td> du tableau
+      const tbody = document.querySelector("#myTable tbody");
+
+      // Supprime chaque cellule <td>
+      while (tbody.firstChild) {
+        tbody.removeChild(tbody.firstChild);
+      }
+      // Créer un nouveau tableau
+      json_resultat.forEach((value) => {
+        const row = document.createElement("tr");
+
+        const cellName = document.createElement("td");
+        cellName.textContent = value.name_material;
+        row.appendChild(cellName);
+
+        const cellDescription = document.createElement("td");
+        cellDescription.textContent = value.description;
+        row.appendChild(cellDescription);
+
+        const cellSerialNumber = document.createElement("td");
+        cellSerialNumber.textContent = value.serial_number;
+        row.appendChild(cellSerialNumber);
+
+        const cellDatePurchase = document.createElement("td");
+        cellDatePurchase.textContent = value.date_purchase;
+        row.appendChild(cellDatePurchase);
+
+        const cellBrand = document.createElement("td");
+        cellBrand.textContent = value.name_brand;
+        row.appendChild(cellBrand);
+
+        const cellCategory = document.createElement("td");
+        cellCategory.textContent = value.name_category;
+        row.appendChild(cellCategory);
+
+        // Ajouter les nouvelles lignes au tableau
+        tbody.appendChild(row);
+      });
+    });
+    
+    const tableHeader = document.querySelector("#myTable thead");
+    tableHeader.classList.remove(
+      "thead-background-loan",
+      "thead-background-available",
+      "thead-background");
+  
+    tableHeader.classList.add("thead-background-broken");
+});

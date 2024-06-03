@@ -1,5 +1,12 @@
 <?php
 
+
+if (empty($_SESSION['user_id'])) {
+    header('Location: /?page=connexion');
+    exit;
+}
+
+
 $title = 'Utilisateurs';
 $description = 'Description de la page des utilisateurs';
 
