@@ -700,7 +700,7 @@ h1 {
     }
 
     & input[type="email"],
-    input[type="password"] {
+    input[type="password"],input[type="text"] {
         padding-left: 10px;
         height: 40px;
         border-radius: 10px;
@@ -745,6 +745,17 @@ h1 {
     margin-top: 8px;
 }
 
+/* erreur form js */
+.error-message {
+    color: red;
+    font-size: 0.6em;
+    margin-top: 1em;
+  }
+.error{
+    font-size:0.6em;
+    margin-top: 1em;
+    margin-left:0.5em;
+}
 
 /* CONNEXION MEDIA QUERIES */
 
@@ -1173,11 +1184,7 @@ h1 {
 
             }
 
-            & button {
-                padding: 6px;
-                border-radius: 15px;
-                font-size: 11px;
-            }
+           
 
             /* Tableaux */
             & table {
@@ -1186,13 +1193,6 @@ h1 {
                 font-size: 12px;
                 width: 99%;
 
-                & th {
-                    border: solid 1px var(--grey);
-                    padding: 0;
-                    padding: 10px;
-                    background-color: var(--black);
-                    color: var(--white);
-                }
 
                 & td {
                     border: solid 1px var(--grey);
@@ -1201,39 +1201,17 @@ h1 {
                 }
             }
 
-            /* boutons */
+
+        }
+
+    }
 
             .bottom-main-index {
                 display: flex;
                 flex-direction: row;
             }
 
-            .button-material-index {
-                background-color: var(--black);
-                color: var(--white);
-
-            }
-
-            .button-loan-index {
-                background-color: var(--orange);
-                border: solid 1px var(--brown);
-                color: var(--white);
-            }
-
-            .button-available-index {
-                background-color: var(--purple);
-                border: solid 1px var(--black);
-                color: var(--white);
-            }
-
-            .button-repair-index {
-                border: solid 1px var(--grey);
-            }
-
-        }
-
-    }
-
+        
     /* Container Haut Gauche vue d'ensemble */
     .container-overview-index {
         display: flex;
@@ -1339,6 +1317,77 @@ h1 {
         }
     }
 
+}
+
+/* BACKGROUND COLOR TABLEAUX */
+.thead-background {
+    height: 40px;
+    border: solid 1px var(--grey);
+    padding: 0;
+    padding: 10px;
+    background-color: var(--black);
+    color: var(--white);
+}
+.thead-background-loan {
+    height: 40px;
+    border: solid 1px var(--grey);
+    padding: 0;
+    padding: 10px;
+    background-color: var(--orange);
+    color: var(--white);
+}
+.thead-background-available {
+    height: 40px;
+    border: solid 1px var(--grey);
+    padding: 0;
+    padding: 10px;
+    background-color: var(--grey);
+    color: var(--black);
+}
+.thead-background-broken {
+    height: 40px;
+    border: solid 1px var(--grey);
+    padding: 0;
+    padding: 10px;
+    background-color: var(--purple);
+    color: var(--white);
+}
+
+
+/* Boutons  */
+.bottom-main-index {
+    display: flex;
+    flex-direction: row;
+}
+
+.button-material-index {
+    background-color: var(--black);
+    color: var(--white);
+
+}
+
+.button-loan-index {
+    background-color: var(--orange);
+    border: solid 1px var(--brown);
+    color: var(--white);
+}
+
+
+.button-repair-index  {
+    background-color: var(--purple);
+    border: solid 1px var(--black);
+    color: var(--white);
+}
+
+.button-available-index {
+    border: solid 1px var(--grey);
+}
+
+button {
+    padding: 6px;
+    border-radius: 15px;
+    font-size: 11px;
+    cursor: pointer;
 }
 
 .img-logo {
@@ -1542,9 +1591,12 @@ h1 {
             display: flex;
             align-items: center;
             justify-content: end;
+            font-size: 13px;
+            margin-bottom: 20px;
 
             & img {
-                width: 30px;
+                width: 20px;
+                
 
             }
         }
@@ -1726,4 +1778,16 @@ h1 {
             }
         }
     }
+}
+
+/* /////// ENSEMBLE MATERIELS //////// */
+.container-allmaterial{
+            display: flex;
+            flex-direction: column;
+            row-gap: 12px;
+            width: 100%;
+            padding: 0 4%;
+            font-size: 12px;
+           
+          
 }

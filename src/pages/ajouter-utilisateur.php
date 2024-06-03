@@ -1,5 +1,10 @@
 <?php
 
+if (empty($_SESSION['user_id'])) {
+    header('Location: /?page=connexion');
+    exit;
+}
+
 $title = 'Ajouter un utilisateur';
 $description = 'Description de la page qui ajoute un utilisateurs';
 

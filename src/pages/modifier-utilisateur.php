@@ -1,4 +1,11 @@
 <?php
+
+
+if (empty($_SESSION['user_id'])) {
+    header('Location: /?page=connexion');
+    exit;
+}
+
 $title = "Modifier un utilisateur";
 $description = "Déscription de la page de modification d'un utilisateur";
 

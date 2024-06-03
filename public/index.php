@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 // Récupération du paramètre de la page
 $page = !empty($_GET['page']) ? $_GET['page'] : 'index';
 
