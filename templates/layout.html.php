@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -24,13 +23,19 @@
 
     <div class="container-index">
       <div class="logo-mobile"><img class="img-logo" src="assets/img/logo.svg" /></div>
-      <div class="left-section-index">
-        
+      <div>
+        <h1 class="visibility-hidden"><?= $title ?></h1>
+      </div>
+      <div class="left-section-index" id="nav">
+
+
         <!-- Menu Latéral -->
         <div>
+          <div  id="close" class="visibility-hidden "><img src="assets/img/xmark.svg"></div>
           <div class="logo-section-sidebar">
-            <img src="assets/img/logo_computer_locmns.svg" alt="logo-computer" />
-            <img src="assets/img/logo_locmns.svg" alt="logo" />
+            <img class="logo-computer" src="assets/img/logo_computer_locmns.svg" alt="logo-computer" />
+            <img class="logo-computer" src="assets/img/logo_locmns.svg" alt="logo" />
+            <img class="visibility-hidden logo-user" id="logoUser" src="assets/img/user.svg" alt="logo" />
           </div>
           <ul>
             <li><a href="/"> <img src="assets/img/house.svg" />Accueil</a></li>
@@ -44,7 +49,7 @@
             Déconnexion</a>
         </div>
       </div>
-      <div class="rigth-section-index">
+      <div class="rigth-section-index" >
         <!-- Nav -->
         <div class="nav-bar">
           <div class="all-element-navbar">
@@ -52,9 +57,10 @@
           </div>
           <div class="element-nav-bar">
             <input class="input-search" type="text" /></input>
-            <img class="search" src="assets/img/magnifier.svg" />
-            <img src="assets/img/user.svg" />
-            <img src="assets/img/chevron-down.svg" />
+            <img class="search"  src="assets/img/magnifier.svg" />
+            <img class="burger search" id="burger" src="assets/img/menu-burger.svg" />
+            <img class="visibility-hidden-responsive" src="assets/img/user.svg" />
+            <img class="visibility-hidden-responsive"  src="assets/img/chevron-down.svg" />
           </div>
 
         </div>
@@ -67,6 +73,7 @@
           <?php require '../templates/' . $page . '.html.php'; ?>
         </main>
       <?php endif; ?>
+      <script src="./assets/js/menu-burger.js"></script>
 </body>
 
 </html>

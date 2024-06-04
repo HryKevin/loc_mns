@@ -6,7 +6,7 @@
   <div class="container-material">
     <!-- GERER -->
     <div>
-      <div>
+      <div class="buttons-filter-material">
         <button class="button-material-index "> Tout le matériel</button class="button-loan-index">
         <button class="button-loan-index">En location</button>
         <button class="button-repair-index ">En Panne</button>
@@ -24,7 +24,6 @@
               <th>Nom</th>
               <th>Description</th>
               <th>Numéro de série</th>
-              <th>Date achat</th>
               <th>Marque</th>
               <th>Catégorie</th>
               <th></th>
@@ -35,13 +34,12 @@
               <td><?= $material['name_material'] ?></td>
               <td><?= $material['description'] ?></td>
               <td><?= $material['serial_number'] ?></td>
-              <td><?= $material['date_purchase'] ?></td>
               <td><?= $material['name_brand'] ?></td>
               <td><?= $material['name_category'] ?></td>
-              <td>
-                <button><a href="<?= '/?page=modifier-materiel&id=' . $material['id_material'] ?>"><img class="button-crud-users" src="assets/img/pen-writing-6.svg" />
+              <td class="flex">
+                <button class="flex-button"><a href="<?= '/?page=modifier-materiel&id=' . $material['id_material'] ?>"><img class="button-crud-users" src="assets/img/pen-writing-6.svg" />
                     Modifier</a></button></li>
-                <button><a href="<?= '/?page=supprimer-materiel&id=' . $material['id_material'] ?>"><img class="button-crud-users" src="assets/img/trash.svg" />
+                <button class="flex-button"><a href="<?= '/?page=supprimer-materiel&id=' . $material['id_material'] ?>"><img class="button-crud-users" src="assets/img/trash.svg" />
                     Supprimer</a></button></li>
 
               </td>
