@@ -16,7 +16,7 @@
       </div>
     </div>
     <!-- DIV TAB -->
-    <div class="container-allmaterial">
+    <div class="container-all-material">
       <div class="scroll-bar">
         <table id="myTable">
           <thead class="thead-background">
@@ -25,6 +25,10 @@
               <th>Description</th>
               <th>Numéro de série</th>
               <th>Marque</th>
+              <th>Dimension écran</th>
+              <th>Processeur</th>
+              <th>Mémoire</th>
+              <th>RAM</th>
               <th>Catégorie</th>
               <th></th>
             </tr>
@@ -35,6 +39,11 @@
               <td><?= $material['description'] ?></td>
               <td><?= $material['serial_number'] ?></td>
               <td><?= $material['name_brand'] ?></td>
+              <td><?= $material['screen_size'] ?></td>
+              <td><?= $material['processor']?></td>
+              <td><?= $material['storage_memory']?></td>
+              <td><?= $material['ram']?></td>
+
               <td><?= $material['name_category'] ?></td>
               <td class="flex">
                 <button class="flex-button"><a href="<?= '/?page=modifier-materiel&id=' . $material['id_material'] ?>"><img class="button-crud-users" src="assets/img/pen-writing-6.svg" />
