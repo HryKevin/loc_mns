@@ -46,7 +46,7 @@
       <!-- CONTAINER VUE D'ENSEMBLE -->
       <div class="container-overview-index">
         <h2>Vue d’ensemble du parc</h2>
-        <div class="roundTest"></div>
+        <div ><canvas id="myChart"></canvas></div>
       </div>
     </div>
     <!-- BAS DU MAIN -->

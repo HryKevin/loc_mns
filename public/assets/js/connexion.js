@@ -1,4 +1,4 @@
-// controle de l'email et du mot de passe
+// controle de l'email 
 document.addEventListener("DOMContentLoaded", function () {
   let user_email = document.querySelector("#user_email");
 

@@ -223,3 +223,12 @@ brokenMaterials.addEventListener("click", function () {
   
     tableHeader.classList.add("thead-background-broken");
 });
+
+
+// Chart JS
+
+let ctx = document.querySelector("#myChart").getContext('2d');
+
+let data = {
+
+}

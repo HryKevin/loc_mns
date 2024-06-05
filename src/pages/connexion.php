@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login_form_submit'])) 
     if ($customer) {
       $salt = "alkh1";
       $password = $_POST['password'] . $salt;
-      var_dump($customer);
+    
 
       if (password_verify($password, $customer['password'])) {
         session_start();
