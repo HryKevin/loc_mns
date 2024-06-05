@@ -5,15 +5,33 @@ let paginationContainer = document.querySelector("#pagination .pagination");
 
 roleAdmin.addEventListener("click", function () {
   fetchUsers(1, 1); // Filtre pour les administrateurs (ID de rôle 1)
+  changeThBackgroundColor("var(--orange)");
 });
 
 roleIntervenant.addEventListener("click", function () {
   fetchUsers(1, 3); // Filtre pour les intervenants (ID de rôle 3)
+  changeThBackgroundColor("var(--purple)");
 });
 
 roleStagiaire.addEventListener("click", function () {
   fetchUsers(1, 2); // Filtre pour les stagiaires (ID de rôle 2)
+  changeThBackgroundColor("var(--grey)");
+  setThTextColor("var(--black)");
 });
+
+function setThTextColor(color) {
+  const thElements = document.querySelectorAll("#tableUsers th");
+  thElements.forEach((th) => {
+    th.style.color = color;
+  });
+}
+
+function changeThBackgroundColor(color) {
+  const thElements = document.querySelectorAll("#tableUsers th");
+  thElements.forEach((th) => {
+    th.style.backgroundColor = color;
+  });
+}
 
 function setupPagination(pagination, role = null) {
   paginationContainer.innerHTML = "";

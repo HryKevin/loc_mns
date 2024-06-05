@@ -8,8 +8,8 @@
                 <div class="filters">
                     <a href="/?page=utilisateurs"><button class="button-material-index button-users">Tous les utilisateurs</button></a>
                     <button class="button-admin-filter button-users" id="roleAdmin">Administrateurs</button>
-                    <button class="button-available-index button-users" id="roleIntervenant">Intervenants</button>
-                    <button class="button-repair-index button-users" id="roleStagiaire">Stagiaires</button>
+                    <button class="button-intervenant-filter button-users" id="roleIntervenant">Intervenants</button>
+                    <button class="button-stagiaire-filter button-users" id="roleStagiaire">Stagiaires</button>
                 </div>
             <div class="add-users">
                 <a href="/?page=ajouter-utilisateur">Ajouter un nouvel
