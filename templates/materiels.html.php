@@ -19,7 +19,7 @@
         <div class="img-card-categorie-material"></div>
         <div class="card-body">
           <h3>Catégories</h3>
-          <div class="card-button"><button>Voir <img src="assets/img/chevron-white.svg"></button></div>
+          <div class="card-button"><a href="/?page=categories"><button>Voir <img src="assets/img/chevron-white.svg"></button></a></div>
         </div>
       </div>
       <div class="card-material">

@@ -5,16 +5,21 @@
         <div class="container-users">
             
             <div class="handle-users">
-                <div>
-                <button class="button-material-index button-users">Tous les utilisateurs</button>
-                <button class="button-loan-index button-users">Administrateurs</button>
-                <button class="button-available-index button-users">Intervenants</button>
-                <button class="button-repair-index button-users">Stagiaires</button>
-            </div>
+                <div class="filters">
+                    <a href="/?page=utilisateurs"><button class="button-material-index button-users">Tous les utilisateurs</button></a>
+                    <button class="button-admin-filter button-users" id="roleAdmin">Administrateurs</button>
+                    <button class="button-intervenant-filter button-users" id="roleIntervenant">Intervenants</button>
+                    <button class="button-stagiaire-filter button-users" id="roleStagiaire">Stagiaires</button>
+                </div>
+            <div class="add-users">
                 <a href="/?page=ajouter-utilisateur">Ajouter un nouvel
-                    utilisateur&nbsp;<img src="assets/img/circles.svg" alt="logo gérer" /></a></div>
+                    utilisateur&nbsp;<img src="assets/img/circles.svg" alt="logo gérer" /></a>
+                    <a href="/?page=ajouter-utilisateurs">Ajouter plusieurs utilisateurs&nbsp;<img src="assets/img/circles.svg" alt="logo gérer" /></a>
+            </div>
+                
+            </div>
             <div class="container-table-users scroll-bar">
-                <table class="show_users">
+                <table class="show_users" id="tableUsers">
                     <thead>
                         <tr>
                             <th>Nom</th>
@@ -50,7 +55,7 @@
                 </table>
             </div>
             <!-- Pagination -->
-            <div class="pagination">
+            <div class="pagination" id="pagination">
                 <nav aria-label="Page navigation">
                     <ul class="pagination justify-content-center">
                         <!-- Bouton pour revenir à la première page -->
@@ -106,3 +111,5 @@
 
 </div>
 </div>
+ <script src="./assets/js/utilisateurs.js"></script>
+
