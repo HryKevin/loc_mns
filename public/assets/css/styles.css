@@ -1899,12 +1899,17 @@ button {
 
 .img-div{
     margin: auto;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     img{
-        height:400px;  
+        height:300px;  
     }
 }
 .form-update-materiel{
     display: flex;
+    padding: 10px;
     flex-direction: column;
     align-items: start;
     justify-content: center;
@@ -1916,32 +1921,41 @@ button {
         margin:4px 0 8px 0;
         height:2em;
         width:100%;
+        font-size:12px;
       
     }
 
     input[type="submit"]{
         background-color: var(--orange);
         border: 1px solid var(--brown);
-        padding: 9px 28px;
+        padding: 5px 28px;
         display: flex;
         align-items: center;
         justify-content: center;
         border-radius: 25px;
         color: var(--white);
-        transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out; 
+        font-size:12px;
         
     }
     input[type="submit"]:hover {
             background-color: var(--orange-hover);
             transition: all 0.3s ease-in-out;
+           
         }
     .flex{
         display: flex;
         flex-direction: column;
     }
+    .border-none{
+        border: 1px solid black;
+    }
+    label {
+        font-size:12px
+    }
 }
 
-@media (max-width: 768px){
+@media (max-width: 1024px){
     .flex-container{
         display: flex;
         flex-direction: column;
@@ -1951,6 +1965,3 @@ button {
         height: 100%;}
 }
 
-.border-none{
-    border: 1px solid black;
-}

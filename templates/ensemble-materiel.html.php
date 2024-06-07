@@ -19,7 +19,7 @@
 
       </div>
       <div class="manage-container">
-        <a href="/">Ajouter du matériel <img src="assets/img/circles.svg" alt="logo gérer" /></a>
+        <a href="/?page=ajouter-materiel">Ajouter du matériel <img src="assets/img/circles.svg" alt="logo gérer" /></a>
       </div>
     </div>
     <!-- DIV TAB -->
