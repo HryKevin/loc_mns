@@ -12,14 +12,18 @@
         <div class="container-cards-category">
             <?php foreach ($categories as $category): ?>
                 <div class="card-category">
-                    <div class="img-card-allcategory"></div>
+                        <img class="img-card-allcategory" src="<?= htmlspecialchars($category['image']) ?>"
+                            alt="<?= htmlspecialchars($category['name_category']) ?>">
+                    
                     <div class="card-body-category">
                         <h3><?= htmlspecialchars($category['name_category']) ?></h3>
                         <div class="card-button">
+                            <a href="/?page=aff-categorie&id=<?= $category['id_category'] ?>">
                             <button>
-                                <a href="/?page=aff-categorie&id=<?= $category['id_category'] ?>">Voir</a>
+                                Voir
                                 <img src="assets/img/chevron-white.svg">
                             </button>
+                            </a>
                         </div>
                     </div>
                 </div>
