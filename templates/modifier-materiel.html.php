@@ -62,7 +62,7 @@
                 if ($brand) {
                   // Itérez sur chaque résultat et affichez-le comme une option dans le select
                   while ($row = $brand->fetch()) {
-                    // Vérifiez si l'ID du rôle correspond à l'ID du rôle de l'utilisateur
+                    // Vérifiez si l'ID de brand correspond à l'ID du rôle de l'utilisateur
                     $selected = ($row['id_brand'] == $material['id_brand']) ? 'selected' : '';
                     echo '<option value="' . $row['id_brand'] . '" ' . $selected . '>' . $row['name_brand'] . '</option>';
                   }
@@ -87,7 +87,7 @@
                 if ($category) {
                   // Itérez sur chaque résultat et affichez-le comme une option dans le select
                   while ($row = $category->fetch()) {
-                    // Vérifiez si l'ID du rôle correspond à l'ID du rôle de l'utilisateur
+                    // Vérifiez si l'ID  category correspond à l'ID du rôle de l'utilisateur
                     $selected = ($row['id_category'] == $material['id_category']) ? 'selected' : '';
                     echo '<option value="' . $row['id_category'] . '" ' . $selected . '>' . $row['name_category'] . '</option>';
                   }
