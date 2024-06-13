@@ -1,21 +1,21 @@
 <!-- MAIN -->
 <div class="container-main-index">
-    <div class="container-main-materials">
-        <div class="top-container-materials"></div>
-        <div class="container-materials">
-            <div class="handle-materials">
+    <div class="container-main-users">
+        <div class="top-container-users"></div>
+        <div class="container-users">
+            <div class="handle-users">
                 <div class="filters">
                     <a href="/?page=categories"><button class="button-material-index button-materials">Toutes les
                             catégories</button></a>
                     <!-- Ajoutez d'autres filtres si nécessaire -->
                 </div>
-                <div class="add-materials">
+                <div class="add-users">
                     <a href="/?page=ajouter-materiel">Ajouter un nouveau matériel&nbsp;<img src="assets/img/circles.svg"
                             alt="logo gérer" /></a>
                 </div>
             </div>
-            <div class="container-table-materials scroll-bar">
-                <table class="show_materials" id="tableMaterials">
+            <div class="container-table-users scroll-bar">
+                <table class="show_users" id="tableMaterials">
                     <thead>
                         <tr>
                             <th>Nom du matériel</th>
