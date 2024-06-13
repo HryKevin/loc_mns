@@ -1,18 +1,25 @@
 <!-- MAIN -->
 <div class="container-main-material">
   <!-- BARRE GRISE -->
-  <div class="top-container-material"></div>
+  <div class="top-container-material">
+    <a href="/?page=materiels"><img src="./assets/img/arrow-return.svg"></a>
+    <div class="top-txt-container-material">
+      <a href="/?page=materiels">Matériels </a> / Tous les équipements
+    </div>
+  </div>
   <!-- CONTAINER GLOBAL -->
   <div class="container-material">
     <!-- GERER -->
     <div>
       <div class="buttons-filter-material">
-        <button class="button-material-index "> Tout le matériel</button class="button-loan-index">
-        <button class="button-loan-index">En location</button>
-        <button class="button-repair-index ">En Panne</button>
-        <button class="button-available-index">Disponible</button>
+        <button class="button-material-index" id="allMaterials">Tout le matériel</button>
+        <button class="button-loan-index" id="loanMaterials">En location</button>
+        <button class="button-available-index" id="availableMaterials">Disponible</button>
+        <button class="button-repair-index" id="brokenMaterials">En panne</button>
+
       </div>
-      <div class="manage-container"><a href="/">Ajouter du matériel <img src="assets/img/circles.svg" alt="logo gérer" /></a>
+      <div class="manage-container">
+        <a href="/?page=ajouter-materiel">Ajouter du matériel <img src="assets/img/circles.svg" alt="logo gérer" /></a>
       </div>
     </div>
     <!-- DIV TAB -->
@@ -35,32 +42,36 @@
           </thead>
           <tbody>
             <?php foreach ($materials as $material) : ?>
-              <td><?= $material['name_material'] ?></td>
-              <td><?= $material['description'] ?></td>
-              <td><?= $material['serial_number'] ?></td>
-              <td><?= $material['name_brand'] ?></td>
-              <td><?= $material['screen_size'] ?></td>
-              <td><?= $material['processor']?></td>
-              <td><?= $material['storage_memory']?></td>
-              <td><?= $material['ram']?></td>
-
-              <td><?= $material['name_category'] ?></td>
-              <td class="flex">
-                <button class="flex-button"><a href="<?= '/?page=modifier-materiel&id=' . $material['id_material'] ?>"><img class="button-crud-users" src="assets/img/pen-writing-6.svg" />
-                    Modifier</a></button></li>
-                <button class="flex-button"><a href="<?= '/?page=supprimer-materiel&id=' . $material['id_material'] ?>"><img class="button-crud-users" src="assets/img/trash.svg" />
-                    Supprimer</a></button></li>
-
-              </td>
+              <tr>
+                <td><?= $material['name_material'] ?? 'non renseigné' ?></td>
+                <td><?= $material['description'] ?? 'non renseigné' ?></td>
+                <td><?= $material['serial_number'] ?? 'non renseigné' ?></td>
+                <td><?= $material['name_brand'] ?? 'non renseigné' ?></td>
+                <td><?= $material['screen_size'] ?? 'non renseigné' ?></td>
+                <td><?= $material['processor'] ?? 'non renseigné' ?></td>
+                <td><?= $material['storage_memory'] ?? 'non renseigné' ?></td>
+                <td><?= $material['ram'] ?? 'non renseigné' ?></td>
+                <td><?= $material['name_category'] ?? 'non renseigné' ?></td>
+                <td class="flex">
+                  <button class="flex-button">
+                    <a href="<?= '/?page=modifier-materiel&id=' . $material['id_material'] ?>">
+                      <img class="button-crud-users" src="assets/img/pen-writing-6.svg" />
+                      Modifier
+                    </a>
+                  </button>
+                  <button class="flex-button">
+                    <a href="<?= '/?page=supprimer-materiel&id=' . $material['id_material'] ?>">
+                      <img class="button-crud-users" src="assets/img/trash.svg" />
+                      Supprimer
+                    </a>
+                  </button>
+                </td>
               </tr>
             <?php endforeach; ?>
+          </tbody>
         </table>
       </div>
     </div>
   </div>
 </div>
-</div>
-
-
-</div>
-</div>
+<script src="assets/js/materiel.js"></script>
