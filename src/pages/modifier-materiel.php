@@ -18,7 +18,7 @@ if (!empty($_GET['id'])) {
     $query = $dbh->prepare("SELECT * FROM material 
                              LEFT JOIN category ON category.id_category = material.id_category 
                             LEFT JOIN model ON model.id_model = category.id_category 
-                LEFT JOIN brand ON brand.id_brand = category.id_category
+                            LEFT JOIN brand ON brand.id_brand = category.id_category
                             WHERE id_material = :id");
 
     // Exécuter la requête en liant la valeur de :id à l'ID récupéré de l'URL
@@ -27,6 +27,16 @@ if (!empty($_GET['id'])) {
     // Récupérer les données de l'utilisateur
     $material = $query->fetch();
 
+
+   // Récupérer la liste des categories
+    $query = "SELECT id_category, name_category FROM category";
+    $category = $dbh->query($query);
+
+    // Récupérer la liste des marques
+    $query = "SELECT id_brand, name_brand FROM brand";
+    $brand = $dbh->query($query);
+      
+    
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
 
         $errors = [];

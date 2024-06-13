@@ -53,15 +53,22 @@
                <?php endif; ?>
              </div>
 
-             <div>
-               <label for="name_brand">Marque :</label>
-               <input type="text" name="material[name_brand]" id="datePurchase" value="<?= $material['name_brand'] ?>" placeholder="Date d'achat" >
-               <?php if (isset($errors) && !empty($errors['material']['name_brand'])) : ?>
-                 <div class="errors-inscr">
-                   <?= $errors['material']['name_brand'] ?>
-                 </div>
-               <?php endif; ?>
-             </div>
+             
+             <label for="role">Marque :</label>
+             <select name="users[id_role]" id="role_update">
+             
+               <?php
+                // Vérifiez si la requête a retourné des résultats
+                if ($brand) {
+                  // Itérez sur chaque résultat et affichez-le comme une option dans le select
+                  while ($row = $brand->fetch()) {
+                    // Vérifiez si l'ID du rôle correspond à l'ID du rôle de l'utilisateur
+                    $selected = ($row['id_brand'] == $material['id_brand']) ? 'selected' : '';
+                    echo '<option value="' . $row['id_brand'] . '" ' . $selected . '>' . $row['name_brand'] . '</option>';
+                  }
+                }
+                ?>
+                </select>
 
              <div>
                <label for="date_purchase">Dimension :</label>
@@ -73,13 +80,20 @@
                <?php endif; ?>
              </div>
 
-             <label for="name_category">Catégorie :</label>
-             <input type="text" name="material[name_category]" id="datePurchase" value="<?= $material['name_category'] ?>" placeholder="Date d'achat" required>
-             <?php if (isset($errors) && !empty($errors['material']['name_category'])) : ?>
-               <div class="errors-inscr">
-                 <?= $errors['material']['name_category'] ?>
-               </div>
-             <?php endif; ?>
+             <label for="role">Categorie :</label>
+             <select name="users[id_role]" id="role_update">
+               <?php
+                // Vérifiez si la requête a retourné des résultats
+                if ($category) {
+                  // Itérez sur chaque résultat et affichez-le comme une option dans le select
+                  while ($row = $category->fetch()) {
+                    // Vérifiez si l'ID du rôle correspond à l'ID du rôle de l'utilisateur
+                    $selected = ($row['id_category'] == $material['id_category']) ? 'selected' : '';
+                    echo '<option value="' . $row['id_category'] . '" ' . $selected . '>' . $row['name_category'] . '</option>';
+                  }
+                }
+                ?>
+                </select>
            </div>
 
            <?php if ($material['name_category'] === 'Laptop' || $material['name_category'] === 'Tablette') : ?>
