@@ -120,7 +120,7 @@
 
           <div>
             <label for="date_purchase">Dimension :</label>
-            <input type="text" name="material[screen_size]" id="datePurchase" value="" placeholder="Date d'achat" required>
+            <input type="text" name="material[screen_size]" id="datePurchase" value="" placeholder="Dimension" required>
             <?php if (isset($errors) && !empty($errors['material']['screen_size'])) : ?>
               <div class="errors-inscr">
                 <?= $errors['material']['screen_size'] ?>
@@ -132,7 +132,7 @@
 
           <div>
             <label for="processor">Processeur :</label>
-            <input type="text" name="material[processor]" id="processor" value="" placeholder="Date d'achat">
+            <input type="text" name="material[processor]" id="processor" value="" placeholder="Processeur">
             <?php if (isset($errors) && !empty($errors['material']['processor'])) : ?>
               <div class="errors-inscr">
                 <?= $errors['material']['processor'] ?>
@@ -142,7 +142,7 @@
 
           <div>
             <label for="storage_memory">Mémoire :</label>
-            <input type="text" name="material[storage_memory]" id="storageMemory" value="" placeholder="Date d'achat">
+            <input type="text" name="material[storage_memory]" id="storageMemory" value="" placeholder="Mémoire">
             <?php if (isset($errors) && !empty($errors['material']['storage_memory'])) : ?>
               <div class="errors-inscr">
                 <?= $errors['material']['storage_memory'] ?>
@@ -152,7 +152,7 @@
 
           <div>
             <label for="ram">RAM :</label>
-            <input type="text" name="material[ram]" id="ram" value="" placeholder="Date d'achat">
+            <input type="text" name="material[ram]" id="ram" value="" placeholder="RAM">
             <?php if (isset($errors) && !empty($errors['material']['ram'])) : ?>
               <div class="errors-inscr">
                 <?= $errors['material']['ram'] ?>
@@ -163,7 +163,7 @@
 
           <div>
             <div class="submit-inscription">
-              <input type="submit" name="submit" value="Modifier">
+              <input type="submit" name="submit" value="Ajouter">
               <?php if (isset($success) && !empty($success)) : ?>
                 <div class="success-inscr">
                   <?= $success ?>
