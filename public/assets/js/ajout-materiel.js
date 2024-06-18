@@ -2,13 +2,35 @@
 const categorySelect = document.querySelector("#category");
 const brandSelect = document.querySelector("#brand");
 const modelSelect = document.querySelector("#model");
-  
+const processorField = document.querySelector("#processor").closest('div');
+const storageMemoryField = document.querySelector("#storageMemory").closest('div');
+const ramField = document.querySelector("#ram").closest('div');
+
 brandSelect.disabled = true;
 modelSelect.disabled = true;
+  // Fonction pour afficher/masquer les champs
+  function toggleFields(category) {
+    if (category === "Laptop" || category === "Tablette") {
+        processorField.style.display = "";
+        storageMemoryField.style.display = "";
+        ramField.style.display = "";
+    } else {
+        processorField.style.display = "none";
+        storageMemoryField.style.display = "none";
+        ramField.style.display = "none";
+    }
+}
+
+toggleFields("");
+
 
   categorySelect.addEventListener("change", function () {
     const categoryId = categorySelect.value;
-    
+       // Récupérer le nom de la catégorie sélectionnée
+       const selectedCategory = categorySelect.options[categorySelect.selectedIndex].text;
+
+       // Afficher ou masquer les champs en fonction de la catégorie
+       toggleFields(selectedCategory);
     if (categoryId) {
       console.log(categoryId);
       // Active la sélection de marque et désactiver la sélection de modèle
