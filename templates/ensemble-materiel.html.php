@@ -3,7 +3,7 @@
   <!-- BARRE GRISE -->
   <div class="top-container-material">
     <a href="/?page=materiels"><img src="./assets/img/arrow-return.svg"></a>
-    <div class="top-txt-container-material">
+    <div class="top-txt-container">
       <a href="/?page=materiels">Matériels </a> / Tous les équipements
     </div>
   </div>

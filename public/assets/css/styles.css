@@ -550,9 +550,22 @@ h1 {
     .top-container-add-users {
         background-color: var(--dark-grey);
         width: 98%;
-        height: 5%;
-        border-radius: 20px 20px 0 0;
-        /* Correction de la syntaxe pour la propriété border-radius */
+        height: 50px;
+        border-radius: 20px 20px 0px 0px;
+        display: flex;
+        align-items: center;
+        & a {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+        & img {
+            width: 18px;
+            height: 18px;
+            margin-left: 10px;
+        }
     }
 
     .container-add-users {
@@ -1619,8 +1632,22 @@ button {
 }
 
 /* INDEX  */
-.visibility-hidden {
 
+  /* Rectangle blanc  */
+  .top-txt-container{
+    background-color: var(--white);
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    border-radius: 12px;
+    width: fit-content;
+    font-size: 12px;
+    margin-left: 10px;
+    border: 1px solid transparent;
+    border-top: none;
+    border-bottom: 1px solid #DDD;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, .39), 0 -1px 1px #FFF, 0 1px 0 #FFF;
+}
 
 .visibility-hidden{
     visibility: hidden;
@@ -1883,21 +1910,7 @@ button {
     a {
         text-decoration: none;
     }
-    /* Rectangle blanc  */
-    .top-txt-container-material{
-        background-color: var(--white);
-        display: flex;
-        flex-direction: row;
-        padding: 5px;
-        border-radius: 12px;
-        width: fit-content;
-        font-size: 12px;
-        margin-left: 10px;
-        border: 1px solid transparent;
-        border-top: none;
-        border-bottom: 1px solid #DDD;
-        box-shadow: inset 0 1px 2px rgba(0, 0, 0, .39), 0 -1px 1px #FFF, 0 1px 0 #FFF;
-    }
+  
     
     /* Container Global */
     .container-material {
@@ -2194,19 +2207,19 @@ button {
            
            
           
-}
+
 
 
 /*/////////////// MODIFIER UN MATERIEL /////////////////*/
 
 .flex-container {
     display: flex;
+
     height: 100%;
     width: 100%;
 }
 
-.top-txt-container-material {
-    background-color: var(--white);
+
 .img-div{
     margin: auto;
     width: 50%;
@@ -2217,53 +2230,68 @@ button {
         height:300px;  
     }
 }
-.form-update-materiel{
+.container-form-material{
+    width: 40%;
     display: flex;
-    padding: 10px;
+    align-items: center;
     flex-direction: column;
-    align-items: start;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-   
-
-    input[type="text"],input[type="date"]{
-        margin:4px 0 8px 0;
-        height:2em;
-        width:100%;
-        font-size:12px;
-      
-    }
-
-    input[type="submit"]{
-        background-color: var(--orange);
-        border: 1px solid var(--brown);
-        padding: 5px 28px;
+    margin: auto;
+    margin-left: 100px;
+    .form-update-material{
         display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 25px;
-        color: var(--white);
-        transition: all 0.3s ease-in-out; 
-        font-size:12px;
-        
-    }
-    input[type="submit"]:hover {
-            background-color: var(--orange-hover);
-            transition: all 0.3s ease-in-out;
-           
-        }
-    .flex{
-        display: flex;
+        padding: 10px;
         flex-direction: column;
-    }
-    .border-none{
-        border: 1px solid black;
-    }
-    label {
-        font-size:12px
+        align-items: start;
+        justify-content: center;
+        width:50%;
+        height: 100%;
+       
+    
+        input[type="text"],input[type="date"]{
+            margin:4px 0 8px 0;
+            height:2em;
+            width:100%;
+            font-size:12px;
+          
+        }
+    
+        input[type="submit"]{
+            background-color: var(--orange);
+            border: 1px solid var(--brown);
+            padding: 5px 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 25px;
+            color: var(--white);
+            transition: all 0.3s ease-in-out; 
+            font-size:12px;
+            
+        }
+        input[type="submit"]:hover {
+                background-color: var(--orange-hover);
+                transition: all 0.3s ease-in-out;
+               
+            }
+        .flex-txt-area{
+            display: flex;
+            flex-direction: column;
+        }
+        .border-none{
+            border: 1px solid black;
+        }
+        label {
+            font-size:12px
+        }
+        .category{
+
+            a {
+                font-size: 11px;
+            }
+        }
     }
 }
+
 
 @media (max-width: 1024px){
     .flex-container{
@@ -2275,4 +2303,3 @@ button {
         height: 100%;}
 }
 
-}
