@@ -29,17 +29,51 @@ allMaterials.addEventListener("click", function () {
         cellSerialNumber.textContent = value.serial_number;
         row.appendChild(cellSerialNumber);
 
-        const cellDatePurchase = document.createElement("td");
-        cellDatePurchase.textContent = value.date_purchase;
+        const cellBrand = document.createElement("td");
+        cellDatePurchase.textContent = value.name_brand;
         row.appendChild(cellDatePurchase);
 
-        const cellBrand = document.createElement("td");
-        cellBrand.textContent = value.name_brand;
+        const cellSize = document.createElement("td");
+        cellBrand.textContent = value.screen_size;
         row.appendChild(cellBrand);
 
-        const cellCategory = document.createElement("td");
-        cellCategory.textContent = value.name_category;
+        const cellProcessor = document.createElement("td");
+        cellCategory.textContent = value.processor;
         row.appendChild(cellCategory);
+
+        const cellCategory = document.createElement("td");
+        cellCategory.textContent = value.processor;
+        row.appendChild(cellCategory);
+
+        
+        const liEdit = document.createElement("li");
+        const editButton = document.createElement("button");
+        const editLink = document.createElement("a");
+        editLink.href = `/?page=modifier-utilisateur&id=${user.id_users}`;
+        const editImg = document.createElement("img");
+        editImg.src = "assets/img/pen-writing-6.svg";
+        editImg.className = "button-crud-users";
+        editLink.appendChild(editImg);
+        editLink.appendChild(document.createTextNode(" Modifier"));
+        editButton.appendChild(editLink);
+        liEdit.appendChild(editButton);
+        ul.appendChild(liEdit);
+
+        const liDelete = document.createElement("li");
+        const deleteButton = document.createElement("button");
+        const deleteLink = document.createElement("a");
+        deleteLink.href = `/?page=supprimer-materiel&id=${material.id_material}`;
+        const deleteImg = document.createElement("img");
+        deleteImg.src = "assets/img/trash.svg";
+        deleteImg.className = "button-crud-users";
+        deleteLink.appendChild(deleteImg);
+        deleteLink.appendChild(document.createTextNode(" Supprimer"));
+        deleteButton.appendChild(deleteLink);
+        liDelete.appendChild(deleteButton);
+        ul.appendChild(liDelete);
+
+        cellButtons.appendChild(ul);
+        row.appendChild(cellButtons);
 
         // Ajouter les nouvelles lignes au tableau
         tbody.appendChild(row);
@@ -97,6 +131,22 @@ loanMaterials.addEventListener("click", function () {
         const cellCategory = document.createElement("td");
         cellCategory.textContent = value.name_category;
         row.appendChild(cellCategory);
+
+        const liDelete = document.createElement("li");
+        const deleteButton = document.createElement("button");
+        const deleteLink = document.createElement("a");
+        deleteLink.href = `/?page=supprimer-materiel&id=${$materials.id_material}`;
+        const deleteImg = document.createElement("img");
+        deleteImg.src = "assets/img/trash.svg";
+        deleteImg.className = "button-crud-users";
+        deleteLink.appendChild(deleteImg);
+        deleteLink.appendChild(document.createTextNode(" Supprimer"));
+        deleteButton.appendChild(deleteLink);
+        liDelete.appendChild(deleteButton);
+        ul.appendChild(liDelete);
+
+        cellButtons.appendChild(ul);
+        row.appendChild(cellButtons);
 
         // Ajouter les nouvelles lignes au tableau
         tbody.appendChild(row);
