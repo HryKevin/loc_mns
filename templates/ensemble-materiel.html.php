@@ -1,18 +1,25 @@
 <!-- MAIN -->
 <div class="container-main-material">
   <!-- BARRE GRISE -->
-  <div class="top-container-material"></div>
+  <div class="top-container-material">
+    <a href="/?page=materiels"><img src="./assets/img/arrow-return.svg"></a>
+    <div class="top-txt-container-material">
+      <a href="/?page=materiels">Matériels </a> / Tous les équipements
+    </div>
+  </div>
   <!-- CONTAINER GLOBAL -->
   <div class="container-material">
     <!-- GERER -->
     <div>
       <div class="buttons-filter-material">
-        <button class="button-material-index "> Tout le matériel</button class="button-loan-index">
-        <button class="button-loan-index">En location</button>
-        <button class="button-repair-index ">En Panne</button>
-        <button class="button-available-index">Disponible</button>
+        <button class="button-material-index" id="allMaterials">Tout le matériel</button>
+        <button class="button-loan-index" id="loanMaterials">En location</button>
+        <button class="button-available-index" id="availableMaterials">Disponible</button>
+        <button class="button-repair-index" id="brokenMaterials">En panne</button>
+
       </div>
-      <div class="manage-container"><a href="/">Ajouter du matériel <img src="assets/img/circles.svg" alt="logo gérer" /></a>
+      <div class="manage-container">
+        <a href="/?page=ajouter-materiel">Ajouter du matériel <img src="assets/img/circles.svg" alt="logo gérer" /></a>
       </div>
     </div>
     <!-- DIV TAB -->
@@ -57,13 +64,10 @@
               </td>
               </tr>
             <?php endforeach; ?>
+          </tbody>
         </table>
       </div>
     </div>
   </div>
 </div>
-</div>
-
-
-</div>
-</div>
+<script src="assets/js/materiel.js"></script>
