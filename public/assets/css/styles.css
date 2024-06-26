@@ -711,14 +711,22 @@ h1 {
     }
 
     .handleCategory {
-        position: relative;
-        right: -133px;
-        top: 104px;
+        position: absolute;
 
 
-        img{
+
+        img {
+            position: relative;
             border: 1px solid black;
             border-radius: 6px;
+            display: block;
+            left: 150px;
+            padding:2px;
+            margin-bottom: 3px;
+        }
+
+        img:hover{
+            cursor: pointer;
         }
     }
 
@@ -1633,6 +1641,7 @@ button {
 
 /* INDEX  */
 
+
   /* Rectangle blanc  */
   .top-txt-container{
     background-color: var(--white);
@@ -2205,8 +2214,6 @@ button {
             }
         
            
-           
-          
 
 
 

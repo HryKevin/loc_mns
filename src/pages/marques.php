@@ -5,9 +5,9 @@ $description = "Description de la page catégories";
 require '../src/data/db-connect.php';
 
 // Requête pour récupérer les catégories
-$query = "SELECT id_category, name_category, image FROM category";
-$category = $dbh->query($query);
-$categories = $category->fetchAll();
+$query = "SELECT id_brand, name_brand, image FROM brand";
+$brand = $dbh->query($query);
+$brands = $brand->fetchAll();
 
 if (isset($_SESSION['user_id'])) {
     // Requête pour récupérer le rôle de l'utilisateur connecté

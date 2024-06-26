@@ -5,14 +5,17 @@ if (empty($_SESSION['user_id'])) {
     exit;
 }
 
-// Vérifier si l'ID du matériel est passé en paramètre GET
-if (empty($_GET['id'])) {
-    header('Location: /');
-    exit;
-}
-
 $title = "Modifier un matériel";
 $description = "Description de la page de modification d'un matériel";
+
+if (!empty($_GET['id'])) {
+    require '../src/data/db-connect.php';
+  
+    // Récupérer l'ID de l'URL et l'ajouter aux données de la requête POST
+    $_POST['material']['id_material'] = $_GET['id'];
+
+
+
 
 // Récupère les détails du matériel à modifier
 $query = $dbh->prepare("SELECT * FROM material 
@@ -156,4 +159,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
             $errors['form'] = "Erreur de base de données : " . $e->getMessage();
         }
     }
+}
 }
