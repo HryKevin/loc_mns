@@ -39,7 +39,7 @@
               <td><?= $material['description'] ?></td>
               <td><?= $material['serial_number'] ?></td>
               <td><?= $material['name_brand'] ?></td>
-              <td><?= $material['screen_size'] ?></td>
+              <td><?= $material['screen-size'] ?></td>
               <td><?= $material['processor']?></td>
               <td><?= $material['storage_memory']?></td>
               <td><?= $material['ram']?></td>
@@ -50,6 +50,9 @@
                     Modifier</a></button></li>
                 <button class="flex-button"><a href="<?= '/?page=supprimer-materiel&id=' . $material['id_material'] ?>"><img class="button-crud-users" src="assets/img/trash.svg" />
                     Supprimer</a></button></li>
+                    <button class="flex-button"><a href="<?= '/?page=louer-materiel&id=' . $material['id_material'] ?>"><img
+                          class="button-crud-users" src="assets/img/basket-shopping.svg" />
+                        Louer</a></button>
 
               </td>
               </tr>

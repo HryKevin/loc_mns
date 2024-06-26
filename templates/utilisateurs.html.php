@@ -3,6 +3,7 @@
     <div class="container-main-users">
         <div class="top-container-users"></div>
         <div class="container-users">
+            <?php if (isset($_SESSION['user_id']) && $userRole === 'Admin' ): ?>
             
             <div class="handle-users">
                 <div class="filters">
@@ -105,6 +106,7 @@
 
         </div>
     </div>
+    <?php endif; ?>
 </div>
 </div>
 

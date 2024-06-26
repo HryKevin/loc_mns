@@ -11,7 +11,7 @@ $description = "Déscription de la page de modification d'un matériel";
 
 if (!empty($_GET['id'])) {
     require '../src/data/db-connect.php';
-
+  
     // Récupérer l'ID de l'URL et l'ajouter aux données de la requête POST
     $_POST['material']['id_material'] = $_GET['id'];
 
