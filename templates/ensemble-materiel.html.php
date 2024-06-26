@@ -46,7 +46,7 @@
               <td><?= $material['description'] ?></td>
               <td><?= $material['serial_number'] ?></td>
               <td><?= $material['name_brand'] ?></td>
-              <td><?= $material['screen-size'] ?></td>
+              <td><?= $material['screen_size'] ?></td>
               <td><?= $material['processor']?></td>
               <td><?= $material['storage_memory']?></td>
               <td><?= $material['ram']?></td>
