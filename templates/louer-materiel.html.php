@@ -25,7 +25,7 @@
                             </div>
                         <?php endif; ?>
                     </div>
-                    
+
 
                     <div>
                         <label for="serial_number">Numéro de série : </label>

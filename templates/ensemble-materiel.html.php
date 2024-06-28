@@ -3,7 +3,7 @@
   <!-- BARRE GRISE -->
   <div class="top-container-material">
     <a href="/?page=materiels"><img src="./assets/img/arrow-return.svg"></a>
-    <div class="top-txt-container-material">
+    <div class="top-txt-container">
       <a href="/?page=materiels">Matériels </a> / Tous les équipements
     </div>
   </div>
@@ -42,30 +42,26 @@
           </thead>
           <tbody>
             <?php foreach ($materials as $material) : ?>
-              <tr>
-                <td><?= $material['name_material'] ?? 'non renseigné' ?></td>
-                <td><?= $material['description'] ?? 'non renseigné' ?></td>
-                <td><?= $material['serial_number'] ?? 'non renseigné' ?></td>
-                <td><?= $material['name_brand'] ?? 'non renseigné' ?></td>
-                <td><?= $material['screen_size'] ?? 'non renseigné' ?></td>
-                <td><?= $material['processor'] ?? 'non renseigné' ?></td>
-                <td><?= $material['storage_memory'] ?? 'non renseigné' ?></td>
-                <td><?= $material['ram'] ?? 'non renseigné' ?></td>
-                <td><?= $material['name_category'] ?? 'non renseigné' ?></td>
-                <td class="flex">
-                  <button class="flex-button">
-                    <a href="<?= '/?page=modifier-materiel&id=' . $material['id_material'] ?>">
-                      <img class="button-crud-users" src="assets/img/pen-writing-6.svg" />
-                      Modifier
-                    </a>
-                  </button>
-                  <button class="flex-button">
-                    <a href="<?= '/?page=supprimer-materiel&id=' . $material['id_material'] ?>">
-                      <img class="button-crud-users" src="assets/img/trash.svg" />
-                      Supprimer
-                    </a>
-                  </button>
-                </td>
+              <td><?= $material['name_material'] ?></td>
+              <td><?= $material['description'] ?></td>
+              <td><?= $material['serial_number'] ?></td>
+              <td><?= $material['name_brand'] ?></td>
+              <td><?= $material['screen-size'] ?></td>
+              <td><?= $material['processor']?></td>
+              <td><?= $material['storage_memory']?></td>
+              <td><?= $material['ram']?></td>
+
+              <td><?= $material['name_category'] ?></td>
+              <td class="flex">
+                <button class="flex-button"><a href="<?= '/?page=modifier-materiel&id=' . $material['id_material'] ?>"><img class="button-crud-users" src="assets/img/pen-writing-6.svg" />
+                    Modifier</a></button></li>
+                <button class="flex-button"><a href="<?= '/?page=supprimer-materiel&id=' . $material['id_material'] ?>"><img class="button-crud-users" src="assets/img/trash.svg" />
+                    Supprimer</a></button></li>
+                    <button class="flex-button"><a href="<?= '/?page=louer-materiel&id=' . $material['id_material'] ?>"><img
+                          class="button-crud-users" src="assets/img/basket-shopping.svg" />
+                        Louer</a></button>
+
+              </td>
               </tr>
             <?php endforeach; ?>
           </tbody>

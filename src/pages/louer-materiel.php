@@ -32,7 +32,7 @@ if (!empty($_GET['id'])) {
 
 
 
- 
+
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
 
@@ -77,4 +77,4 @@ if (!empty($_GET['id'])) {
 $_POST['id'] = $_GET['id'];
 
 
- $requete = "SELECT * FROM material WHERE id = :id";
+$requete = "SELECT * FROM material WHERE id = :id";

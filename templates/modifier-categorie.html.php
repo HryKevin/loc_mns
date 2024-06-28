@@ -7,7 +7,8 @@
                 <form class="form-inscription" method="POST" enctype="multipart/form-data">
                     <div>
                         <label for="lastname">Nom de la catégorie :</label>
-                        <input type="text" name="category[name_category]" value="<?= $category['name_category']?> " placeholder="Nom" required>
+                        <input type="text" name="category[name_category]" value="<?= $category['name_category'] ?> "
+                            placeholder="Nom" required>
                         <!--Message d'erreur -->
                         <?php if (isset($errors) && !empty($errors['category']['name_category'])): ?>
                             <div class="errors-inscr">
@@ -17,8 +18,8 @@
                     </div>
                     <div>
                         <label for="image">Image :</label>
-                        <input type="file" name="category[image]" value="<?= $category['image']?>" required>
-                        <img style ="height:50px"src="<?= $category['image']?>">
+                        <input type="file" name="category[image]" value="<?= $category['image'] ?>" required>
+                        <img style="height:50px" src="<?= $category['image'] ?>">
                         <?php if (isset($errors) && !empty($errors['category']['image'])): ?>
                             <div class="errors-inscr">
                                 <?= $errors['category']['image'] ?>

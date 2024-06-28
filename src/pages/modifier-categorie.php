@@ -79,7 +79,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
                 $query->execute([
                     ':name_category' => $_POST['category']['name_category'],
                     ':image' => $relativeImagePath, // Chemin relatif de l'image généré précédemment
-                    ':id' => $_POST['category']['id_category']]);
+                    ':id' => $_POST['category']['id_category']
+                ]);
 
                 if (!$dbh->lastInsertId()) {
                     $errors['form'] = "Une erreur s'est produite lors de l'ajout de la catégorie. Contactez l'administrateur à l'adresse [email].";
@@ -97,4 +98,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
         }
     }
 }
-

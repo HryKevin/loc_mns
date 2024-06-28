@@ -6,93 +6,116 @@ if (empty($_SESSION['user_id'])) {
 }
 
 $title = "Modifier un matériel";
-$description = "Déscription de la page de modification d'un matériel";
+$description = "Description de la page de modification d'un matériel";
 
 if (!empty($_GET['id'])) {
     require '../src/data/db-connect.php';
-
+  
     // Récupérer l'ID de l'URL et l'ajouter aux données de la requête POST
     $_POST['material']['id_material'] = $_GET['id'];
 
-    // Préparer la requête avec un paramètre :id
-    $query = $dbh->prepare("SELECT * FROM material 
-                             LEFT JOIN category ON category.id_category = material.id_category 
-                            LEFT JOIN model ON model.id_model = category.id_category 
-                            LEFT JOIN brand ON brand.id_brand = category.id_category
-                            WHERE id_material = :id");
-
-    // Exécuter la requête en liant la valeur de :id à l'ID récupéré de l'URL
-    $query->execute(['id' => $_GET['id']]);
-
-    // Récupérer les données de l'utilisateur
-    $material = $query->fetch();
 
 
-   // Récupérer la liste des categories
-    $query = "SELECT id_category, name_category FROM category";
-    $category = $dbh->query($query);
 
-    // Récupérer la liste des marques
-    $query = "SELECT id_brand, name_brand FROM brand";
-    $brand = $dbh->query($query);
-      
+// Récupère les détails du matériel à modifier
+$query = $dbh->prepare("SELECT * FROM material 
+                        LEFT JOIN category ON category.id_category = material.id_category 
+                        LEFT JOIN model ON model.id_model = material.id_model 
+                        LEFT JOIN brand ON brand.id_brand = model.id_brand
+                        WHERE id_material = :id");
+$query->execute(['id' => $_GET['id']]);
+$material = $query->fetch();
+
+
+// Récupére la liste des models pour le formulaire de sélection
+$query = "SELECT id_model, name_model FROM model";
+$models = $dbh->query($query);
+
+// Récupére la liste des marques pour le formulaire de sélection
+$query = "SELECT id_brand, name_brand FROM brand";
+$brands = $dbh->query($query);
+
+// Récupére la liste des categories pour le formulaire de sélection
+$query = "SELECT id_category, name_category FROM category";
+$categories = $dbh->query($query);
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
+    $errors = [];
+
+    // Validation du champ "Nom"
+    if (empty($_POST['material']['name_material']) || strlen($_POST['material']['name_material']) <= 1) {
+        $errors['material']['name_material'] = "Veuillez saisir un nom contenant plus d'un caractère.";
+    }
+
+    // Validation du champ "Description"
+    if (empty($_POST['material']['description']) || strlen($_POST['material']['description']) <= 1) {
+        $errors['material']['description'] = "Veuillez saisir une description contenant plus d'un caractère.";
+    }
+
+    // Validation du champ "Numéro de série"
+    if (empty($_POST['material']['serial_number']) || strlen($_POST['material']['serial_number']) <= 1) {
+        $errors['material']['serial_number'] = "Veuillez saisir un numéro de série contenant plus d'un caractère.";
+    }
+
+    // Validation du champ "Date d'achat"
+    if (empty($_POST['material']['date_purchase'])) {
+        $errors['material']['date_purchase'] = "Veuillez saisir une date d'achat valide.";
+    }
     
-    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
+    // Validation du champ "Marque"
 
-        $errors = [];
+   
+    // Validation du champ "Model"
+    if (empty($_POST['material']['id_model'])) {
+        $errors['material']['id_model'] = "Veuillez sélectionner une catégorie valide.";
+    }
 
-        // Validation du champs "NOM"
-        if (empty($_POST['material']['name_material']) || strlen($_POST['material']['name_material']) <= 1) {
-            $errors['material']['name_material'] = "Veuillez saisir un nom, qui contient plus d'un caractère.";
-        }
 
-        // Validation du champs "Description"
-        if (empty($_POST['material']['description']) || strlen($_POST['material']['description']) <= 1) {
-            $errors['material']['description'] = "Veuillez saisir une description, qui contient plus d'un caractère.";
-        }
+    // Validation du champ "Catégorie"
+    if (empty($_POST['material']['id_category'])) {
+        $errors['material']['id_category'] = "Veuillez sélectionner une catégorie valide.";
+    }
 
-        // Validation du champs "Numéros de série"
-        if (empty($_POST['material']['serial_number']) || strlen($_POST['material']['serial_number']) <= 1) {
-            $errors['material']['serial_number'] = "Veuillez sélectionner un numéro de série, qui contient plus d'un caractère.";
-        }
+    // Validation du champ "Dimension"
+    if (empty($_POST['material']['screen_size']) || strlen($_POST['material']['screen_size']) <= 1) {
+        $errors['material']['screen_size'] = "Veuillez saisir une dimension valide.";
+    }
+    var_dump($_POST);
 
-        // Validation du champs "Date d'achat"
-        if (empty($_POST['material']['date_purchase'])) {
-            $errors['material']['date_purchase'] = "Veuillez saisir une date d'achat valide.";
-        }
 
-        // Validation du champs "Marque"
-        if (empty($_POST['material']['name_brand']) || strlen($_POST['material']['name_brand']) <= 1) {
-            $errors['material']['name_brand'] = "Veuillez saisir une marque, qui contient plus d'un caractère.";
-        }
 
-        // Validation du champs "Dimension"
-        if (empty($_POST['material']['screen_size']) || strlen($_POST['material']['screen_size']) <= 1) {
-            $errors['material']['screen_size'] = "Veuillez saisir une dimension valide.";
-        }
+    // // Si la catégorie est 'Laptop' ou 'Tablette', valider les champs spécifiques
+    // if ($_POST['material']['id_model'] == 1 || $_POST['material']['id_category'] == 2) {
+    //     if (empty($_POST['material']['processor']) || strlen($_POST['material']['processor']) <= 1) {
+    //         $errors['material']['processor'] = "Veuillez saisir un processeur valide.";
+    //     }
+    //     if (empty($_POST['material']['storage_memory']) || strlen($_POST['material']['storage_memory']) <= 1) {
+    //         $errors['material']['storage_memory'] = "Veuillez saisir une mémoire valide.";
+    //     }
+    //     if (empty($_POST['material']['ram']) || strlen($_POST['material']['ram']) <= 1) {
+    //         $errors['material']['ram'] = "Veuillez saisir une RAM valide.";
+    //     }
+    // }
 
-        // Validation du champs "Catégorie"
-        if (empty($_POST['material']['name_category']) || strlen($_POST['material']['name_category']) <= 1) {
-            $errors['material']['name_category'] = "Veuillez saisir une catégorie valide.";
-        }
+    // if (!empty($_POST)) {
+    //     var_dump($_POST['material']['name_material']);
+    //     var_dump($_POST['material']['description']);
+    //     var_dump($_POST['material']['serial_number']);
+    //     var_dump($_POST['material']['date_purchase']);
+    //     var_dump($_POST['material']['screen_size']);
+    //     var_dump($_POST['material']['processor'] ?? null);
+    //     var_dump($_POST['material']['storage_memory'] ?? null);
+    //     var_dump($_POST['material']['ram'] ?? null);
+    //     var_dump($_POST['material']['id_category'] ?? null);
+    //     var_dump($_POST['material']['id_model'] ?? null);
+    //     var_dump($_POST['material']['id_material'] ?? null);
+    //     exit;
+    // }
 
-        // Validation des champs spécifiques aux Laptops/Tablettes
-        if ($_POST['material']['name_category'] === 'Laptop' || $_POST['material']['name_category'] === 'Tablette') {
-            if (empty($_POST['material']['processor']) || strlen($_POST['material']['processor']) <= 1) {
-                $errors['material']['processor'] = "Veuillez saisir un processeur valide.";
-            }
-            if (empty($_POST['material']['storage_memory']) || strlen($_POST['material']['storage_memory']) <= 1) {
-                $errors['material']['storage_memory'] = "Veuillez saisir une mémoire valide.";
-            }
-            if (empty($_POST['material']['ram']) || strlen($_POST['material']['ram']) <= 1) {
-                $errors['material']['ram'] = "Veuillez saisir une RAM valide.";
-            }
-        }
-
-        // Si la variable erreurs est vide
-        if (empty($errors)) {
-            // Effectuer les modifications dans la base de données
-            $query = $dbh->prepare("UPDATE material SET 
+    if (empty($errors)) {
+        try {
+            // Mettre à jour le matériel
+            $updateMaterialQuery = $dbh->prepare("UPDATE material SET 
                 name_material = :name_material, 
                 description = :description, 
                 serial_number = :serial_number,
@@ -100,11 +123,13 @@ if (!empty($_GET['id'])) {
                 screen_size = :screen_size,
                 processor = :processor,
                 storage_memory = :storage_memory,
-                ram = :ram
-                WHERE id_material = :id_material");
+                ram = :ram,
+                id_category = :id_category,
+                id_model = :id_model
+                WHERE id_material = :id");
 
-            // Passer les paramètres au tableau
-            $query->execute([
+
+            $updateMaterialQuery->execute([
                 'name_material' => $_POST['material']['name_material'],
                 'description' => $_POST['material']['description'],
                 'serial_number' => $_POST['material']['serial_number'],
@@ -113,18 +138,26 @@ if (!empty($_GET['id'])) {
                 'processor' => $_POST['material']['processor'] ?? null,
                 'storage_memory' => $_POST['material']['storage_memory'] ?? null,
                 'ram' => $_POST['material']['ram'] ?? null,
-                'id_material' => $_POST['material']['id_material']
+                'id_category' => $_POST['material']['id_category'],
+                'id_model' => $_POST['material']['id_model'],
+                'id' => $_GET['id']
             ]);
 
-            // Vérifier si la mise à jour a réussi
-            if ($query->rowCount() > 0) {
-                
-                $success = "Les modifications de l'utilisateur ont été enregistrées avec succès.";
+            // Vérifie si la mise à jour a réussi
+            if ($updateMaterialQuery->rowCount() > 0) {
+
+             
+                // Redirection
+                $_SESSION['success'] = "Les modifications du matériel ont été enregistrées avec succès.";
                 header('Location: /?page=ensemble-materiel');
                 exit;
             } else {
-                $errors['form'] = "Une erreur s'est produite lors de la modification de l'utilisateur. Contactez l'administrateur à l'adresse [email].";
+                $errors['form'] = "Une erreur s'est produite lors de la mise à jour du matériel.";
             }
+        } catch (PDOException $e) {
+            // Gestion des erreurs de base de données
+            $errors['form'] = "Erreur de base de données : " . $e->getMessage();
         }
     }
+}
 }
