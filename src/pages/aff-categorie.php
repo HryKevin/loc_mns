@@ -1,6 +1,7 @@
 <?php
 
 require '../src/data/db-connect.php';
+$user_role_id = $_SESSION['user_role_id'];
 
 $idCategory = isset($_GET['id']) ? intval($_GET['id']) : 0;
 $nbParPage = 10;

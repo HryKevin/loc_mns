@@ -1,7 +1,7 @@
 <?php
 $title = "Catégories";
 $description = "Description de la page catégories";
-
+$user_role_id = $_SESSION['user_role_id'];
 require '../src/data/db-connect.php';
 
 // Requête pour récupérer les catégories

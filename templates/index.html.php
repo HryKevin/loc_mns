@@ -8,6 +8,7 @@
         <!-- CONTAINER EQUIPEMENTS -->
 
         <div class="title-material-index">
+        <?php if ($user_role_id == 1): ?>
           <h2>Equipements</h2>
           <a href="/?page=ensemble-materiel">Voir plus<img src="assets/img/chevron-down-orange.svg"> </a>
         </div>
@@ -15,6 +16,7 @@
           <button class="button-loan-index" id="loanMaterials">En location</button>
           <button class="button-available-index" id="availableMaterials">Disponible</button>
           <button class="button-repair-index" id="brokenMaterials">En panne</button>
+        
         </div>
         <!-- TABLEAU -->
 
@@ -42,12 +44,58 @@
               <?php endforeach; ?>
           </table>
         </div>
+        <?php endif; ?>
+
+
+        <?php if ($user_role_id == 2 || $user_role_id == 3): ?>
+          <h2>Mes Equipements</h2>
+          <a href="/?page=ensemble-materiel">Voir plus<img src="assets/img/chevron-down-orange.svg"> </a>
+        </div>
+        
+        <!-- TABLEAU -->
+
+        <div class="scroll-bar">
+          <table id="myTable">
+            <thead class="thead-background">
+              <tr >
+                <th>Nom</th>
+                <th>Description</th>
+                <?php if ($user_role_id == 1): ?>
+                <th>Numéro de série</th>
+                <?php endif; ?>
+                <th>Date achat</th>
+                <th>Marque</th>
+                <th>Catégorie</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php foreach ($materials as $material) : ?>
+                <td><?= $material['name_material'] ?></td>
+                <td><?= $material['description'] ?></td>
+                <?php if ($user_role_id == 1): ?>
+                <td><?= $material['serial_number'] ?></td>
+                <?php endif; ?>
+                <td><?= $material['date_purchase'] ?></td>
+                <td><?= $material['name_brand'] ?></td>
+                <td><?= $material['name_category'] ?></td>
+                </tr>
+              <?php endforeach; ?>
+          </table>
+        </div>
+        <?php endif; ?>
       </div>
       <!-- CONTAINER VUE D'ENSEMBLE -->
       <div class="container-overview-index">
-        <h2>Vue d’ensemble du parc</h2>
+      <?php if ($user_role_id == 1): ?>
+        <h2>Vue d'ensemble du parc</h2>
         <div ><canvas id="myChart"></canvas></div>
+        <?php endif; ?>
+        <?php if ($user_role_id == 2 || $user_role_id == 3): ?>
+        <h2>Durée de ma location</h2>
+        <div ><canvas id="myChart"></canvas></div>
+        <?php endif; ?>
       </div>
+      
     </div>
     <!-- BAS DU MAIN -->
     <div class="bottom-main-index">

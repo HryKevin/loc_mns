@@ -4,9 +4,10 @@ if (empty($_SESSION['user_id'])) {
     header('Location: /?page=connexion');
     exit;
 }
+$user_role_id = $_SESSION['user_role_id'];
 
 if (!empty($_GET['id'])) {
-    require '../src/data/db-connect.php';
+   
 
     $query = $dbh->prepare("DELETE FROM material WHERE id_material = :id");
     $query->execute([

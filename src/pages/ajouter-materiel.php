@@ -8,6 +8,8 @@ if (empty($_SESSION['user_id'])) {
     exit;
 }
 
+$user_role_id = $_SESSION['user_role_id'];
+
 // Récupére la liste des models pour le formulaire de sélection
 $query = "SELECT id_model, name_model FROM model";
 $models = $dbh->query($query);

@@ -8,7 +8,7 @@ if (empty($_SESSION['user_id'])) {
 $title = 'Accueil';
 $description = 'Description de la page d\'accueil';
 
-
+$user_role_id = $_SESSION['user_role_id'];
 
 // Requete tous les équipements
 

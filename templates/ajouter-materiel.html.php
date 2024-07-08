@@ -42,7 +42,7 @@
           </div>
 
 
-          <div>
+          <div class="category">
             <label for="id_category">Catégorie :</label>
             <select name="material[id_category]" id="category"required>
               <option value="">Sélectionner une Catégorie</option>
@@ -61,6 +61,7 @@
                 <?= $errors['material']['id_category'] ?>
               </div>
             <?php endif; ?>
+            <a href="/?page=ajouter-categorie">Ajouter une catégorie</a>
           </div>
           <div>
             <label for="id_model">Marque :</label>

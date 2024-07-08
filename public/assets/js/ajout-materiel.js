@@ -40,7 +40,7 @@ toggleFields("");
         '<option value="">Sélectionner un Modèle</option>';
 
       // Charge les marques pour la catégorie sélectionnée
-      fetch("ajax.php?ajax=json.brand&categoryId="+ categoryId)
+      fetch("ajax.php?ajax=json.brand")
         .then((response) => response.json())
         .then((data) => {
           console.log(data);

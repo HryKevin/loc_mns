@@ -27,16 +27,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login_form_submit'])) 
     $email = $_POST['email'];
     $query = $dbh->prepare("SELECT * FROM users WHERE email = :email");
     $query->execute(['email' => $email]);
-    $customer = $query->fetch();
+    $user = $query->fetch();
 
-    if ($customer) {
+    if ($user) {
       $salt = "alkh1";
       $password = $_POST['password'] . $salt;
     
 
-      if (password_verify($password, $customer['password'])) {
+      if (password_verify($password, $user['password'])) {
         session_start();
-        $_SESSION['user_id'] = $customer['id_users'];
+        $_SESSION['user_id'] = $user['id_users'];
+        $_SESSION['user_role_id'] = $user['id_role']; 
         header('Location: /');
         exit;
       } else {

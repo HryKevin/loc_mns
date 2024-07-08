@@ -41,8 +41,10 @@
             <li><a href="/"> <img src="assets/img/house.svg" />Accueil</a></li>
             <li><a href="/?page=materiels"> <img src="assets/img/computer.svg" />Matériels</a></li>
             <li><a href="/"> <img src="assets/img/bell.svg" />Notifications</a></li>
+            <?php if ($user_role_id == 1) : ?>
             <li><a href="/?page=utilisateurs"> <img src="assets/img/users.svg" />Utilisateurs</a></li>
             <li><a href="/"> <img src="assets/img/gear.svg" />Réglages</a></li>
+            <?php endif; ?>
           </ul>
         </div>
         <div><a href="/?page=deconnexion"><img src="assets/img/door.svg" />

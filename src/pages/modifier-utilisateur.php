@@ -5,6 +5,7 @@ if (empty($_SESSION['user_id'])) {
     header('Location: /?page=connexion');
     exit;
 }
+$user_role_id = $_SESSION['user_role_id'];
 
 $title = "Modifier un utilisateur";
 $description = "Déscription de la page de modification d'un utilisateur";

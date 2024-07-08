@@ -10,18 +10,22 @@
   <!-- CONTAINER GLOBAL -->
   <div class="container-material">
     <!-- GERER -->
+
     <div>
       <div class="buttons-filter-material">
-        <button class="button-material-index" id="allMaterials">Tout le matériel</button>
-        <button class="button-loan-index" id="loanMaterials">En location</button>
-        <button class="button-available-index" id="availableMaterials">Disponible</button>
-        <button class="button-repair-index" id="brokenMaterials">En panne</button>
+        <?php if ($user_role_id == 1) : ?>
+          <button class="button-material-index" id="allMaterials">Tout le matériel</button>
+          <button class="button-loan-index" id="loanMaterials">En location</button>
+          <button class="button-available-index" id="availableMaterials">Disponible</button>
+          <button class="button-repair-index" id="brokenMaterials">En panne</button>
+          <div class="manage-container">
+            <a href="/?page=ajouter-materiel">Ajouter un matériel <img src="assets/img/circles.svg" alt="logo gérer" /></a>
+            <a href="/?page=ajouter-materiels">Ajouter plusieurs matériels <img src="assets/img/circles.svg" alt="logo gérer" /></a>
+          </div> <?php endif; ?>
+      </div>
 
-      </div>
-      <div class="manage-container">
-        <a href="/?page=ajouter-materiel">Ajouter du matériel <img src="assets/img/circles.svg" alt="logo gérer" /></a>
-      </div>
     </div>
+
     <!-- DIV TAB -->
     <div class="container-all-material">
       <div class="scroll-bar">
@@ -30,9 +34,11 @@
             <tr>
               <th>Nom</th>
               <th>Description</th>
+              <?php if ($user_role_id == 1) : ?>
               <th>Numéro de série</th>
+              <?php endif; ?>
               <th>Marque</th>
-              <th>Dimension écran</th>
+              <th>Dimension </th>
               <th>Processeur</th>
               <th>Mémoire</th>
               <th>RAM</th>
@@ -44,22 +50,25 @@
             <?php foreach ($materials as $material) : ?>
               <td><?= $material['name_material'] ?></td>
               <td><?= $material['description'] ?></td>
+              <?php if ($user_role_id == 1) : ?>
               <td><?= $material['serial_number'] ?></td>
+              <?php endif; ?>
               <td><?= $material['name_brand'] ?></td>
               <td><?= $material['screen_size'] ?></td>
-              <td><?= $material['processor']?></td>
-              <td><?= $material['storage_memory']?></td>
-              <td><?= $material['ram']?></td>
+              <td><?= $material['processor'] ?></td>
+              <td><?= $material['storage_memory'] ?></td>
+              <td><?= $material['ram'] ?></td>
 
               <td><?= $material['name_category'] ?></td>
               <td class="flex">
-                <button class="flex-button"><a href="<?= '/?page=modifier-materiel&id=' . $material['id_material'] ?>"><img class="button-crud-users" src="assets/img/pen-writing-6.svg" />
-                    Modifier</a></button></li>
-                <button class="flex-button"><a href="<?= '/?page=supprimer-materiel&id=' . $material['id_material'] ?>"><img class="button-crud-users" src="assets/img/trash.svg" />
-                    Supprimer</a></button></li>
-                    <button class="flex-button"><a href="<?= '/?page=louer-materiel&id=' . $material['id_material'] ?>"><img
-                          class="button-crud-users" src="assets/img/basket-shopping.svg" />
-                        Louer</a></button>
+                <?php if ($user_role_id == 1) : ?>
+                  <button class="flex-button"><a href="<?= '/?page=modifier-materiel&id=' . $material['id_material'] ?>"><img class="button-crud-users" src="assets/img/pen-writing-6.svg" />
+                      Modifier</a></button></li>
+                  <button class="flex-button"><a href="<?= '/?page=supprimer-materiel&id=' . $material['id_material'] ?>"><img class="button-crud-users" src="assets/img/trash.svg" />
+                      Supprimer</a></button></li>
+                <?php endif; ?>
+                <button class="flex-button"><a href="<?= '/?page=louer-materiel&id=' . $material['id_material'] ?>"><img class="button-crud-users" src="assets/img/basket-shopping.svg" />
+                    Louer</a></button>
 
               </td>
               </tr>

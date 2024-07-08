@@ -7,6 +7,7 @@ try {
               LEFT JOIN brand ON brand.id_brand = category.id_category
               LEFT JOIN material_loan_reason  ON material_loan_reason.id_material = material.id_material
               LEFT JOIN loan ON loan.id_loan= material_loan_reason.id_loan
+              LEFT JOIN users ON loan.id_users = users.id_users
               WHERE id_loan_status = 3
               "
               ;
