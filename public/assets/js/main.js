@@ -227,8 +227,60 @@ brokenMaterials.addEventListener("click", function () {
 
 // Chart JS
 
-let ctx = document.querySelector("#myChart").getContext('2d');
+const data = {
+  labels: [
+    'En location',
+    'Disponible',
+    'En panne'
+  ],
+  datasets: [{
+    label: 'Nombre d\équipement',
+    data: [300, 100, 50],
+    backgroundColor: [
+      '#FFB566',
+      '#E6E9E0',
+      '#776E9A'
+    ],
+    hoverOffset: 4
+  }]
+};
 
-let data = {
+const config = {
+  type: 'doughnut',
+  data: data,
+};
 
-}
+// Initialiser le graphique
+document.addEventListener('DOMContentLoaded', function() {
+  let ctx = document.querySelector("#myChart").getContext('2d');
+  new Chart(ctx, config);
+});
+
+const dataUser = {
+  labels: [
+    'En location',
+    'Disponible',
+    'En panne'
+  ],
+  datasets: [{
+    label: 'Nombre d\équipement',
+    data: [300, 100, 50],
+    backgroundColor: [
+      '#FFB566',
+      '#E6E9E0',
+      '#776E9A'
+    ],
+    hoverOffset: 4
+  }]
+};
+
+const configUser = {
+  type: 'doughnut',
+  data: data,
+};
+
+// Initialiser le graphique
+document.addEventListener('DOMContentLoaded', function() {
+  let ctx = document.querySelector("#myChartuser").getContext('2d');
+  new Chart(ctx, configUser);
+});

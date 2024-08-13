@@ -16,7 +16,7 @@
                         <?php endif; ?>
                     </div>
                     <div>
-                        <label for="description">Déscription :</label>
+                        <label for="description">Description :</label>
                         <input type="text" name="users[firstname]" id="firstname" value="<?= $material['description'] ?>" placeholder="Prénom"
                             required>
                         <?php if (isset($errors) && !empty($errors['users']['firstname'])): ?>

@@ -1,3 +1,18 @@
+// Fonction pour créer l'en-tête du tableau avec des colonnes spécifiées
+function createTableHeader(columns) {
+  const tableHeader = document.querySelector("#myTable thead");
+  tableHeader.innerHTML = ""; // Clear existing header content
+  const headerRow = document.createElement("tr");
+
+  columns.forEach(column => {
+    const th = document.createElement("th");
+    th.textContent = column;
+    headerRow.appendChild(th);
+  });
+
+  tableHeader.appendChild(headerRow);
+}
+
 // Sélection du bouton "Tout le matériel"
 let allMaterials = document.querySelector("#allMaterials");
 
@@ -7,6 +22,10 @@ allMaterials.addEventListener("click", function () {
     .then(async (json_resultat) => {
       const tbody = document.querySelector("#myTable tbody");
       tbody.innerHTML = ""; // Supprimer toutes les lignes existantes
+
+      // Définir les colonnes pour "Tout le matériel"
+      const columns = ["Nom", "Description", "Numéro de série", "Marque", "Taille", "Processeur", "Stockage", "RAM", "Catégorie", "Actions"];
+      createTableHeader(columns);
 
       json_resultat.forEach((value) => {
         const row = document.createElement("tr");
@@ -22,8 +41,6 @@ allMaterials.addEventListener("click", function () {
         const cellSerialNumber = document.createElement("td");
         cellSerialNumber.textContent = value.serial_number;
         row.appendChild(cellSerialNumber);
-
-  
 
         const cellBrand = document.createElement("td");
         cellBrand.textContent = value.name_brand;
@@ -80,10 +97,9 @@ allMaterials.addEventListener("click", function () {
         deleteButton.appendChild(deleteLink);
         liDelete.appendChild(deleteButton);
         ul.appendChild(liDelete);
-        cellButtons.appendChild(ul);
 
+        // Ajout des boutons de location
         const liLoan = document.createElement("li");
-       
         const loanButton = document.createElement("button");
         const loanLink = document.createElement("a");
         loanLink.href = `/?page=supprimer-materiel&id=${value.id_material}`;
@@ -107,19 +123,6 @@ allMaterials.addEventListener("click", function () {
   tableHeader.className = "thead-background";
 });
 
-function createTableHeader(columns) {
-  const tableHeader = document.querySelector("#myTable thead");
-  tableHeader.innerHTML = ""; // Clear existing header content
-  const headerRow = document.createElement("tr");
-
-  columns.forEach(column => {
-    const th = document.createElement("th");
-    th.textContent = column;
-    headerRow.appendChild(th);
-  });
-
-  tableHeader.appendChild(headerRow);
-}
 // Sélection du bouton "Matériel emprunté"
 let loanMaterials = document.querySelector("#loanMaterials");
 
@@ -130,10 +133,10 @@ loanMaterials.addEventListener("click", function () {
       const tbody = document.querySelector("#myTable tbody");
       tbody.innerHTML = ""; // Supprimer toutes les lignes existantes
 
-        // Définir les colonnes pour "Tout le matériel"
-      const columns = ["Nom", "Description", "Numéro de série", "Marque", "Taille", "Processeur", "Stockage", "RAM", "Catégorie", "Actions"];
+      // Définir les colonnes pour "Matériel emprunté"
+      const columns = ["Nom", "Description", "Numéro de série", "Marque", "Taille", "Processeur", "Stockage", "RAM", "Catégorie", "Date de début de location", "Date de fin de location", "Utilisateur", "Actions"];
       createTableHeader(columns);
-      
+
       json_resultat.forEach((value) => {
         const row = document.createElement("tr");
 
@@ -189,7 +192,6 @@ loanMaterials.addEventListener("click", function () {
         const ul = document.createElement("ul");
         ul.className = "flex";
 
- 
         // Ajout des boutons d'édition
         const liEdit = document.createElement("li");
         const editButton = document.createElement("button");
@@ -217,8 +219,8 @@ loanMaterials.addEventListener("click", function () {
         deleteButton.appendChild(deleteLink);
         liDelete.appendChild(deleteButton);
         ul.appendChild(liDelete);
-        cellButtons.appendChild(ul);
 
+        // Ajout des boutons de location
         const liLoan = document.createElement("li");
         const loanButton = document.createElement("button");
         const loanLink = document.createElement("a");
@@ -231,13 +233,13 @@ loanMaterials.addEventListener("click", function () {
         loanButton.appendChild(loanLink);
         liLoan.appendChild(loanButton);
         ul.appendChild(liLoan);
+
         cellButtons.appendChild(ul);
         row.appendChild(cellButtons);
 
         tbody.appendChild(row); // Ajouter la nouvelle ligne au tableau
       });
     });
-    
 
   // Mise à jour de l'en-tête du tableau
   const tableHeader = document.querySelector("#myTable thead");
@@ -253,6 +255,10 @@ availableMaterials.addEventListener("click", function () {
     .then(async (json_resultat) => {
       const tbody = document.querySelector("#myTable tbody");
       tbody.innerHTML = ""; // Supprimer toutes les lignes existantes
+
+      // Définir les colonnes pour "Matériel disponible"
+      const columns = ["Nom", "Description", "Numéro de série", "Marque", "Taille", "Processeur", "Stockage", "RAM", "Catégorie", "Actions"];
+      createTableHeader(columns);
 
       json_resultat.forEach((value) => {
         const row = document.createElement("tr");
@@ -324,8 +330,8 @@ availableMaterials.addEventListener("click", function () {
         deleteButton.appendChild(deleteLink);
         liDelete.appendChild(deleteButton);
         ul.appendChild(liDelete);
-        cellButtons.appendChild(ul);
 
+        // Ajout des boutons de location
         const liLoan = document.createElement("li");
         const loanButton = document.createElement("button");
         const loanLink = document.createElement("a");
@@ -360,10 +366,13 @@ brokenMaterials.addEventListener("click", function () {
       const tbody = document.querySelector("#myTable tbody");
       tbody.innerHTML = ""; // Supprimer toutes les lignes existantes
 
+      // Définir les colonnes pour "Matériel en panne"
+      const columns = ["Nom", "Description", "Numéro de série", "Marque", "Taille", "Processeur", "Stockage", "RAM", "Catégorie", "Actions"];
+      createTableHeader(columns);
+
       json_resultat.forEach((value) => {
         const row = document.createElement("tr");
 
-    
         const cellName = document.createElement("td");
         cellName.textContent = value.name_material;
         row.appendChild(cellName);
@@ -404,7 +413,6 @@ brokenMaterials.addEventListener("click", function () {
         const ul = document.createElement("ul");
         ul.className = "flex";
 
-        
         // Ajout des boutons d'édition
         const liEdit = document.createElement("li");
         const editButton = document.createElement("button");
@@ -432,8 +440,8 @@ brokenMaterials.addEventListener("click", function () {
         deleteButton.appendChild(deleteLink);
         liDelete.appendChild(deleteButton);
         ul.appendChild(liDelete);
-        cellButtons.appendChild(ul);
 
+        // Ajout des boutons de location
         const liLoan = document.createElement("li");
         const loanButton = document.createElement("button");
         const loanLink = document.createElement("a");

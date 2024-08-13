@@ -92,7 +92,7 @@
         <?php endif; ?>
         <?php if ($user_role_id == 2 || $user_role_id == 3): ?>
         <h2>Durée de ma location</h2>
-        <div ><canvas id="myChart"></canvas></div>
+        <div ><canvas id="myChartuser"></canvas></div>
         <?php endif; ?>
       </div>
       
@@ -251,6 +251,7 @@
 
   </div>
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="./assets/js/main.js"></script>
 
 
