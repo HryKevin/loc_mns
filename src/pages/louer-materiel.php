@@ -1,9 +1,7 @@
 <?php
 
-
 $title = "Location";
 $description = "Description de la page de location de matériel";
-
 
 if (empty($_SESSION['user_id'])) {
     header('Location: /?page=connexion');
@@ -11,71 +9,48 @@ if (empty($_SESSION['user_id'])) {
 }
 $user_role_id = $_SESSION['user_role_id'];
 
-
+$material = [];
 
 if (!empty($_GET['id'])) {
-    require '../src/data/db-connect.php';
-
-    // Récupérer l'ID de l'URL et l'ajouter aux données de la requête POST
-    $_POST['loan']['id_materiel'] = $_GET['id'];
-
-    // Préparer la requête avec un paramètre :id
-    $query = $dbh->prepare("SELECT material.*, loan.* FROM material_loan_reason 
-                            LEFT JOIN loan ON material_loan_reason.id_loan = loan.id_loan 
-                            LEFT JOIN material ON material_loan_reason.id_material = material.id_material 
-                            WHERE material.id_material = :id");
-
-    // Exécuter la requête en liant la valeur de :id à l'ID récupéré de l'URL
+    // Récupérer les informations du matériel
+    $query = $dbh->prepare("SELECT * FROM material WHERE id_material = :id");
     $query->execute(['id' => $_GET['id']]);
-
-    // Récupérer les données de l'utilisateur
     $material = $query->fetch();
-
-
-
-
-
-    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
-
-        $errors = [];
-
-        // Validation du champs "NOM"
-        if (empty($_POST['users']['lastname']) || strlen($_POST['users']['lastname']) <= 1) {
-            $errors['users']['lastname'] = "Veuillez saisir un nom, qui contient plus d'un caractère.";
-        }
-
-        // Validation du champs "Prénom"
-        if (empty($_POST['users']['firstname']) || strlen($_POST['users']['firstname']) <= 1) {
-            $errors['users']['firstname'] = "Veuillez saisir un prénom, qui contient plus d'un caractère.";
-        }
-
-        //Validation du champs "Rôle"
-        if (empty($_POST['users']['id_role'])) {
-            $errors['users']['id_role'] = "Veuillez sélectionner un rôle pour l'utilisateur.";
-        }
-
-        // Validation du champs "Email"
-        if (empty($_POST['users']['email']) || !filter_var($_POST['users']['email'], FILTER_VALIDATE_EMAIL)) {
-            $errors['users']['email'] = "Veuillez saisir un email valide.";
-        }
-
-        // Si la variable erreurs est vide 
-        if (empty($errors)) {
-            // Effectuer les modifications dans la base de données
-            $query = $dbh->prepare("UPDATE users SET firstname = :firstname, lastname = :lastname, email = :email, id_role = :id_role WHERE id_users = :id_users");
-            $query->execute($_POST['users']);
-
-            // Vérifier si la mise à jour a réussi
-            if ($query->rowCount() > 0) {
-                $success = "Les modifications de l'utilisateur ont été enregistrées avec succès.";
-            } else {
-                $errors['form'] = "Une erreur s'est produite lors de la modification de l'utilisateur. Contactez l'administrateur à l'adresse [email].";
-            }
-        }
-    }
 }
 
-$_POST['id'] = $_GET['id'];
+if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST['loan'])) {
+    // Récupérer les informations du formulaire
+    $start_date = $_POST['loan']['start_date'];
+    $end_date = $_POST['loan']['end_date'];
+    $comments = $_POST['loan']['comments'];
+    $id_material = $_POST['loan']['id_materiel'];
+    $user_id = $_SESSION['user_id'];
+    $id_localisation = $_POST['loan']['id_localisation']; // Assure-toi que ce champ est inclus dans le formulaire
 
+    // Insérer les données dans la table `loan`
+    $stmt = $dbh->prepare("INSERT INTO loan (date_loan, comment, date_return, id_localisation, id_users, id_loan_status) VALUES (:start_date, :comments, :end_date, :id_localisation, :id_users, 1)");
+    $success = $stmt->execute([
+        ':start_date' => $start_date,
+        ':comments' => $comments,
+        ':end_date' => $end_date,
+        ':id_localisation' => $id_localisation,
+        ':id_users' => $user_id
+    ]);
 
-$requete = "SELECT * FROM material WHERE id = :id";
+    if ($success) {
+        $loan_id = $dbh->lastInsertId(); // Récupérer l'ID du prêt inséré
+        // Associer le matériel au prêt dans `material_loan_reason`
+        $stmt = $dbh->prepare("INSERT INTO material_loan_reason (id_material, id_loan, date_return) VALUES (:id_material, :id_loan, :end_date)");
+        $stmt->execute([
+            ':id_material' => $id_material,
+            ':id_loan' => $loan_id,
+            ':end_date' => $end_date
+        ]);
+
+        $_SESSION['success'] = "Matériel loué avec succès.";
+        header('Location: /chemin/vers/ensemble-materiel.php'); // Mettre à jour avec le chemin réel vers la page "ensemble matériel"
+        exit;
+    } else {
+        $errors['submit'] = "Erreur lors de la location du matériel.";
+    }
+}

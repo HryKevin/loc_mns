@@ -4,67 +4,49 @@
         <div class="top-container-add-users"></div>
         <div class="container-add-users">
             <div class="container-form-inscription">
-                <form class="form-inscription" method="POST">
+                <form class="form-inscription" method="POST" action="">
                     <div>
-                        <label for="name">Nom du matériel :</label>
-                        <input type="text" name="users[lastname]" id="" value="<?= $material['name_material']?>" placeholder="Nom" required>
-                        <!--Message d'erreur -->
-                        <?php if (isset($errors) && !empty($errors['users']['lastname'])): ?>
-                            <div class="errors-inscr">
-                                <?= $errors['users']['lastname'] ?>
-                            </div>
-                        <?php endif; ?>
+                        <label for="name_material">Nom du matériel :</label>
+                        <input type="text" name="material[name_material]" id="name_material" value="<?= htmlspecialchars($material['name_material'] ?? '') ?>" placeholder="Nom du matériel" readonly>
                     </div>
                     <div>
                         <label for="description">Description :</label>
-                        <input type="text" name="users[firstname]" id="firstname" value="<?= $material['description'] ?>" placeholder="Prénom"
-                            required>
-                        <?php if (isset($errors) && !empty($errors['users']['firstname'])): ?>
-                            <div class="errors-inscr">
-                                <?= $errors['users']['firstname'] ?>
-                            </div>
-                        <?php endif; ?>
+                        <input type="text" name="material[description]" id="description" value="<?= htmlspecialchars($material['description'] ?? '') ?>" placeholder="Description du matériel" readonly>
                     </div>
-
-
                     <div>
-                        <label for="serial_number">Numéro de série : </label>
-                        <input type="email" name="users[email]" id="email" value="<?= $material['serial_number'] ?>" placeholder="Email" required>
-                        <?php if (isset($errors) && !empty($errors['users']['email'])): ?>
-                            <div class="errors-inscr">
-                                <?= $errors['users']['email'] ?>
-                            </div>
-                        <?php endif; ?>
+                        <label for="serial_number">Numéro de série :</label>
+                        <input type="text" name="material[serial_number]" id="serial_number" value="<?= htmlspecialchars($material['serial_number'] ?? '') ?>" placeholder="Numéro de série" readonly>
                     </div>
-                    <div class="password-inscr">
-                        <label for="serial_number">Numéro de série : </label>
-                        <input type="email" name="users[email]" id="email" value="<?= $material['serial_number'] ?>" placeholder="Email"
-                            required>
-                        <?php if (isset($errors) && !empty($errors['users']['email'])): ?>
-                            <div class="errors-inscr">
-                                <?= $errors['users']['email'] ?>
-                            </div>
-                        <?php endif; ?>
+                    <div>
+                        <label for="start_date">Date de début :</label>
+                        <input type="date" name="loan[start_date]" id="start_date" required>
+                    </div>
+                    <div>
+                        <label for="end_date">Date de fin :</label>
+                        <input type="date" name="loan[end_date]" id="end_date" required>
+                    </div>
+                    <div>
+                        <label for="id_localisation">Localisation :</label>
+                        <select name="loan[id_localisation]" id="id_localisation" required>
+                            <!-- Remplir les options depuis la base de données -->
+                            <?php
+                            $locations = $dbh->query("SELECT * FROM localisation")->fetchAll();
+                            foreach ($locations as $location) {
+                                echo "<option value=\"{$location['id_localisation']}\">{$location['name_localisation']}</option>";
+                            }
+                            ?>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="comments">Commentaires :</label>
+                        <textarea name="loan[comments]" id="comments" placeholder="Ajouter des commentaires (facultatif)"></textarea>
                     </div>
                     <div class="submit-inscription">
-                        <input type="submit" name="submit" value="Ajouter">
-                        <?php if (isset($success) && !empty($success)): ?>
-                            <div class="success-inscr">
-                                <?= $success ?>
-                            </div>
-                        <?php endif; ?>
+                        <input type="hidden" name="loan[id_materiel]" value="<?= htmlspecialchars($_GET['id'] ?? '') ?>">
+                        <input type="submit" name="submit" value="Louer">
                     </div>
-
                 </form>
             </div>
-
-
-
         </div>
     </div>
-</div>
-</div>
-
-
-</div>
 </div>

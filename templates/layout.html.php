@@ -12,7 +12,6 @@
   </title>
   <meta name="description" content="<?= $description ?? '' ?>">
 
-
   <!-- MAIN CSS -->
   <link rel="stylesheet" href="assets/css/styles.css">
 
@@ -27,8 +26,6 @@
         <h1 class="visibility-hidden"><?= $title ?></h1>
       </div>
       <div class="left-section-index" id="nav">
-
-
         <!-- Menu Latéral -->
         <div>
           <div  id="close" class="visibility-hidden "><img src="assets/img/xmark.svg"></div>
@@ -77,5 +74,4 @@
       <?php endif; ?>
       <script src="./assets/js/menu-burger.js"></script>
 </body>
-
 </html>

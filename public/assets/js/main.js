@@ -1,6 +1,6 @@
 let allMaterials = document.querySelector("#allMaterials");
 
-// TABLEAU TOUT LE MATERIEL
+// TAB
 allMaterials.addEventListener("click", function () {
   fetch("ajax.php?ajax=json.all-material")
     .then((resultat) => resultat.json())
