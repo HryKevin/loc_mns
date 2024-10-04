@@ -26,16 +26,8 @@
                         <input type="date" name="loan[end_date]" id="end_date" required>
                     </div>
                     <div>
-                        <label for="id_localisation">Localisation :</label>
-                        <select name="loan[id_localisation]" id="id_localisation" required>
-                            <!-- Remplir les options depuis la base de données -->
-                            <?php
-                            $locations = $dbh->query("SELECT * FROM localisation")->fetchAll();
-                            foreach ($locations as $location) {
-                                echo "<option value=\"{$location['id_localisation']}\">{$location['name_localisation']}</option>";
-                            }
-                            ?>
-                        </select>
+                        <label for="name_localisation">Localisation :</label>
+                        <input type="text" name="loan[name_localisation]" id="localisation" required>
                     </div>
                     <div>
                         <label for="comments">Commentaires :</label>
@@ -46,6 +38,20 @@
                         <input type="submit" name="submit" value="Louer">
                     </div>
                 </form>
+
+                <!-- Affichage des périodes de location déjà réservées -->
+                <?php if (!empty($periods)) : ?>
+                    <div class="existing-periods">
+                        <h3>Périodes de location déjà réservées :</h3>
+                        <ul>
+                            <?php foreach ($periods as $period) : ?>
+                                <li>Du <?= htmlspecialchars(date('d/m/Y', strtotime($period['date_loan']))) ?> 
+                                    au <?= htmlspecialchars(date('d/m/Y', strtotime($period['date_return']))) ?>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
     </div>

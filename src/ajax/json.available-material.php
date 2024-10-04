@@ -41,11 +41,11 @@ try {
         material.id_material;
     ";
 
-    // Préparez et exécutez la requête
+    // Prépare et exécute la requête
     $result = $dbh->prepare($query);
     $result->execute();
 
-    // Récupérez les résultats de la requête
+    
     $data = $result->fetchAll(PDO::FETCH_ASSOC);
 
     // Encoder les données en JSON et les renvoyer

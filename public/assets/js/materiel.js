@@ -50,7 +50,7 @@ function addActionButtons(value, ul, isAvailableFilter = false) {
     const loanLink = document.createElement("a");
     loanLink.href = `/?page=louer-materiel&id=${value.id_material}`;
     const loanImg = document.createElement("img");
-    loanImg.src = "assets/img/basket-shopping.svg";
+    loanImg.src = "assets/img/basket.png";
     loanButton.className = "flex-button";
     loanLink.appendChild(loanImg);
     loanLink.appendChild(document.createTextNode(" Louer"));

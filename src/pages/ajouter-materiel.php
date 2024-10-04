@@ -29,51 +29,36 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
     if (empty($_POST['material']['name_material']) || strlen($_POST['material']['name_material']) <= 1) {
         $errors['material']['name_material'] = "Veuillez saisir un nom contenant plus d'un caractère.";
     }
-
     // Validation du champ "Description"
     if (empty($_POST['material']['description']) || strlen($_POST['material']['description']) <= 1) {
         $errors['material']['description'] = "Veuillez saisir une description contenant plus d'un caractère.";
     }
-
     // Validation du champ "Numéro de série"
     if (empty($_POST['material']['serial_number']) || strlen($_POST['material']['serial_number']) <= 1) {
         $errors['material']['serial_number'] = "Veuillez saisir un numéro de série contenant plus d'un caractère.";
     }
-
     // Validation du champ "Date d'achat"
     if (empty($_POST['material']['date_purchase'])) {
         $errors['material']['date_purchase'] = "Veuillez saisir une date d'achat valide.";
     }
-
-    // Validation du champ "Marque"
-
-
-
     // Validation du champ "Model"
     if (empty($_POST['material']['id_model'])) {
         $errors['material']['id_model'] = "Veuillez sélectionner une catégorie valide.";
     }
-
-
     // Validation du champ "Catégorie"
     if (empty($_POST['material']['id_category'])) {
         $errors['material']['id_category'] = "Veuillez sélectionner une catégorie valide.";
     }
-
     // Validation du champ "Dimension"
     if (empty($_POST['material']['screen_size']) || strlen($_POST['material']['screen_size']) <= 1) {
         $errors['material']['screen_size'] = "Veuillez saisir une dimension valide.";
     }
-    var_dump($_POST);
-    var_dump($errors);
-
-
-
 
     if (empty($errors)) {
         try {
             // Mettre à jour le matériel
-            $materialQuery = $dbh->prepare("INSERT INTO material (name_material,description,serial_number,date_purchase,screen_size,processor,storage_memory,ram,id_model,id_category) VALUES (:name_material,:description,:serial_number,:date_purchase,:screen_size,:processor,:storage_memory,:ram,:id_model,:id_category)");
+            $materialQuery = $dbh->prepare("INSERT INTO material (name_material,description,serial_number,date_purchase,screen_size,processor,storage_memory,ram,id_model,id_category) 
+                                                   VALUES (:name_material,:description,:serial_number,:date_purchase,:screen_size,:processor,:storage_memory,:ram,:id_model,:id_category)");
 
             $materialQuery->execute([
                 'name_material' => $_POST['material']['name_material'],
@@ -87,9 +72,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
                 'id_category' => $_POST['material']['id_category'],
                 'id_model' => $_POST['material']['id_model']
             ]);
-
-
-
             // Vérifie si la mise à jour a réussi
             if (!$dbh->lastInsertId()) {
                 $errors['form'] = "Une erreur s'est produite lors de l'ajout du matériel.";

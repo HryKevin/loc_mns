@@ -1,6 +1,5 @@
 <?php
 try {
-    // Préparez la requête SQL pour récupérer les matériels en location avec les dates de début et de retour
     $query = "
     SELECT 
         material.*,
@@ -27,7 +26,10 @@ try {
     INNER JOIN 
         users ON loan.id_users = users.id_users
     WHERE 
-        loan.date_return IS NULL OR loan.date_return > NOW()
+        loan.date_return > NOW()
+        AND loan.id_loan_status = 2
+    GROUP BY 
+        material.id_material
     ORDER BY 
         loan.date_loan DESC;
     ";
@@ -46,4 +48,4 @@ try {
     echo "Il y a une erreur : " . $e->getMessage();
     die;
 }
-?>
+

@@ -62,13 +62,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
     if (empty($_POST['material']['date_purchase'])) {
         $errors['material']['date_purchase'] = "Veuillez saisir une date d'achat valide.";
     }
-    
-    // Validation du champ "Marque"
 
-   
     // Validation du champ "Model"
     if (empty($_POST['material']['id_model'])) {
         $errors['material']['id_model'] = "Veuillez sélectionner une catégorie valide.";
+    }
+
+     // Validation du champ "Marque"
+     if (empty($_POST['material']['id_brand'])) {
+        $errors['material']['id_model'] = "Veuillez sélectionner une marque valide.";
     }
 
 
@@ -81,37 +83,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
     if (empty($_POST['material']['screen_size']) || strlen($_POST['material']['screen_size']) <= 1) {
         $errors['material']['screen_size'] = "Veuillez saisir une dimension valide.";
     }
-    var_dump($_POST);
-
-
-
-    // // Si la catégorie est 'Laptop' ou 'Tablette', valider les champs spécifiques
-    // if ($_POST['material']['id_model'] == 1 || $_POST['material']['id_category'] == 2) {
-    //     if (empty($_POST['material']['processor']) || strlen($_POST['material']['processor']) <= 1) {
-    //         $errors['material']['processor'] = "Veuillez saisir un processeur valide.";
-    //     }
-    //     if (empty($_POST['material']['storage_memory']) || strlen($_POST['material']['storage_memory']) <= 1) {
-    //         $errors['material']['storage_memory'] = "Veuillez saisir une mémoire valide.";
-    //     }
-    //     if (empty($_POST['material']['ram']) || strlen($_POST['material']['ram']) <= 1) {
-    //         $errors['material']['ram'] = "Veuillez saisir une RAM valide.";
-    //     }
-    // }
-
-    // if (!empty($_POST)) {
-    //     var_dump($_POST['material']['name_material']);
-    //     var_dump($_POST['material']['description']);
-    //     var_dump($_POST['material']['serial_number']);
-    //     var_dump($_POST['material']['date_purchase']);
-    //     var_dump($_POST['material']['screen_size']);
-    //     var_dump($_POST['material']['processor'] ?? null);
-    //     var_dump($_POST['material']['storage_memory'] ?? null);
-    //     var_dump($_POST['material']['ram'] ?? null);
-    //     var_dump($_POST['material']['id_category'] ?? null);
-    //     var_dump($_POST['material']['id_model'] ?? null);
-    //     var_dump($_POST['material']['id_material'] ?? null);
-    //     exit;
-    // }
 
     if (empty($errors)) {
         try {
@@ -126,7 +97,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
                 storage_memory = :storage_memory,
                 ram = :ram,
                 id_category = :id_category,
-                id_model = :id_model
+                id_model = :id_model;
+                id_brand = :id_brand,
                 WHERE id_material = :id");
 
 
@@ -141,6 +113,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
                 'ram' => $_POST['material']['ram'] ?? null,
                 'id_category' => $_POST['material']['id_category'],
                 'id_model' => $_POST['material']['id_model'],
+                'id_brand' => $_POST['material']['id_brand'],
                 'id' => $_GET['id']
             ]);
 

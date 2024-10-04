@@ -12,8 +12,7 @@
           <label>Email : </label>
           <input type="email" name="email" id ="user_email" placeholder="Email" data-required>
           <div id="error" class="error"></div>
-          <?php if (isset($errors['email'])) : ?>
-            
+          <?php if (isset($errors['email'])) : ?> 
             <div class="error-message"><?= $errors['email'] ?></div>
           <?php endif; ?>
         </div>
@@ -35,3 +34,9 @@
   </div>
 </div>
 <script src="./assets/js/connexion.js"></script>
+
+<label>Email : </label>
+<input type="email" name="email" id="user_email" 
+       placeholder="Email" 
+       value="<?= htmlspecialchars($email) ?>"
+       data-required>

@@ -1,0 +1,19 @@
+permettant une lecture facile sans avoir besoin de scroller horizontalement.
+@media (max-width: 768px) {
+    .container-main-index {
+        overflow: inherit;
+        height: auto;
+        padding: 20px;
+    }
+
+    .top-main-index {
+        row-gap: 20px;
+        flex-direction: column;
+    }
+
+    .bottom-main-index {
+        margin-top: 20px;
+        row-gap: 20px;
+        flex-direction: column;
+    }
+}

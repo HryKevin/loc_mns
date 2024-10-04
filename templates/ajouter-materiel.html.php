@@ -82,6 +82,7 @@
                 <?= $errors['material']['id_brand'] ?>
               </div>
             <?php endif; ?>
+            <a href="/?page=ajouter-categorie">Ajouter une marque</a>
           </div>
 
 
@@ -105,6 +106,8 @@
                 <?= $errors['material']['id_model'] ?>
               </div>
             <?php endif; ?>
+            </br>
+            <a href="/?page=ajouter-categorie">Ajouter un modèle</a>
           </div>
 
 

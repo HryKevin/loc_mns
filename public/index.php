@@ -7,7 +7,7 @@ $page = !empty($_GET['page']) ? $_GET['page'] : 'index';
 $path = '../src/pages/' . $page . '.php';
 if (file_exists($path)) {
     // Db connect et chargement des variables globales
-    require "../src/data/db-connect.php";
+    require __DIR__ . '/../src/data/db-connect.php';
     // Chargement des données pour la page
     require $path;
     // Inclusion du template correspondant à la page

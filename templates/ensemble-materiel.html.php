@@ -1,15 +1,4 @@
 <!DOCTYPE html>
-<html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liste des Matériels</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
-
-<body>
-    <!-- MAIN -->
     <div class="container-main-material">
         <!-- BARRE GRISE -->
         <div class="top-container-material">
@@ -91,7 +80,7 @@
                                         <?php if (isAvailableForRent($material)) : ?>
                                             <button class="flex-button">
                                                 <a href="<?= '/?page=louer-materiel&id=' . $material['id_material'] ?>">
-                                                    <img class="button-crud-users" src="assets/img/basket-shopping.svg" /> Louer
+                                                    <img class="button-crud-users" src="assets/img/basket.png" /> Louer
                                                 </a>
                                             </button>
                                         <?php endif; ?>
@@ -105,6 +94,3 @@
         </div>
     </div>
     <script src="assets/js/materiel.js"></script>
-</body>
-
-</html>

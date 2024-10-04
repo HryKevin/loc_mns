@@ -8,8 +8,22 @@ try {
         model.name_model,
         brand.name_brand,
         CASE 
-            WHEN loan.id_loan IS NULL OR (loan.date_return IS NOT NULL AND loan.date_return < NOW())
+            -- Matériel jamais loué ou prêté mais rendu
+            WHEN loan.id_loan IS NULL 
+                OR (loan.date_return IS NOT NULL AND loan.date_return < NOW()) 
             THEN 'Disponible'
+
+            -- Matériel actuellement en prêt (statut validé et prêt en cours)
+            WHEN loan.id_loan_status = 2 
+                AND loan.date_loan <= NOW() 
+                AND (loan.date_return IS NULL OR loan.date_return > NOW())
+            THEN 'Non disponible'
+
+            -- Matériel réservé pour une période future (statut validé et prêt à venir)
+            WHEN loan.id_loan_status = 2 
+                AND loan.date_loan > NOW()
+            THEN 'Réservé'
+            
             ELSE 'Non disponible'
         END as availability_status
     FROM 
@@ -24,8 +38,11 @@ try {
         material_loan_reason ON material.id_material = material_loan_reason.id_material
     LEFT JOIN 
         loan ON material_loan_reason.id_loan = loan.id_loan
+     GROUP BY 
+        material.id_material
     ORDER BY 
         material.id_material;
+    
     ";
 
     // Préparez et exécutez la requête

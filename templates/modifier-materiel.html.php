@@ -39,33 +39,9 @@
                </div>
              <?php endif; ?>
            </div>
-          
-           <div>
-             <label for="id_model">Modele :</label>
-             <select name="material[id_model]" required>
-               <?php
-                // Vérifie si la requête a retourné des résultats
-                if ($models) {
-                  // Itérez sur chaque résultat et affichez-le comme une option dans le select
-                  while ($model = $models->fetch()) {
-                    echo '<option value="' . $model['id_model'] . '">' . $model['name_model'] . '</option>';
-                  }
-                }
-                ?>
-             </select>
-             <?php if (isset($errors['material']['id_model'])) : ?>
-               <div class="errors-inscr">
-                 <?= $errors['material']['id_model'] ?>
-               </div>
-             <?php endif; ?>
-           </div>
-
-
-
-
            <div class="category">
              <label for="id_category">Categorie :</label>
-             <select name="material[id_category]"  required>
+             <select name="material[id_category]" id="category"  required>
                <?php
                 // Vérifie si la requête a retourné des résultats
                 if ($categories) {
@@ -83,6 +59,23 @@
              <?php endif; ?>
              <a href="/?page=ajouter-categorie">Ajouter une catégorie</a>
            </div>
+           <div>
+             <label for="id_model">Modele :</label>
+             <select name="material[id_model]" id="model" required>
+              <option value=""> 
+               </select>
+           </div>
+
+           <div>
+             <label for="id_brand">Marque :</label>
+             <select name="material[id_brand]" id="brand" required>
+             <option value="">Sélectionner une Marque</option>
+           </div>
+
+
+
+
+          
 
            <div>
              <label for="date_purchase">Date achat :</label>
@@ -160,6 +153,6 @@
        <div class="img-div"> <img src="./assets/img/update-material.svg" alt=""></div>
      </div>
    </div>
-
  </div>
  </div>
+ <script src="./assets/js/modifier.js"></script>

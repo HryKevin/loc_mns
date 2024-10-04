@@ -4,12 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="équipements, gestion, location, retour">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Gayathri:wght@100;400;700&family=Golos+Text:wght@400..900&display=swap" rel="stylesheet">
-  <title>
-    <?= $title ?? '' ?>
-  </title>
+
+  <title><?= $title ?? '' ?></title>
+
   <meta name="description" content="<?= $description ?? '' ?>">
 
   <!-- MAIN CSS -->
@@ -27,8 +28,9 @@
       </div>
       <div class="left-section-index" id="nav">
         <!-- Menu Latéral -->
+        <header>
         <div>
-          <div  id="close" class="visibility-hidden "><img src="assets/img/xmark.svg"></div>
+          <div id="close" class="visibility-hidden "><img src="assets/img/xmark.svg"></div>
           <div class="logo-section-sidebar">
             <img class="logo-computer" src="assets/img/logo_computer_locmns.svg" alt="logo-computer" />
             <img class="logo-computer" src="assets/img/logo_locmns.svg" alt="logo" />
@@ -39,8 +41,8 @@
             <li><a href="/?page=materiels"> <img src="assets/img/computer.svg" />Matériels</a></li>
             <li><a href="/"> <img src="assets/img/bell.svg" />Notifications</a></li>
             <?php if ($user_role_id == 1) : ?>
-            <li><a href="/?page=utilisateurs"> <img src="assets/img/users.svg" />Utilisateurs</a></li>
-            <li><a href="/"> <img src="assets/img/gear.svg" />Réglages</a></li>
+              <li><a href="/?page=utilisateurs"> <img src="assets/img/users.svg" />Utilisateurs</a></li>
+              <li><a href="/"> <img src="assets/img/gear.svg" />Réglages</a></li>
             <?php endif; ?>
           </ul>
         </div>
@@ -48,7 +50,7 @@
             Déconnexion</a>
         </div>
       </div>
-      <div class="rigth-section-index" >
+      <div class="rigth-section-index">
         <!-- Nav -->
         <div class="nav-bar">
           <div class="all-element-navbar">
@@ -56,13 +58,13 @@
           </div>
           <div class="element-nav-bar">
             <input class="input-search" type="text" /></input>
-            <img class="search"  src="assets/img/magnifier.svg" />
+            <img class="search" src="assets/img/magnifier.svg" />
             <img class="burger search" id="burger" src="assets/img/menu-burger.svg" />
             <img class="visibility-hidden-responsive" src="assets/img/user.svg" />
-            <img class="visibility-hidden-responsive"  src="assets/img/chevron-down.svg" />
+            <img class="visibility-hidden-responsive" src="assets/img/chevron-down.svg" />
           </div>
-
         </div>
+        </header>
         <main>
           <?php require '../templates/' . $page . '.html.php'; ?>
         </main>
@@ -74,4 +76,5 @@
       <?php endif; ?>
       <script src="./assets/js/menu-burger.js"></script>
 </body>
+
 </html>
